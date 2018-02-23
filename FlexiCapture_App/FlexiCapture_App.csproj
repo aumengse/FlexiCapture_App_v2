@@ -92,6 +92,12 @@
     <Compile Include="Matched.Designer.cs">
       <DependentUpon>Matched.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unmatched_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unmatched_Data.Designer.cs">
+      <DependentUpon>Unmatched_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unmatched_View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +133,6 @@
     </Compile>
     <Compile Include="ScanForm.Designer.cs">
       <DependentUpon>ScanForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Unmatched_Data.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Unmatched_Data.Designer.cs">
-      <DependentUpon>Unmatched_Data.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Matched.resx">
       <DependentUpon>Matched.cs</DependentUpon>
