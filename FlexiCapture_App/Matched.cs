@@ -188,15 +188,22 @@ namespace FlexiCapture_App
                 matched_listview_view("icbs_trans","<>","U");
                 matched_listview_view("scanned_trans","<>","U");
 
-                string icbs_items = items_counter("icbs_trans");
-                string icbs_sum = amount_sum("icbs_trans");
-                lbl_icbs_value_items.Text = icbs_items;
-                lbl_icbs_total_amount.Text = icbs_sum;
-
-                string scan_items = items_counter("scanned_trans");
-                string scan_sum = amount_sum("scanned_trans");
-                lbl_scan_value_items.Text = scan_items;
-                lbl_scan_total_amount.Text = scan_sum;
+                if (Matched_Icbs_Records.Items.Count > 0)
+                {
+                    string icbs_items = items_counter("icbs_trans");
+                    string icbs_sum = amount_sum("icbs_trans");
+                    lbl_icbs_value_items.Text = icbs_items;
+                    lbl_icbs_total_amount.Text = icbs_sum;
+                }
+                
+                if(Matched_Trans_Records.Items.Count > 0)
+                {
+                    string scan_items = items_counter("scanned_trans");
+                    string scan_sum = amount_sum("scanned_trans");
+                    lbl_scan_value_items.Text = scan_items;
+                    lbl_scan_total_amount.Text = scan_sum;
+                }
+                
             }
         }
 
