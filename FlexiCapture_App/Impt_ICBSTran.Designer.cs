@@ -42,6 +42,7 @@
             this.btn_browse.TabIndex = 35;
             this.btn_browse.Text = "Browse";
             this.btn_browse.UseVisualStyleBackColor = true;
+            this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click_1);
             // 
             // label2
             // 
@@ -67,6 +68,7 @@
             this.btn_ok.TabIndex = 36;
             this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click_1);
             // 
             // Impt_ICBSTran
             // 

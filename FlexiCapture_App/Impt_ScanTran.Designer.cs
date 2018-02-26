@@ -95,12 +95,11 @@
             // openfile_browse
             // 
             this.openfile_browse.FileName = "openFileDialog1";
-            this.openfile_browse.FileOk += new System.ComponentModel.CancelEventHandler(this.openfile_browse_FileOk);
             // 
             // dg_data_imported
             // 
             this.dg_data_imported.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_data_imported.Location = new System.Drawing.Point(172, 231);
+            this.dg_data_imported.Location = new System.Drawing.Point(11, 156);
             this.dg_data_imported.Name = "dg_data_imported";
             this.dg_data_imported.Size = new System.Drawing.Size(240, 150);
             this.dg_data_imported.TabIndex = 33;
@@ -109,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 448);
+            this.ClientSize = new System.Drawing.Size(584, 306);
             this.Controls.Add(this.dg_data_imported);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.tb_table_name);

@@ -59,6 +59,8 @@
             this.lbl_scan_total_items = new System.Windows.Forms.Label();
             this.lbl_scan_total_amt = new System.Windows.Forms.Label();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbl_icbs_total_amt = new System.Windows.Forms.Label();
             this.lbl_icbs_total_items = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -391,6 +391,24 @@
             this.pnl_main.TabIndex = 17;
             this.pnl_main.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1003, 686);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Total amount:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(667, 686);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Total items:";
+            // 
             // lbl_icbs_total_amt
             // 
             this.lbl_icbs_total_amt.AutoSize = true;
@@ -642,24 +660,6 @@
             this.amount.Text = "Amount";
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1003, 686);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Total amount:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(667, 686);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Total items:";
             // 
             // TransMain
             // 
