@@ -54,7 +54,7 @@ namespace FlexiCapture_App
                     {
                         while (rdr.Read())
                         {
-                            ListViewItem aa = new ListViewItem(rdr.GetValue(0).ToString());
+                            ListViewItem aa = new ListViewItem(rdr.GetValue(5).ToString());
                             aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
@@ -86,7 +86,7 @@ namespace FlexiCapture_App
                     {
                         while (rdr.Read())
                         {
-                            ListViewItem aa = new ListViewItem(rdr.GetValue(0).ToString());
+                            ListViewItem aa = new ListViewItem(rdr.GetValue(5).ToString());
                             aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
@@ -199,7 +199,7 @@ namespace FlexiCapture_App
                     {
                         while (rdr.Read())
                         {
-                            ListViewItem aa = new ListViewItem(rdr.GetValue(0).ToString());
+                            ListViewItem aa = new ListViewItem(rdr.GetValue(5).ToString());
                             aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());

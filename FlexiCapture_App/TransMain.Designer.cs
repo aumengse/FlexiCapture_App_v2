@@ -77,18 +77,18 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cmb_icbs_trans = new System.Windows.Forms.ComboBox();
             this.lv_icbs = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.lv_data = new System.Windows.Forms.ListView();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trans_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -568,7 +568,7 @@
             // lv_icbs
             // 
             this.lv_icbs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
+            this.columnHeader7,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -582,11 +582,6 @@
             this.lv_icbs.UseCompatibleStateImageBehavior = false;
             this.lv_icbs.View = System.Windows.Forms.View.Details;
             this.lv_icbs.DoubleClick += new System.EventHandler(this.lv_icbs_DoubleClick_1);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 38;
             // 
             // columnHeader2
             // 
@@ -622,7 +617,7 @@
             // lv_data
             // 
             this.lv_data.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
+            this.columnHeader6,
             this.trans_date,
             this.acc_name,
             this.acc_num,
@@ -636,11 +631,6 @@
             this.lv_data.UseCompatibleStateImageBehavior = false;
             this.lv_data.View = System.Windows.Forms.View.Details;
             this.lv_data.DoubleClick += new System.EventHandler(this.lv_data_DoubleClick);
-            // 
-            // id
-            // 
-            this.id.Text = "ID";
-            this.id.Width = 38;
             // 
             // trans_date
             // 
@@ -662,6 +652,14 @@
             this.amount.Text = "Amount";
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tran Code";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tran Code";
             // 
             // TransMain
             // 
@@ -735,20 +733,20 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox cmb_icbs_trans;
         private System.Windows.Forms.ListView lv_icbs;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListView lv_data;
-        private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.ColumnHeader trans_date;
         private System.Windows.Forms.ColumnHeader acc_name;
         private System.Windows.Forms.ColumnHeader acc_num;
         private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
 
