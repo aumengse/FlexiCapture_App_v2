@@ -125,8 +125,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
-                                OleDbDataReader nw_rdr = nw_command.ExecuteReader();
-                                nw_rdr.Read();
+                                nw_command.ExecuteNonQuery();
                                 //MessageBox.Show("Updated");
 
                             }
@@ -136,8 +135,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
+                                nw_command2.ExecuteNonQuery();
                                 //MessageBox.Show("SCAN Updated");
 
                             }
@@ -152,8 +150,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
-                                OleDbDataReader nw_rdr1 = nw_command1.ExecuteReader();
-                                nw_rdr1.Read();
+                                nw_command1.ExecuteNonQuery();
                                 //MessageBox.Show("SCAN Unmatched Updated");
 
                             }
@@ -163,8 +160,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
+                                nw_command2.ExecuteNonQuery();
                                 //MessageBox.Show("ICBS Unmatched Updated");
 
                             }
@@ -212,8 +208,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
-                                OleDbDataReader nw_rdr = nw_command.ExecuteReader();
-                                nw_rdr.Read();
+                                nw_command.ExecuteNonQuery();
                                 //MessageBox.Show("Updated");
 
                             }
@@ -223,8 +218,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
+                                nw_command2.ExecuteNonQuery();
                                 //MessageBox.Show("SCAN Updated");
 
                             }
@@ -239,8 +233,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
-                                OleDbDataReader nw_rdr1 = nw_command1.ExecuteReader();
-                                nw_rdr1.Read();
+                                nw_command1.ExecuteNonQuery();
                                 //MessageBox.Show("SCAN Unmatched Updated");
 
                             }
@@ -250,8 +243,7 @@ namespace FlexiCapture_App
                             {
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
+                                nw_command2.ExecuteNonQuery();
                                 //MessageBox.Show("ICBS Unmatched Updated");
 
                             }

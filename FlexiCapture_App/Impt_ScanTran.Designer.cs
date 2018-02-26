@@ -99,16 +99,16 @@
             // dg_data_imported
             // 
             this.dg_data_imported.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_data_imported.Location = new System.Drawing.Point(11, 156);
+            this.dg_data_imported.Location = new System.Drawing.Point(206, 195);
             this.dg_data_imported.Name = "dg_data_imported";
-            this.dg_data_imported.Size = new System.Drawing.Size(240, 150);
+            this.dg_data_imported.Size = new System.Drawing.Size(206, 150);
             this.dg_data_imported.TabIndex = 33;
             // 
             // Impt_ScanTran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 306);
+            this.ClientSize = new System.Drawing.Size(624, 190);
             this.Controls.Add(this.dg_data_imported);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.tb_table_name);
