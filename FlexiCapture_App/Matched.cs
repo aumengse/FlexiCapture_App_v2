@@ -76,7 +76,7 @@ namespace FlexiCapture_App
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 con.Open();
 
-                string cmd = "update "+ table_name +" set match_code='U', match_ref = Null where acct_num=" + acct_num + "";
+                string cmd = "update "+ table_name +" set match_code='U', match_ref = Null, remarks = Null where acct_num=" + acct_num + "";
                 OleDbCommand command = new OleDbCommand(cmd, con);
                 OleDbDataReader rdr = command.ExecuteReader();
                 con.Close();
@@ -97,6 +97,9 @@ namespace FlexiCapture_App
             {
                 undo_force_match("icbs_trans", icbs_acct_num);
                 undo_force_match("scanned_trans", icbs_acct_num);
+                
+                matched_listview_view("icbs_trans");
+                matched_listview_view("scanned_trans");
             }
         }
     }

@@ -60,13 +60,15 @@ namespace FlexiCapture_App
         {
             Unmatched_View uv = new Unmatched_View();
             uv.Hide();
-            scanned_force_match();
-            icbs_force_match();
-            MessageBox.Show("Force Match Successful", "Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
-            uv.Unmatched_Icbs_Records.Update();
-            uv.Show();
-            this.Hide();
-            
+            //scanned_force_match();
+            //icbs_force_match();
+            //MessageBox.Show("Force Match Successful", "Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
+            //uv.Unmatched_Icbs_Records.Update();
+            //uv.Show();
+            //this.Hide();
+            Remarks remarks = new Remarks();
+            remarks.Show();
+            remarks.acct_num = txt_icbs_acct_num.Text;
         }
     }
 }
