@@ -43,6 +43,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_undo = new System.Windows.Forms.Button();
+            this.lbl_scan_total_amount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_scan_value_items = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_icbs_total_amount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_icbs_value_items = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -152,7 +160,7 @@
             // 
             // btn_undo
             // 
-            this.btn_undo.Location = new System.Drawing.Point(21, 448);
+            this.btn_undo.Location = new System.Drawing.Point(21, 476);
             this.btn_undo.Name = "btn_undo";
             this.btn_undo.Size = new System.Drawing.Size(122, 23);
             this.btn_undo.TabIndex = 10;
@@ -160,11 +168,91 @@
             this.btn_undo.UseVisualStyleBackColor = true;
             this.btn_undo.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbl_scan_total_amount
+            // 
+            this.lbl_scan_total_amount.AutoSize = true;
+            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1157, 441);
+            this.lbl_scan_total_amount.Name = "lbl_scan_total_amount";
+            this.lbl_scan_total_amount.Size = new System.Drawing.Size(13, 13);
+            this.lbl_scan_total_amount.TabIndex = 23;
+            this.lbl_scan_total_amount.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1092, 441);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Total Amount";
+            // 
+            // lbl_scan_value_items
+            // 
+            this.lbl_scan_value_items.AutoSize = true;
+            this.lbl_scan_value_items.Location = new System.Drawing.Point(704, 441);
+            this.lbl_scan_value_items.Name = "lbl_scan_value_items";
+            this.lbl_scan_value_items.Size = new System.Drawing.Size(13, 13);
+            this.lbl_scan_value_items.TabIndex = 21;
+            this.lbl_scan_value_items.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(639, 441);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Total Items";
+            // 
+            // lbl_icbs_total_amount
+            // 
+            this.lbl_icbs_total_amount.AutoSize = true;
+            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(536, 445);
+            this.lbl_icbs_total_amount.Name = "lbl_icbs_total_amount";
+            this.lbl_icbs_total_amount.Size = new System.Drawing.Size(13, 13);
+            this.lbl_icbs_total_amount.TabIndex = 19;
+            this.lbl_icbs_total_amount.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(471, 445);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Total Amount";
+            // 
+            // lbl_icbs_value_items
+            // 
+            this.lbl_icbs_value_items.AutoSize = true;
+            this.lbl_icbs_value_items.Location = new System.Drawing.Point(83, 445);
+            this.lbl_icbs_value_items.Name = "lbl_icbs_value_items";
+            this.lbl_icbs_value_items.Size = new System.Drawing.Size(13, 13);
+            this.lbl_icbs_value_items.TabIndex = 17;
+            this.lbl_icbs_value_items.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 445);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Total Items";
+            // 
             // Matched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 479);
+            this.ClientSize = new System.Drawing.Size(1251, 511);
+            this.Controls.Add(this.lbl_scan_total_amount);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_scan_value_items);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_icbs_total_amount);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_icbs_value_items);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_undo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -175,6 +263,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,5 +284,13 @@
         private System.Windows.Forms.ColumnHeader check;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btn_undo;
+        private System.Windows.Forms.Label lbl_scan_total_amount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_scan_value_items;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_icbs_total_amount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_icbs_value_items;
+        private System.Windows.Forms.Label label1;
     }
 }

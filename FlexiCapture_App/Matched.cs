@@ -71,9 +71,66 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private static string amount_sum(string table_name)
+        {
+            string amount = "";
+            try
+            {
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //conString();
+                con.Open();
+                string cmd = "SELECT sum(amount) FROM " + table_name + " where match_code <> 'U'";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    {
+                        amount = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return amount;
+        }
+        private static string items_counter(string table_name)
+        {
+            string items = "";
+            try
+            {
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //conString();
+                con.Open();
+                string cmd = "SELECT COUNT(acct_name) FROM " + table_name + " where match_code <> 'U'";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    items = rdr.GetValue(0).ToString();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return items;
+        }
         private void Matched_Load(object sender, EventArgs e)
         {
+            string icbs_items = items_counter("icbs_trans");
+            string icbs_sum = amount_sum("icbs_trans");
+            lbl_icbs_value_items.Text = icbs_items;
+            lbl_icbs_total_amount.Text = icbs_sum;
+
+            string scan_items = items_counter("scanned_trans");
+            string scan_sum = amount_sum("scanned_trans");
+            lbl_scan_value_items.Text = scan_items;
+            lbl_scan_total_amount.Text = scan_sum;
+
             matched_listview_view("icbs_trans");
             matched_listview_view("scanned_trans");
         }
