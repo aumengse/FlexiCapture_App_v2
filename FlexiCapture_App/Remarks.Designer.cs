@@ -71,6 +71,7 @@
             this.Name = "Remarks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Remarks";
+            this.Load += new System.EventHandler(this.Remarks_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

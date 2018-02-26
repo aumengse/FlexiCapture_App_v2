@@ -110,7 +110,7 @@ namespace FlexiCapture_App
                     
                     con.Open();
                     string cmd = "SELECT id,trans_date,acct_name FROM [scanned_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + " and [tran_code] = " + row.Cells[5].Value.ToString() + "";
+                                                             "and [acct_num] =" + Double.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + " and [tran_code] = '" + row.Cells[5].Value.ToString() + "'";
                     {
                         OleDbCommand command = new OleDbCommand(cmd, con);
                         OleDbDataReader rdr = command.ExecuteReader();
@@ -126,7 +126,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                                 nw_command.ExecuteNonQuery();
-                                //MessageBox.Show("Updated");
+                                MessageBox.Show("Updated");
 
                             }
                             con.Close();
@@ -136,7 +136,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                //MessageBox.Show("SCAN Updated");
+                                MessageBox.Show("SCAN Updated");
 
                             }
                             con.Close();
@@ -151,7 +151,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
                                 nw_command1.ExecuteNonQuery();
-                                //MessageBox.Show("SCAN Unmatched Updated");
+                                MessageBox.Show("SCAN Unmatched Updated");
 
                             }
                             con.Close();
@@ -161,7 +161,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                //MessageBox.Show("ICBS Unmatched Updated");
+                                MessageBox.Show("ICBS Unmatched Updated");
 
                             }
                             con.Close();
@@ -176,7 +176,7 @@ namespace FlexiCapture_App
             }
             catch (Exception e)
             {
-                //MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message);
             }
         }
 
@@ -193,7 +193,7 @@ namespace FlexiCapture_App
 
                     con.Open();
                     string cmd = "SELECT id,trans_date,acct_name FROM [icbs_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "and [tran_code] = "+ row.Cells[5].Value.ToString() + "";
+                                                             "and [acct_num] =" + Double.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "and [tran_code] = '"+ row.Cells[5].Value.ToString() + "'";
                     {
                         OleDbCommand command = new OleDbCommand(cmd, con);
                         OleDbDataReader rdr = command.ExecuteReader();
@@ -209,7 +209,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                                 nw_command.ExecuteNonQuery();
-                                //MessageBox.Show("Updated");
+                                MessageBox.Show("Updated");
 
                             }
                             con.Close();
@@ -219,7 +219,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                //MessageBox.Show("SCAN Updated");
+                                MessageBox.Show("SCAN Updated");
 
                             }
                             con.Close();
@@ -234,7 +234,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
                                 nw_command1.ExecuteNonQuery();
-                                //MessageBox.Show("SCAN Unmatched Updated");
+                                MessageBox.Show("SCAN Unmatched Updated");
 
                             }
                             con.Close();
@@ -244,7 +244,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                //MessageBox.Show("ICBS Unmatched Updated");
+                                MessageBox.Show("ICBS Unmatched Updated");
 
                             }
                             con.Close();
@@ -258,7 +258,7 @@ namespace FlexiCapture_App
             }
             catch (Exception e)
             {
-                //MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message);
             }
         }
 
