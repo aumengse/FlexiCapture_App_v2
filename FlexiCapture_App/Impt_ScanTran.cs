@@ -43,7 +43,7 @@ namespace FlexiCapture_App
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT * FROM [" + tb_table_name.Text + "]";
+                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount FROM [" + tb_table_name.Text + "]";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -72,28 +72,26 @@ namespace FlexiCapture_App
                 foreach (DataGridViewRow row in dg_data_imported.Rows)
                 {
                     
-                    date_string = DateTime.Parse(row.Cells[1].Value.ToString()).ToString("MM/dd/yyyy");
+                    date_string = DateTime.Parse(row.Cells[0].Value.ToString()).ToString("MM/dd/yyyy");
                     date_x = DateTime.Parse(date_string);
-                    acct_name = row.Cells[2].Value.ToString();
-                    acct_num = row.Cells[3].Value.ToString();
-                    amount = row.Cells[4].Value.ToString();
+                   
 
                     con.Open();
 
                     String query = "INSERT INTO scanned_trans (trans_date,acct_name,acct_num,amount) VALUES(@trans_date, @acct_name, @acct_num, @amount)";
                     OleDbCommand cmd = new OleDbCommand(query, con);
                     cmd.Parameters.AddWithValue("@trans_date", date_x ); // set parameterized query @a to fname parameter
-                    cmd.Parameters.AddWithValue("@acct_name", row.Cells[2].Value.ToString()); // set parameterized query @b to mname parameter
-                    cmd.Parameters.AddWithValue("@acct_num", double.Parse(row.Cells[3].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@amount", double.Parse(row.Cells[4].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@acct_name", row.Cells[1].Value.ToString()); // set parameterized query @b to mname parameter
+                    cmd.Parameters.AddWithValue("@acct_num", double.Parse(row.Cells[2].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@amount", double.Parse(row.Cells[3].Value.ToString()));
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
                 
             }
-            catch 
+            catch
             {
-                
+                //MessageBox.Show(e.Message);
             }
             MessageBox.Show("Import Successfully");
 
