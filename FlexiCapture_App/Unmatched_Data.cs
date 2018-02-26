@@ -13,6 +13,14 @@ namespace FlexiCapture_App
 {
     public partial class Unmatched_Data : Form
     {
+        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private Conf.conf dbcon;
+        private void conString()
+        {
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+        }
         public Unmatched_Data()
         {
             InitializeComponent();
@@ -26,7 +34,8 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "update scanned_trans set match_code='F' where acct_num=" + txt_scan_acct_num.Text + "";
                 OleDbCommand command = new OleDbCommand(cmd, con);
@@ -43,7 +52,8 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "update icbs_trans set match_code='F' where acct_num=" + txt_icbs_acct_num.Text + "";
                 OleDbCommand command = new OleDbCommand(cmd, con);
@@ -68,7 +78,8 @@ namespace FlexiCapture_App
             //this.Hide();
             Remarks remarks = new Remarks();
             remarks.Show();
-            remarks.acct_num = txt_icbs_acct_num.Text;
+            remarks.icbs_acct_num = txt_icbs_acct_num.Text;
+            remarks.scan_acct_num = txt_scan_acct_num.Text;
         }
     }
 }

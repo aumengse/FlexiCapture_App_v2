@@ -13,16 +13,24 @@ namespace FlexiCapture_App
 {
     public partial class Matched : Form
     {
-
+        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private Conf.conf dbcon;
         public Matched()
         {
             InitializeComponent();
+        }
+        private void conString()
+        {
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
         }
         private void matched_listview_view(string table_name)
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "SELECT * FROM " + table_name + " where match_code <> 'U'";
                 {
@@ -73,14 +81,18 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
 
                 string cmd = "update "+ table_name +" set match_code='U', match_ref = Null, remarks = Null where acct_num=" + acct_num + "";
                 OleDbCommand command = new OleDbCommand(cmd, con);
                 OleDbDataReader rdr = command.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Undo Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (table_name == "icbs_trans")
+                {
+                    MessageBox.Show("Undo Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (Exception ex)

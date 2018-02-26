@@ -35,6 +35,7 @@
             this.Account_Number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Unmatched_Scanned_Records = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,7 +43,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_icbs_value_items = new System.Windows.Forms.Label();
+            this.lbl_icbs_total_amount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_scan_total_amount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_scan_value_items = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +115,10 @@
             this.Unmatched_Scanned_Records.View = System.Windows.Forms.View.Details;
             this.Unmatched_Scanned_Records.SelectedIndexChanged += new System.EventHandler(this.Unmatched_Trans_Records_SelectedIndexChanged);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Check";
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Date";
@@ -130,7 +142,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(585, 448);
+            this.button1.Location = new System.Drawing.Point(583, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 37);
             this.button1.TabIndex = 5;
@@ -158,15 +170,92 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Scanned Data";
             // 
-            // columnHeader1
+            // label1
             // 
-            this.columnHeader1.Text = "Check";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 449);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Total Items";
+            // 
+            // lbl_icbs_value_items
+            // 
+            this.lbl_icbs_value_items.AutoSize = true;
+            this.lbl_icbs_value_items.Location = new System.Drawing.Point(86, 449);
+            this.lbl_icbs_value_items.Name = "lbl_icbs_value_items";
+            this.lbl_icbs_value_items.Size = new System.Drawing.Size(13, 13);
+            this.lbl_icbs_value_items.TabIndex = 9;
+            this.lbl_icbs_value_items.Text = "0";
+            // 
+            // lbl_icbs_total_amount
+            // 
+            this.lbl_icbs_total_amount.AutoSize = true;
+            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(539, 449);
+            this.lbl_icbs_total_amount.Name = "lbl_icbs_total_amount";
+            this.lbl_icbs_total_amount.Size = new System.Drawing.Size(13, 13);
+            this.lbl_icbs_total_amount.TabIndex = 11;
+            this.lbl_icbs_total_amount.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(474, 449);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Total Amount";
+            // 
+            // lbl_scan_total_amount
+            // 
+            this.lbl_scan_total_amount.AutoSize = true;
+            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1160, 445);
+            this.lbl_scan_total_amount.Name = "lbl_scan_total_amount";
+            this.lbl_scan_total_amount.Size = new System.Drawing.Size(13, 13);
+            this.lbl_scan_total_amount.TabIndex = 15;
+            this.lbl_scan_total_amount.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1095, 445);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Total Amount";
+            // 
+            // lbl_scan_value_items
+            // 
+            this.lbl_scan_value_items.AutoSize = true;
+            this.lbl_scan_value_items.Location = new System.Drawing.Point(707, 445);
+            this.lbl_scan_value_items.Name = "lbl_scan_value_items";
+            this.lbl_scan_value_items.Size = new System.Drawing.Size(13, 13);
+            this.lbl_scan_value_items.TabIndex = 13;
+            this.lbl_scan_value_items.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(642, 445);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Total Items";
             // 
             // Unmatched_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 488);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1251, 536);
+            this.Controls.Add(this.lbl_scan_total_amount);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_scan_value_items);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_icbs_total_amount);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_icbs_value_items);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -177,6 +266,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -196,5 +286,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_icbs_value_items;
+        private System.Windows.Forms.Label lbl_icbs_total_amount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_scan_total_amount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_scan_value_items;
+        private System.Windows.Forms.Label label6;
     }
 }
