@@ -109,8 +109,8 @@ namespace FlexiCapture_App
                 {
                     
                     con.Open();
-                    string cmd = "SELECT id,trans_date,acct_name FROM [icbs_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "";
+                    string cmd = "SELECT id,trans_date,acct_name FROM [scanned_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
+                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + " and [tran_code] = " + row.Cells[5].Value.ToString() + "";
                     {
                         OleDbCommand command = new OleDbCommand(cmd, con);
                         OleDbDataReader rdr = command.ExecuteReader();
@@ -192,8 +192,8 @@ namespace FlexiCapture_App
                 {
 
                     con.Open();
-                    string cmd = "SELECT id,trans_date,acct_name FROM [scanned_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "";
+                    string cmd = "SELECT id,trans_date,acct_name FROM [icbs_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
+                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "and [tran_code] = "+ row.Cells[5].Value.ToString() + "";
                     {
                         OleDbCommand command = new OleDbCommand(cmd, con);
                         OleDbDataReader rdr = command.ExecuteReader();
@@ -270,7 +270,7 @@ namespace FlexiCapture_App
                 conString();
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount FROM scanned_trans";
+                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount,tran_code FROM scanned_trans";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -292,7 +292,7 @@ namespace FlexiCapture_App
                 conString();
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount FROM icbs_trans";
+                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount,tran_code FROM icbs_trans";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -309,8 +309,7 @@ namespace FlexiCapture_App
 
         private void button1_Click(object sender, EventArgs e)
         {
-            get_data_scanned();
-            get_data_icbs();
+            matching_scanned();
         }
     }
 }
