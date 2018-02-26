@@ -307,9 +307,6 @@ namespace FlexiCapture_App
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            matching_scanned();
-        }
+       
     }
 }

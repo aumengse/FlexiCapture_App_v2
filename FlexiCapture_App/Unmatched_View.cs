@@ -187,19 +187,25 @@ namespace FlexiCapture_App
         }
         private void Unmatched_View_Load(object sender, EventArgs e)
         {
-            string icbs_items = items_counter("icbs_trans");
-            string icbs_sum = amount_sum("icbs_trans");
-            lbl_icbs_value_items.Text = icbs_items;
-            lbl_icbs_total_amount.Text = icbs_sum;
-
-            string scan_items = items_counter("scanned_trans");
-            string scan_sum = amount_sum("scanned_trans");
-            lbl_scan_value_items.Text = scan_items;
-            lbl_scan_total_amount.Text = scan_sum;
-
             unmatched_icbs_view();
             unmatched_trans_view();
             Unmatched_Icbs_Records.Refresh();
+
+            if (Unmatched_Icbs_Records.Items.Count > 0)
+            {
+                string icbs_items = items_counter("icbs_trans");
+                string icbs_sum = amount_sum("icbs_trans");
+                lbl_icbs_value_items.Text = icbs_items;
+                lbl_icbs_total_amount.Text = icbs_sum;
+            }
+
+            if (Unmatched_Scanned_Records.Items.Count > 0)
+            {
+                string scan_items = items_counter("scanned_trans");
+                string scan_sum = amount_sum("scanned_trans");
+                lbl_scan_value_items.Text = scan_items;
+                lbl_scan_total_amount.Text = scan_sum;
+            }
         }
     }
 }

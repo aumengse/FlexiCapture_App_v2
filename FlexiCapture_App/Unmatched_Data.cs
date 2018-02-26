@@ -80,6 +80,7 @@ namespace FlexiCapture_App
             remarks.Show();
             remarks.icbs_acct_num = txt_icbs_acct_num.Text;
             remarks.scan_acct_num = txt_scan_acct_num.Text;
+            this.Dispose();
         }
     }
 }

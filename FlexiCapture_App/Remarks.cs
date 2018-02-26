@@ -89,10 +89,13 @@ namespace FlexiCapture_App
             Unmatched_View uv = new Unmatched_View();
             MessageBox.Show("Force Match Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             uv.Unmatched_Icbs_Records.Update();
+            //Unmatched_Data ud = new Unmatched_Data();
+            //ud.Close();
+
             uv.Show();
-            Unmatched_Data ud = new Unmatched_Data();
-            ud.Dispose();
+           
             this.Hide();
+           
         }
 
         private void Remarks_Load(object sender, EventArgs e)
