@@ -15,13 +15,22 @@ namespace FlexiCapture_App
 {
     public partial class Impt_ScanTran : Form
     {
+        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private Conf.conf dbcon;
+
         public Impt_ScanTran()
         {
             InitializeComponent();
             this.CenterToScreen();
         }
+        private void conString()
+        {
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+        }
 
-        
+
 
         private void Impt_ScanTran_Load(object sender, EventArgs e)
         {
@@ -32,18 +41,15 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
-                con.Open();
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT * FROM [" + tb_table_name.Text + "]";
+                conString();
+                String query = "SELECT * FROM [" + tb_table_name.Text + "]";
+                OleDbCommand cmd = new OleDbCommand(query, con);
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
                 dg_data_imported.DataSource = ds.Tables[0];
-
-                
 
 
             }
@@ -55,28 +61,28 @@ namespace FlexiCapture_App
 
         private void inserting()
         {
-            string  date,acct_name, acct_num, amount;
-            
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
+            string date_string, acct_name, acct_num, amount;
+            DateTime date_xx;
+            conString();
            
             try
             { 
                 foreach (DataGridViewRow row in dg_data_imported.Rows)
                 {
-                    date = DateTime.Parse(row.Cells[1].Value.ToString()).ToString("MM/dd/yyyy");
-                    
+                    date_string = DateTime.Parse(row.Cells[1].Value.ToString()).ToString("MM/dd/yyyy");
+                    date_xx = DateTime.Parse(date_string);
                     acct_name = row.Cells[2].Value.ToString();
                     acct_num = row.Cells[3].Value.ToString();
                     amount = row.Cells[4].Value.ToString();
                     
 
                     con.Open();
-                    string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) VALUES ('" + date.ToString() + "','" + acct_name + "','"+ acct_num + "','" + amount + "');";
+                    String query = "INSERT INTO scanned_trans(trans_date,acct_name,acct_num,amount) VALUES ('" + date_string + "','" + acct_name + "','"+ acct_num + "','" + amount + "');";
 
                     OleDbCommand cmd = new OleDbCommand(query, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Imported Successfully");
+                    //MessageBox.Show("Import Successfully");
                     
                 }
 
@@ -87,14 +93,12 @@ namespace FlexiCapture_App
             }
          }
 
-       
 
-
-        private void import_from_flexiCapture()
+        /*private void import_from_flexiCapture()
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
 
                 string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) SELECT date,acct_name,acct_num,amount from"+ tb_data_source.Text+"."+tb_table_name+"";
@@ -110,18 +114,16 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
 
-        }
+        }*/
 
-        private void openfile_browse_FileOk(object sender, CancelEventArgs e)
-        {
-           
-        }
+      
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
             //import_from_flexiCapture();
             get_data();
             inserting();
+            //this.Close();
         }
 
         private void btn_browse_Click(object sender, EventArgs e)

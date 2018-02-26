@@ -16,18 +16,26 @@ namespace FlexiCapture_App
 
     public partial class TransMain : Form
     {
+        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private Conf.conf dbcon;
 
         public TransMain()
         {
             InitializeComponent();
             
             this.CenterToScreen();
-           
-           
+                     
             pnl_info.Hide();
             pnl_main.Hide();
             pnl_info_icbs.Hide();
            
+        }
+
+        private void conString()
+        {
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
         }
 
 
@@ -35,7 +43,7 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "SELECT * FROM [scanned_trans]";
                 {
@@ -67,7 +75,7 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "SELECT * FROM [icbs_trans]";
                 {
@@ -98,54 +106,74 @@ namespace FlexiCapture_App
 
         private void count_items_scan()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
-            con.Open();
-            string cmd = "SELECT COUNT(amount) from scanned_trans";
+            conString();
+            try
             {
-                OleDbCommand command = new OleDbCommand(cmd, con);
-                OleDbDataReader rdr = command.ExecuteReader();
-                rdr.Read();
-                lbl_scan_total_items.Text = rdr.GetValue(0).ToString();
-                              
-            }
-            con.Close();
+                con.Open();
+                string cmd = "SELECT COUNT(amount) from scanned_trans";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    lbl_scan_total_items.Text = rdr.GetValue(0).ToString();
 
-            con.Open();
-            string query = "SELECT COUNT(amount) from icbs_trans";
-            {
-                OleDbCommand command = new OleDbCommand(query, con);
-                OleDbDataReader rdr = command.ExecuteReader();
-                rdr.Read();
-                lbl_icbs_total_items.Text = rdr.GetValue(0).ToString();
-          
+                }
+                con.Close();
+
+                con.Open();
+                string query = "SELECT COUNT(amount) from icbs_trans";
+                {
+                    OleDbCommand command = new OleDbCommand(query, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    lbl_icbs_total_items.Text = rdr.GetValue(0).ToString();
+
+                }
+                con.Close();
             }
-            con.Close(); 
+            catch
+            {
+                lbl_scan_total_items.Visible = false;
+                lbl_icbs_total_items.Visible = false;
+            }
+            
         }
 
         private void sum_amount()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
-            con.Open();
-            string cmd = "SELECT SUM(amount) from scanned_trans";
+            conString();
+            
+            try
             {
-                OleDbCommand command = new OleDbCommand(cmd, con);
-                OleDbDataReader rdr = command.ExecuteReader();
-                rdr.Read();
-                lbl_scan_total_amt.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+                con.Open();
+                string cmd = "SELECT SUM(amount) from scanned_trans";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    lbl_scan_total_amt.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
 
+                }
+                con.Close();
+
+                con.Open();
+                string query = "SELECT SUM(amount) from icbs_trans";
+                {
+                    OleDbCommand command = new OleDbCommand(query, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    lbl_icbs_total_amt.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+
+                }
+                con.Close();
             }
-            con.Close();
-
-            con.Open();
-            string query = "SELECT SUM(amount) from icbs_trans";
+            catch
             {
-                OleDbCommand command = new OleDbCommand(query, con);
-                OleDbDataReader rdr = command.ExecuteReader();
-                rdr.Read();
-                lbl_icbs_total_amt.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
-
+                MessageBox.Show("No Results found");
+                lbl_icbs_total_amt.Text = "0.00";
+                lbl_scan_total_amt.Text = "0.00";
             }
-            con.Close();
+           
 
         }
         
@@ -176,11 +204,6 @@ namespace FlexiCapture_App
             mv.Show();
         }
 
-        private void lv_data_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void performMatchingToolStripMenuItem_Click(object sender, EventArgs e)
         {
          
@@ -200,10 +223,6 @@ namespace FlexiCapture_App
             it.Show();
         }
 
-        private void TransMain_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void viewImportedRecordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -219,10 +238,6 @@ namespace FlexiCapture_App
 
         }
 
-        private void ConfigToolStrip_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void unmatchedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -283,6 +298,11 @@ namespace FlexiCapture_App
         private void btn_exit_Click_1(object sender, EventArgs e)
         {
             pnl_info.Hide();
+        }
+
+        private void TransMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
