@@ -25,14 +25,14 @@ namespace FlexiCapture_App
             dbcon = new Conf.conf();
             con.ConnectionString = dbcon.getConnectionString();
         }
-        private void matched_listview_view(string table_name)
+        private void matched_listview_view(string table_name, string op, string match_code_value)
         {
             try
             {
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM " + table_name + " where match_code <> 'U'";
+                string cmd = "SELECT * FROM " + table_name + " where match_code "+ op +" '"+ match_code_value +"'";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -98,11 +98,12 @@ namespace FlexiCapture_App
         }
         private static string items_counter(string table_name)
         {
+
             string items = "";
             try
             {
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
-                //conString();
+                //Matched.conString();
                 con.Open();
                 string cmd = "SELECT COUNT(acct_name) FROM " + table_name + " where match_code <> 'U'";
                 {
@@ -131,8 +132,8 @@ namespace FlexiCapture_App
             lbl_scan_value_items.Text = scan_items;
             lbl_scan_total_amount.Text = scan_sum;
 
-            matched_listview_view("icbs_trans");
-            matched_listview_view("scanned_trans");
+            matched_listview_view("icbs_trans","<>","U");
+            matched_listview_view("scanned_trans","<>","U");
         }
         private void undo_force_match(string table_name,string acct_num)
         {
@@ -167,8 +168,50 @@ namespace FlexiCapture_App
                 undo_force_match("icbs_trans", icbs_acct_num);
                 undo_force_match("scanned_trans", icbs_acct_num);
                 
-                matched_listview_view("icbs_trans");
-                matched_listview_view("scanned_trans");
+                matched_listview_view("icbs_trans","<>","U");
+                matched_listview_view("scanned_trans","<>","U");
+
+                string icbs_items = items_counter("icbs_trans");
+                string icbs_sum = amount_sum("icbs_trans");
+                lbl_icbs_value_items.Text = icbs_items;
+                lbl_icbs_total_amount.Text = icbs_sum;
+
+                string scan_items = items_counter("scanned_trans");
+                string scan_sum = amount_sum("scanned_trans");
+                lbl_scan_value_items.Text = scan_items;
+                lbl_scan_total_amount.Text = scan_sum;
+            }
+        }
+
+        private void match_icbs_filter_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (match_icbs_filter.Text == "Regular Match")
+            {
+                matched_listview_view("icbs_trans", "=", "R");
+            }
+            else if (match_icbs_filter.Text == "Force Match")
+            {
+                matched_listview_view("icbs_trans", "=", "F");
+            }
+            else
+            {
+                matched_listview_view("icbs_trans", "<>", "U");
+            }
+        }
+
+        private void match_scan_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (match_scan_filter.Text == "Regular Match")
+            {
+                matched_listview_view("scanned_trans", "=", "R");
+            }
+            else if (match_scan_filter.Text == "Force Match")
+            {
+                matched_listview_view("scanned_trans", "=", "F");
+            }
+            else
+            {
+                matched_listview_view("scanned_trans", "<>", "U");
             }
         }
     }
