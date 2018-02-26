@@ -129,9 +129,15 @@ namespace FlexiCapture_App
         private static string amount_sum(string table_name)
         {
             string amount = "";
+            OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+            Conf.conf dbcon;
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 //conString();
                 con.Open();
                 string cmd = "SELECT sum(amount) FROM " + table_name + " where match_code = 'U'";
@@ -154,9 +160,14 @@ namespace FlexiCapture_App
         private static string items_counter(string table_name)
         {
             string items = "";
+            OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+            Conf.conf dbcon;
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 //conString();
                 con.Open();
                 string cmd = "SELECT COUNT(acct_name) FROM " + table_name +" where match_code = 'U'";
