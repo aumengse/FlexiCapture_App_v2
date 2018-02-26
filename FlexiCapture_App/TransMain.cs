@@ -176,8 +176,54 @@ namespace FlexiCapture_App
            
 
         }
-        
 
+        private void filtering_data(string table_name, string tran_code)
+        {
+            try
+            {
+                conString();
+                con.Open();
+                string cmd = "SELECT * FROM "+ table_name +" where tran_code = '"+ tran_code +"'";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    if (table_name == "icbs_trans")
+                    {
+                        lv_icbs.Items.Clear();
+                    }
+                    else
+                    {
+                        lv_data.Items.Clear();
+                    }
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            ListViewItem aa = new ListViewItem(rdr.GetValue(0).ToString());
+                            aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
+                            aa.SubItems.Add(rdr.GetValue(2).ToString());
+                            aa.SubItems.Add(rdr.GetValue(3).ToString());
+                            aa.SubItems.Add(String.Format("{0:n}", Double.Parse(rdr.GetValue(4).ToString())));
+                            
+                            if (table_name == "icbs_trans")
+                            {
+                                lv_icbs.Items.Add(aa);
+                            }
+                            else
+                            {
+                                lv_data.Items.Add(aa);
+                            }
+                        }
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void Setup_ScanFiles_Click(object sender, EventArgs e)
         {
             pnl_main.Hide();
@@ -300,9 +346,37 @@ namespace FlexiCapture_App
             pnl_info.Hide();
         }
 
-        private void TransMain_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            if (cmb_scan_trans.Text == "Deposits")
+            {
+                filtering_data("scanned_trans", "DEPO");
+            }
+            else if(cmb_scan_trans.Text == "Withdrawals")
+            {
+                filtering_data("scanned_trans", "WDR");
+            }
+            else
+            {
+                load_data();
+            }
+        }
 
+        private void cmb_icbs_trans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_icbs_trans.Text == "Deposits")
+            {
+                filtering_data("icbs_trans", "DEPO");
+            }
+            else if (cmb_icbs_trans.Text == "Withdrawals") 
+            {
+                filtering_data("icbs_trans", "WDR");
+            }
+            else
+            {
+                load_icbs();
+            }
         }
     }
 }
