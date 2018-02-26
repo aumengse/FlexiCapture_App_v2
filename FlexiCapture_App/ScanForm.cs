@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Configuration;
-using System.Threading;
+
 
 namespace FlexiCapture_App
 {
@@ -126,7 +126,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                                 nw_command.ExecuteNonQuery();
-                                MessageBox.Show("Updated");
+                                //MessageBox.Show("Updated");
 
                             }
                             con.Close();
@@ -136,7 +136,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                MessageBox.Show("SCAN Updated");
+                                //MessageBox.Show("SCAN Updated");
 
                             }
                             con.Close();
@@ -151,7 +151,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
                                 nw_command1.ExecuteNonQuery();
-                                MessageBox.Show("SCAN Unmatched Updated");
+                                //MessageBox.Show("SCAN Unmatched Updated");
 
                             }
                             con.Close();
@@ -161,7 +161,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                MessageBox.Show("ICBS Unmatched Updated");
+                                //MessageBox.Show("ICBS Unmatched Updated");
 
                             }
                             con.Close();
@@ -170,13 +170,13 @@ namespace FlexiCapture_App
                         con.Close();
 
                     }
-                    MessageBox.Show("MATCHING ICBS DONE");
+                    //MessageBox.Show("MATCHING ICBS DONE");
                 }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
         }
 
@@ -209,7 +209,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                                 nw_command.ExecuteNonQuery();
-                                MessageBox.Show("Updated");
+                                //MessageBox.Show("Updated");
 
                             }
                             con.Close();
@@ -219,7 +219,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                MessageBox.Show("SCAN Updated");
+                                //MessageBox.Show("SCAN Updated");
 
                             }
                             con.Close();
@@ -234,7 +234,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
                                 nw_command1.ExecuteNonQuery();
-                                MessageBox.Show("SCAN Unmatched Updated");
+                                //MessageBox.Show("SCAN Unmatched Updated");
 
                             }
                             con.Close();
@@ -244,7 +244,7 @@ namespace FlexiCapture_App
 
                                 OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
                                 nw_command2.ExecuteNonQuery();
-                                MessageBox.Show("ICBS Unmatched Updated");
+                                //MessageBox.Show("ICBS Unmatched Updated");
 
                             }
                             con.Close();
@@ -253,12 +253,12 @@ namespace FlexiCapture_App
                         con.Close();
 
                     }
-                    MessageBox.Show("MATCHING SCANNED DONE");
+                    //MessageBox.Show("MATCHING SCANNED DONE");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
         }
 
@@ -281,7 +281,7 @@ namespace FlexiCapture_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -303,13 +303,10 @@ namespace FlexiCapture_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            matching_scanned();
-        }
+        
     }
 }
