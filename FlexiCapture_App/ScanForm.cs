@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Configuration;
-using System.Threading;
+
 
 namespace FlexiCapture_App
 {
