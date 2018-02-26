@@ -52,7 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_scan_trans = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmb_icbs_trans = new System.Windows.Forms.ComboBox();
             this.lv_icbs = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -306,17 +306,18 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Account Name:";
             // 
-            // comboBox1
+            // cmb_scan_trans
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_scan_trans.FormattingEnabled = true;
+            this.cmb_scan_trans.Items.AddRange(new object[] {
             "All",
             "Deposits",
             "Withdrawals"});
-            this.comboBox1.Location = new System.Drawing.Point(423, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cmb_scan_trans.Location = new System.Drawing.Point(423, 84);
+            this.cmb_scan_trans.Name = "cmb_scan_trans";
+            this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
+            this.cmb_scan_trans.TabIndex = 8;
+            this.cmb_scan_trans.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -373,7 +374,7 @@
             this.pnl_main.Controls.Add(this.lbl_icbs_total_items);
             this.pnl_main.Controls.Add(this.label24);
             this.pnl_main.Controls.Add(this.pnl_info_icbs);
-            this.pnl_main.Controls.Add(this.comboBox2);
+            this.pnl_main.Controls.Add(this.cmb_icbs_trans);
             this.pnl_main.Controls.Add(this.lv_icbs);
             this.pnl_main.Controls.Add(this.label8);
             this.pnl_main.Controls.Add(this.lbl_scan_total_amt);
@@ -381,7 +382,7 @@
             this.pnl_main.Controls.Add(this.label27);
             this.pnl_main.Controls.Add(this.label25);
             this.pnl_main.Controls.Add(this.label23);
-            this.pnl_main.Controls.Add(this.comboBox1);
+            this.pnl_main.Controls.Add(this.cmb_scan_trans);
             this.pnl_main.Controls.Add(this.pnl_info);
             this.pnl_main.Controls.Add(this.lv_data);
             this.pnl_main.Controls.Add(this.label1);
@@ -551,17 +552,18 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Account Name:";
             // 
-            // comboBox2
+            // cmb_icbs_trans
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmb_icbs_trans.FormattingEnabled = true;
+            this.cmb_icbs_trans.Items.AddRange(new object[] {
             "All",
             "Deposits",
             "Withdrawals"});
-            this.comboBox2.Location = new System.Drawing.Point(1055, 88);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 22;
+            this.cmb_icbs_trans.Location = new System.Drawing.Point(1055, 88);
+            this.cmb_icbs_trans.Name = "cmb_icbs_trans";
+            this.cmb_icbs_trans.Size = new System.Drawing.Size(121, 21);
+            this.cmb_icbs_trans.TabIndex = 22;
+            this.cmb_icbs_trans.SelectedIndexChanged += new System.EventHandler(this.cmb_icbs_trans_SelectedIndexChanged);
             // 
             // lv_icbs
             // 
@@ -666,13 +668,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1251, 811);
+            this.ClientSize = new System.Drawing.Size(1251, 733);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TransMain";
             this.Text = "Vouching Transactions Management System";
-            this.Load += new System.EventHandler(this.TransMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_info.ResumeLayout(false);
@@ -711,7 +712,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_scan_trans;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
@@ -732,7 +733,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_icbs_trans;
         private System.Windows.Forms.ListView lv_icbs;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
