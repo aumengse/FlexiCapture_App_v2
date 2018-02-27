@@ -60,6 +60,29 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
         }
+        //private static int get_imported_id(string acct_num)
+        //{
+
+        //    return;
+        //}
+        //private void mark_imported_data(string imported_id)
+        //{
+        //    try
+        //    {
+        //        //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+        //        conString();
+        //        con.Open();
+        //        string cmd = "update [" + tb_table_name.Text + "] set is_import='Yes' where id=" + imported_id + "";
+        //        OleDbCommand command = new OleDbCommand(cmd, con);
+        //        OleDbDataReader rdr = command.ExecuteReader();
+        //        con.Close();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void inserting()
         {
