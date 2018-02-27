@@ -160,7 +160,7 @@
             this.groupBox2.Size = new System.Drawing.Size(603, 430);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ICBS Data";
+            this.groupBox2.Text = "Scanned Data";
             // 
             // btn_undo
             // 
