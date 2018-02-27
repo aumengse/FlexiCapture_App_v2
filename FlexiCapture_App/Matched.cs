@@ -25,6 +25,37 @@ namespace FlexiCapture_App
             dbcon = new Conf.conf();
             con.ConnectionString = dbcon.getConnectionString();
         }
+        private static string get_match_code(string table_name, string acct_num)
+        {
+            string match_code = "";
+            OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+            Conf.conf dbcon;
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+            try
+            {
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //conString();
+                con.Open();
+                string cmd = "SELECT * FROM " + table_name + " where acct_num = " + acct_num + "";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    if (rdr.HasRows)
+                    {
+                        rdr.Read();
+                        match_code = rdr.GetValue(6).ToString();
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return match_code;
+        }
         private void matched_listview_view(string table_name, string op, string match_code_value)
         {
             try
@@ -153,27 +184,39 @@ namespace FlexiCapture_App
         }
         private void undo_force_match(string table_name,string acct_num)
         {
+            string match_code = get_match_code(table_name, acct_num);
 
-            try
+            if (match_code == "F")
             {
-                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
-                conString();
-                con.Open();
+                try
+                {
+                    //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                    conString();
+                    con.Open();
 
-                string cmd = "update "+ table_name +" set match_code='U', match_ref = Null, remarks = Null where acct_num=" + acct_num + "";
-                OleDbCommand command = new OleDbCommand(cmd, con);
-                OleDbDataReader rdr = command.ExecuteReader();
-                con.Close();
+                    string cmd = "update " + table_name + " set match_code='U', match_ref = Null, remarks = Null where acct_num=" + acct_num + "";
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    con.Close();
+                    if (table_name == "icbs_trans")
+                    {
+                        MessageBox.Show("Undo Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
                 if (table_name == "icbs_trans")
                 {
-                    MessageBox.Show("Undo Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("You Cannot Undo Regular Match Data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
