@@ -77,18 +77,18 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cmb_icbs_trans = new System.Windows.Forms.ComboBox();
             this.lv_icbs = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.lv_data = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trans_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -455,7 +455,7 @@
             this.pnl_info_icbs.Controls.Add(this.label22);
             this.pnl_info_icbs.Location = new System.Drawing.Point(700, 143);
             this.pnl_info_icbs.Name = "pnl_info_icbs";
-            this.pnl_info_icbs.Size = new System.Drawing.Size(436, 369);
+            this.pnl_info_icbs.Size = new System.Drawing.Size(449, 369);
             this.pnl_info_icbs.TabIndex = 21;
             this.pnl_info_icbs.Visible = false;
             this.pnl_info_icbs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_icbs_Paint_1);
@@ -583,6 +583,10 @@
             this.lv_icbs.View = System.Windows.Forms.View.Details;
             this.lv_icbs.DoubleClick += new System.EventHandler(this.lv_icbs_DoubleClick_1);
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Tran Code";
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Transac Date";
@@ -632,6 +636,10 @@
             this.lv_data.View = System.Windows.Forms.View.Details;
             this.lv_data.DoubleClick += new System.EventHandler(this.lv_data_DoubleClick);
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tran Code";
+            // 
             // trans_date
             // 
             this.trans_date.Text = "Transac Date";
@@ -653,20 +661,12 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Tran Code";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Tran Code";
-            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1251, 733);
+            this.ClientSize = new System.Drawing.Size(1251, 770);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
