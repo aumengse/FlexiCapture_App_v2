@@ -91,6 +91,7 @@
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.archiveTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -116,6 +117,7 @@
             // fileToolStrip
             // 
             this.fileToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archiveTransactionsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStrip.Name = "fileToolStrip";
             this.fileToolStrip.Size = new System.Drawing.Size(37, 20);
@@ -124,7 +126,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // actionsToolStripMenuItem
@@ -684,12 +686,19 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
+            // archiveTransactionsToolStripMenuItem
+            // 
+            this.archiveTransactionsToolStripMenuItem.Name = "archiveTransactionsToolStripMenuItem";
+            this.archiveTransactionsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.archiveTransactionsToolStripMenuItem.Text = "Archive Transactions";
+            this.archiveTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archiveTransactionsToolStripMenuItem_Click);
+            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1251, 749);
+            this.ClientSize = new System.Drawing.Size(1251, 741);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -772,6 +781,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ToolStripMenuItem performArchivingToolStripMenuItem;
         private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.ToolStripMenuItem archiveTransactionsToolStripMenuItem;
     }
 }
 

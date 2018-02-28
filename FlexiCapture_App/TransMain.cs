@@ -397,5 +397,11 @@ namespace FlexiCapture_App
         {
             pnl_main.Hide();
         }
+
+        private void archiveTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Archive_View av = new Archive_View();
+            av.Show();
+        }
     }
 }
