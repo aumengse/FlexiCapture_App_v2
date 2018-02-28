@@ -43,7 +43,7 @@ namespace FlexiCapture_App
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + tb_table_name.Text + "]";
+                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + tb_table_name.Text + "] where is_import="+ false +"";
                 cmd.Connection = con;
                 //OleDbDataReader rdr = cmd.ExecuteReader();
                 //while (rdr.Read())
@@ -188,6 +188,7 @@ namespace FlexiCapture_App
             //import_from_flexiCapture();
             get_data();
             inserting();
+            this.Close();
         }
 
         private void btn_browse_Click(object sender, EventArgs e)

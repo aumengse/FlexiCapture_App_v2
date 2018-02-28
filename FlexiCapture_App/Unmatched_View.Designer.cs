@@ -51,6 +51,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_scan_value_items = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.trans_code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +62,7 @@
             this.Unmatched_Icbs_Records.CheckBoxes = true;
             this.Unmatched_Icbs_Records.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Check,
+            this.trans_code,
             this.Date,
             this.Account_Name,
             this.Account_Number,
@@ -102,6 +105,7 @@
             this.Unmatched_Scanned_Records.CheckBoxes = true;
             this.Unmatched_Scanned_Records.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
+            this.columnHeader6,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -242,6 +246,14 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Total Items";
             // 
+            // trans_code
+            // 
+            this.trans_code.Text = "Trans Code";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Trans Code";
+            // 
             // Unmatched_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,5 +306,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_scan_value_items;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader trans_code;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

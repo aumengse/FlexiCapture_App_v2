@@ -38,7 +38,7 @@ namespace FlexiCapture_App
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 //conString();
                 con.Open();
-                string cmd = "SELECT * FROM " + table_name + " where acct_num = " + acct_num + "";
+                string cmd = "SELECT * FROM " + table_name + " where acct_num = '" + acct_num + "'";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -194,7 +194,7 @@ namespace FlexiCapture_App
                     conString();
                     con.Open();
 
-                    string cmd = "update " + table_name + " set match_code='U', match_ref = Null, remarks = Null where acct_num=" + acct_num + "";
+                    string cmd = "update " + table_name + " set match_code='U', match_ref = Null, remarks = Null where acct_num='" + acct_num + "'";
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
                     con.Close();
@@ -220,13 +220,17 @@ namespace FlexiCapture_App
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            string icbs_trans_date = Matched_Icbs_Records.CheckedItems[0].SubItems[1].Text;
+            string icbs_acct_name = Matched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
             string icbs_acct_num = Matched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
+            string icbs_amount = Matched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
+
             string scan_acct_num = Matched_Trans_Records.CheckedItems[0].SubItems[3].Text;
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to Undo this Data? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                undo_force_match("icbs_trans", icbs_acct_num);
-                undo_force_match("scanned_trans", scan_acct_num);
+                //undo_force_match("icbs_trans", icbs_trans_date,icbs_acct_name,icbs_acct_num,icbs_amount);
+                //undo_force_match("scanned_trans", scan_acct_num);
                 
                 matched_listview_view("icbs_trans","<>","U");
                 matched_listview_view("scanned_trans","<>","U");

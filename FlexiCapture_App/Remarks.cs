@@ -36,7 +36,7 @@ namespace FlexiCapture_App
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 conString();
                 con.Open();
-                string cmd = "update " + table_name + " set match_code='F', remarks = '"+ remarks +"', match_ref = "+ match_code +" where acct_num=" + acct_num + "";
+                string cmd = "update " + table_name + " set match_code='F', remarks = '"+ remarks +"', match_ref = "+ match_code +" where acct_num='" + acct_num + "'";
                 OleDbCommand command = new OleDbCommand(cmd, con);
                 OleDbDataReader rdr = command.ExecuteReader();
                 con.Close();
@@ -59,7 +59,7 @@ namespace FlexiCapture_App
             {
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 con.Open();
-                string cmd = "SELECT * FROM " + table_name + " where acct_num = " + acct_num + "";
+                string cmd = "SELECT * FROM " + table_name + " where acct_num = '" + acct_num + "'";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
