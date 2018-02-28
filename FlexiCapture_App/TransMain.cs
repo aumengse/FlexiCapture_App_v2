@@ -392,5 +392,10 @@ namespace FlexiCapture_App
             Archiving_Trans arch = new Archiving_Trans();
             arch.Show();
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            pnl_main.Hide();
+        }
     }
 }
