@@ -79,7 +79,7 @@ namespace FlexiCapture_App
                 
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText  = "SELECT icbs_trans.id FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) " +
+                cmd.CommandText  = "SELECT icbs_trans.ID,scanned_trans.ID FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) " +
                                 "AND(icbs_trans.amount = scanned_trans.amount) AND(icbs_trans.acct_num = scanned_trans.acct_num) AND(icbs_trans.acct_name = scanned_trans.acct_name) AND(icbs_trans.trans_date = scanned_trans.trans_date);";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -92,12 +92,12 @@ namespace FlexiCapture_App
                     foreach (DataRow dr in dt.Rows)
                     {
                         con.Open();
-                        string nw_cmd = "UPDATE [icbs_trans] SET match_code='R' where id=" + dr["id"] + "";
+                        string nw_cmd = "UPDATE [icbs_trans] SET match_code='R', trans_src='ICBS', match_ref= " + dr["scanned_trans.id"]+" where id=" + dr["icbs_trans.id"] + "";
                         {
 
                             OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                             nw_command.ExecuteNonQuery();
-                            //MessageBox.Show("ICBS MATCHED Updated");
+                            MessageBox.Show("ICBS MATCHED Updated");
 
                         }
                         con.Close();
@@ -120,7 +120,7 @@ namespace FlexiCapture_App
             {
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT scanned_trans.ID FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) AND(icbs_trans.amount = scanned_trans.amount) " +
+                cmd.CommandText = "SELECT scanned_trans.ID,icbs_trans.ID FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) AND(icbs_trans.amount = scanned_trans.amount) " +
                                    "AND(icbs_trans.acct_num = scanned_trans.acct_num) AND(icbs_trans.acct_name = scanned_trans.acct_name) AND(icbs_trans.trans_date = scanned_trans.trans_date);";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -133,7 +133,7 @@ namespace FlexiCapture_App
                     foreach (DataRow dr in dt.Rows)
                     {
                         con.Open();
-                        string nw_cmd = "UPDATE [scanned_trans] SET match_code='R' where id=" + dr["id"] + "";
+                        string nw_cmd = "UPDATE [scanned_trans] SET match_code='R', trans_src='SCAN', match_ref= " + dr["icbs_trans.id"] + " where id=" + dr["scanned_trans.id"] + "";
                         {
 
                             OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
@@ -176,7 +176,7 @@ namespace FlexiCapture_App
                     {
                         
                         con.Open();
-                        string nw_cmd2 = "UPDATE [icbs_trans] SET match_code='U' where id=" + dru["id"] + "";
+                        string nw_cmd2 = "UPDATE [icbs_trans] SET match_code='U', trans_src='ICBS' where id=" + dru["id"] + "";
                         {
 
                             OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
@@ -218,7 +218,7 @@ namespace FlexiCapture_App
                     {
 
                         con.Open();
-                        string nw_cmd2 = "UPDATE [scanned_trans] SET match_code='U' where id=" + dru["id"] + "";
+                        string nw_cmd2 = "UPDATE [scanned_trans] SET match_code='U', trans_src='SCAN' where id=" + dru["id"] + "";
                         {
 
                             OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
