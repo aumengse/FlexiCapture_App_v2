@@ -60,6 +60,7 @@
             this.lbl_scan_total_items = new System.Windows.Forms.Label();
             this.lbl_scan_total_amt = new System.Windows.Forms.Label();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_icbs_total_amt = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_close = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -403,6 +403,18 @@
             this.pnl_main.TabIndex = 17;
             this.pnl_main.Visible = false;
             // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_close.Location = new System.Drawing.Point(1168, 3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(45, 23);
+            this.btn_close.TabIndex = 28;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -586,9 +598,9 @@
             this.columnHeader5});
             this.lv_icbs.FullRowSelect = true;
             this.lv_icbs.GridLines = true;
-            this.lv_icbs.Location = new System.Drawing.Point(670, 133);
+            this.lv_icbs.Location = new System.Drawing.Point(640, 133);
             this.lv_icbs.Name = "lv_icbs";
-            this.lv_icbs.Size = new System.Drawing.Size(506, 535);
+            this.lv_icbs.Size = new System.Drawing.Size(536, 535);
             this.lv_icbs.TabIndex = 20;
             this.lv_icbs.UseCompatibleStateImageBehavior = false;
             this.lv_icbs.View = System.Windows.Forms.View.Details;
@@ -641,7 +653,7 @@
             this.lv_data.GridLines = true;
             this.lv_data.Location = new System.Drawing.Point(38, 129);
             this.lv_data.Name = "lv_data";
-            this.lv_data.Size = new System.Drawing.Size(506, 535);
+            this.lv_data.Size = new System.Drawing.Size(533, 535);
             this.lv_data.TabIndex = 6;
             this.lv_data.UseCompatibleStateImageBehavior = false;
             this.lv_data.View = System.Windows.Forms.View.Details;
@@ -672,25 +684,12 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_close.Image = global::FlexiCapture_App.Properties.Resources.close;
-            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_close.Location = new System.Drawing.Point(1168, 3);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(45, 23);
-            this.btn_close.TabIndex = 28;
-            this.btn_close.Text = "X";
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1251, 770);
+            this.ClientSize = new System.Drawing.Size(1251, 749);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

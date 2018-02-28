@@ -30,6 +30,7 @@ namespace FlexiCapture_App
 
         private void Archiving_Trans_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             pbar_timer.Enabled = true;
         }
 
@@ -42,8 +43,10 @@ namespace FlexiCapture_App
             {
                 
                 pbar_timer.Stop();
-                
+                archiving_SCAN();
+                archiving_ICBS();
                 MessageBox.Show("Archiving Complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 
@@ -58,17 +61,17 @@ namespace FlexiCapture_App
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                     nw_command.ExecuteNonQuery();
-                    MessageBox.Show("INSERTED ICBS");
+                    //MessageBox.Show("INSERTED ICBS");
                 }
                 con.Close();
 
 
                 con.Open();
-                string del_cmd = "DELETE FROM icbs_trans where trans_code='R'";
+                string del_cmd = "DELETE FROM icbs_trans where match_code='R'";
                 {
                     OleDbCommand nw_command2 = new OleDbCommand(del_cmd, con);
                     nw_command2.ExecuteNonQuery();
-                    MessageBox.Show("DELETED ICBS");
+                    //MessageBox.Show("DELETED ICBS");
                 }
                 con.Close();
 
@@ -90,7 +93,7 @@ namespace FlexiCapture_App
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                     nw_command.ExecuteNonQuery();
-                    MessageBox.Show("INSERTED SCAN");
+                    //MessageBox.Show("INSERTED SCAN");
                 }
                 con.Close();
 
@@ -98,11 +101,11 @@ namespace FlexiCapture_App
 
 
                 con.Open();
-                string del_cmd = "DELETE FROM scanned_trans where trans_code='R'";
+                string del_cmd = "DELETE FROM scanned_trans where match_code='R'";
                 {
                     OleDbCommand nw_command2 = new OleDbCommand(del_cmd, con);
                     nw_command2.ExecuteNonQuery();
-                    MessageBox.Show("DELETED SCAN");
+                    //MessageBox.Show("DELETED SCAN");
                 }
                 con.Close();
 
@@ -115,10 +118,6 @@ namespace FlexiCapture_App
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            archiving_SCAN();
-            archiving_ICBS();
-        }
+       
     }
 }
