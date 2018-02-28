@@ -97,7 +97,7 @@ namespace FlexiCapture_App
 
                             OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                             nw_command.ExecuteNonQuery();
-                            MessageBox.Show("ICBS MATCHED Updated");
+                            //MessageBox.Show("ICBS MATCHED Updated");
 
                         }
                         con.Close();
