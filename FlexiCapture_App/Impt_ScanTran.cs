@@ -43,7 +43,7 @@ namespace FlexiCapture_App
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount FROM [" + tb_table_name.Text + "]";
+                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + tb_table_name.Text + "]";
                 cmd.Connection = con;
                 //OleDbDataReader rdr = cmd.ExecuteReader();
                 //while (rdr.Read())
@@ -111,7 +111,7 @@ namespace FlexiCapture_App
 
                     con.Open();
 
-                    String query = "INSERT INTO scanned_trans (trans_date,acct_name,acct_num,amount) VALUES(@trans_date, @acct_name, @acct_num, @amount)";
+                    String query = "INSERT INTO scanned_trans (trans_date,acct_name,acct_num,amount,trans_code) VALUES(@trans_date, @acct_name, @acct_num, @amount, @trans_code)";
                     OleDbCommand cmd = new OleDbCommand(query, con);
                     if (!string.IsNullOrWhiteSpace(is_emp_date))
                     {
@@ -137,7 +137,7 @@ namespace FlexiCapture_App
                     {
                         cmd.Parameters.AddWithValue("@amount", DBNull.Value);
                     }
-                    
+                    cmd.Parameters.AddWithValue("@trans_code", row.Cells[4].Value.ToString());
                     mark_imported_data(row.Cells[2].Value.ToString());
                     
                     cmd.ExecuteNonQuery();

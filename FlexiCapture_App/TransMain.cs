@@ -55,7 +55,15 @@ namespace FlexiCapture_App
                         while (rdr.Read())
                         {
                             ListViewItem aa = new ListViewItem(rdr.GetValue(5).ToString());
-                            aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
+                            if (!string.IsNullOrWhiteSpace(rdr.GetValue(1).ToString()))
+                            {
+                                aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
+                            }
+                            else
+                            {
+                                aa.SubItems.Add("");
+
+                            }
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
                             aa.SubItems.Add(String.Format("{0:n}", Double.Parse(rdr.GetValue(4).ToString())));
@@ -183,7 +191,7 @@ namespace FlexiCapture_App
             {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM "+ table_name +" where tran_code = '"+ tran_code +"'";
+                string cmd = "SELECT * FROM "+ table_name +" where trans_code = '"+ tran_code +"'";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -355,7 +363,7 @@ namespace FlexiCapture_App
             }
             else if(cmb_scan_trans.Text == "Withdrawals")
             {
-                filtering_data("scanned_trans", "WDR");
+                filtering_data("scanned_trans", "WDL");
             }
             else
             {
@@ -371,7 +379,7 @@ namespace FlexiCapture_App
             }
             else if (cmb_icbs_trans.Text == "Withdrawals") 
             {
-                filtering_data("icbs_trans", "WDR");
+                filtering_data("icbs_trans", "WDL");
             }
             else
             {
