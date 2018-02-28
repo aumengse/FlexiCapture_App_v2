@@ -46,14 +46,14 @@ namespace FlexiCapture_App
             try
             {
                 Unmatched_Data ud = new Unmatched_Data();
-                ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
-                ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
-                ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[1].Text;
-                ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
-                ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
-                ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
-                ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[1].Text;
-                ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
+                ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
+                ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[5].Text;
+                ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
+                ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
+                ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[5].Text;
                 ud.Show();
                 this.Close();
             }

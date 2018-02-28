@@ -229,8 +229,8 @@ namespace FlexiCapture_App
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to Undo this Data? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                //undo_force_match("icbs_trans", icbs_trans_date,icbs_acct_name,icbs_acct_num,icbs_amount);
-                //undo_force_match("scanned_trans", scan_acct_num);
+                undo_force_match("icbs_trans", icbs_acct_num);
+                undo_force_match("scanned_trans", scan_acct_num);
                 
                 matched_listview_view("icbs_trans","<>","U");
                 matched_listview_view("scanned_trans","<>","U");
