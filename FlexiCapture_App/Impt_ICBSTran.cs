@@ -69,17 +69,18 @@ namespace FlexiCapture_App
                 foreach (string line in lines) //read all records
                 {
                     string[] col = line.Split(new char[] { ',' });
-                    string date_string = DateTime.Parse(col[0]).ToString("MM/dd/yyyy");
+                    string date_string = DateTime.Parse(col[1]).ToString("MM/dd/yyyy");
                     date = DateTime.Parse(date_string);
 
                     con.Open();
                     //string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) VALUES ('" + thisDay + "','" + acct_name + "','" + acct_num + "','" + amount + "');";
-                    String query = "INSERT INTO icbs_trans (trans_date,acct_name,acct_num,amount) VALUES(@date, @acct_name, @acct_num, @amount)";
+                    String query = "INSERT INTO icbs_trans (trans_code,trans_date,acct_name,acct_num,amount) VALUES(@code, @date, @acct_name, @acct_num, @amount)";
                     OleDbCommand cmd = new OleDbCommand(query, con);
+                    cmd.Parameters.AddWithValue("@code", col[0]);
                     cmd.Parameters.AddWithValue("@date", date); // set parameterized query @a to fname parameter
-                    cmd.Parameters.AddWithValue("@acct_name", col[1]); // set parameterized query @b to mname parameter
-                    cmd.Parameters.AddWithValue("@acct_num", col[2]);
-                    cmd.Parameters.AddWithValue("@amount", col[3]);
+                    cmd.Parameters.AddWithValue("@acct_name", col[2]); // set parameterized query @b to mname parameter
+                    cmd.Parameters.AddWithValue("@acct_num", col[3]);
+                    cmd.Parameters.AddWithValue("@amount", col[4]);
                     cmd.ExecuteNonQuery();
                     con.Close();
 
