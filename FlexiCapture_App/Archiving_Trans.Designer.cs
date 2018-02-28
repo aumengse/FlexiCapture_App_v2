@@ -34,7 +34,6 @@
             this.lbl_percent = new System.Windows.Forms.Label();
             this.pbar_timer = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pbar_archive
@@ -66,22 +65,11 @@
             // 
             this.pbar_timer.Tick += new System.EventHandler(this.pbar_timer_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(263, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Archiving_Trans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 160);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_percent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbar_archive);
@@ -100,6 +88,5 @@
         private System.Windows.Forms.Label lbl_percent;
         private System.Windows.Forms.Timer pbar_timer;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button1;
     }
 }
