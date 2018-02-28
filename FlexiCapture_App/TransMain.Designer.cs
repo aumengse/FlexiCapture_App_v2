@@ -39,6 +39,7 @@
             this.performMatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unmatchedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.performArchivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openfile_browse_icbs = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_info = new System.Windows.Forms.Panel();
@@ -89,7 +90,7 @@
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.performArchivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_close = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -181,6 +182,13 @@
             this.unmatchedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.unmatchedTransactionsToolStripMenuItem.Text = "View Unmatched Transactions";
             this.unmatchedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.unmatchedTransactionsToolStripMenuItem_Click);
+            // 
+            // performArchivingToolStripMenuItem
+            // 
+            this.performArchivingToolStripMenuItem.Name = "performArchivingToolStripMenuItem";
+            this.performArchivingToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.performArchivingToolStripMenuItem.Text = "Perform Archiving";
+            this.performArchivingToolStripMenuItem.Click += new System.EventHandler(this.performArchivingToolStripMenuItem_Click);
             // 
             // openfile_browse_icbs
             // 
@@ -370,6 +378,7 @@
             // 
             // pnl_main
             // 
+            this.pnl_main.Controls.Add(this.btn_close);
             this.pnl_main.Controls.Add(this.label2);
             this.pnl_main.Controls.Add(this.label3);
             this.pnl_main.Controls.Add(this.lbl_icbs_total_amt);
@@ -663,12 +672,18 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
-            // performArchivingToolStripMenuItem
+            // btn_close
             // 
-            this.performArchivingToolStripMenuItem.Name = "performArchivingToolStripMenuItem";
-            this.performArchivingToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.performArchivingToolStripMenuItem.Text = "Perform Archiving";
-            this.performArchivingToolStripMenuItem.Click += new System.EventHandler(this.performArchivingToolStripMenuItem_Click);
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_close.Image = global::FlexiCapture_App.Properties.Resources.close;
+            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_close.Location = new System.Drawing.Point(1168, 3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(45, 23);
+            this.btn_close.TabIndex = 28;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // TransMain
             // 
@@ -757,6 +772,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ToolStripMenuItem performArchivingToolStripMenuItem;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 
