@@ -89,6 +89,7 @@
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.performArchivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -133,7 +134,8 @@
             this.viewImportedRecordsToolStripMenuItem,
             this.performMatchingToolStripMenuItem,
             this.matchedTransactionsToolStripMenuItem,
-            this.unmatchedTransactionsToolStripMenuItem});
+            this.unmatchedTransactionsToolStripMenuItem,
+            this.performArchivingToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.actionsToolStripMenuItem.Text = "Actions";
@@ -661,6 +663,13 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
+            // performArchivingToolStripMenuItem
+            // 
+            this.performArchivingToolStripMenuItem.Name = "performArchivingToolStripMenuItem";
+            this.performArchivingToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.performArchivingToolStripMenuItem.Text = "Perform Archiving";
+            this.performArchivingToolStripMenuItem.Click += new System.EventHandler(this.performArchivingToolStripMenuItem_Click);
+            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +756,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ToolStripMenuItem performArchivingToolStripMenuItem;
     }
 }
 

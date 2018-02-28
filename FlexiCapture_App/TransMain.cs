@@ -386,5 +386,11 @@ namespace FlexiCapture_App
                 load_icbs();
             }
         }
+
+        private void performArchivingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Archiving_Trans arch = new Archiving_Trans();
+            arch.Show();
+        }
     }
 }

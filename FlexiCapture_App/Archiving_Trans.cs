@@ -53,8 +53,8 @@ namespace FlexiCapture_App
             try
             {
                 con.Open();
-                string nw_cmd = "INSERT INTO archive_trans(trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
-                                "SELECT trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM icbs_trans;";
+                string nw_cmd = "INSERT INTO archive_trans(past_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
+                                "SELECT id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM icbs_trans where match_code='R';";
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                     nw_command.ExecuteNonQuery();
@@ -64,7 +64,7 @@ namespace FlexiCapture_App
 
 
                 con.Open();
-                string del_cmd = "DELETE * FROM icbs_trans";
+                string del_cmd = "DELETE FROM icbs_trans where trans_code='R'";
                 {
                     OleDbCommand nw_command2 = new OleDbCommand(del_cmd, con);
                     nw_command2.ExecuteNonQuery();
@@ -85,8 +85,8 @@ namespace FlexiCapture_App
             try
             {
                 con.Open();
-                string nw_cmd = "INSERT INTO archive_trans(trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
-                                "SELECT trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM scanned_trans;";
+                string nw_cmd = "INSERT INTO archive_trans(past_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
+                                "SELECT id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM scanned_trans where match_code='R';";
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
                     nw_command.ExecuteNonQuery();
@@ -98,7 +98,7 @@ namespace FlexiCapture_App
 
 
                 con.Open();
-                string del_cmd = "DELETE * FROM scanned_trans";
+                string del_cmd = "DELETE FROM scanned_trans where trans_code='R'";
                 {
                     OleDbCommand nw_command2 = new OleDbCommand(del_cmd, con);
                     nw_command2.ExecuteNonQuery();
