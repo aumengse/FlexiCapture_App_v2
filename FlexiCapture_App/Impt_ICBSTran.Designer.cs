@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_textfile = new System.Windows.Forms.TextBox();
             this.btn_ok = new System.Windows.Forms.Button();
+            this.btn_view = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_browse
@@ -62,19 +63,30 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(233, 120);
+            this.btn_ok.Location = new System.Drawing.Point(192, 120);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 36;
-            this.btn_ok.Text = "OK";
+            this.btn_ok.Text = "Import";
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click_1);
+            // 
+            // btn_view
+            // 
+            this.btn_view.Location = new System.Drawing.Point(298, 120);
+            this.btn_view.Name = "btn_view";
+            this.btn_view.Size = new System.Drawing.Size(75, 23);
+            this.btn_view.TabIndex = 37;
+            this.btn_view.Text = "View";
+            this.btn_view.UseVisualStyleBackColor = true;
+            this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
             // 
             // Impt_ICBSTran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 171);
+            this.Controls.Add(this.btn_view);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.label2);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_textfile;
         private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Button btn_view;
     }
 }
