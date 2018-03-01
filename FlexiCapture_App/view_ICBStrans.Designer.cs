@@ -84,6 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 512);
             this.Controls.Add(this.lvw_ICBStrans_);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "view_ICBStrans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

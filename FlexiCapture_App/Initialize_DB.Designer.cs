@@ -1,6 +1,6 @@
 ﻿namespace FlexiCapture_App
 {
-    partial class Archiving_Trans
+    partial class Initialize_DB
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Archiving_Trans));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Initialize_DB));
             this.progress_Bar = new FlexiCapture_App.Progress_Bar();
             this.SuspendLayout();
             // 
             // progress_Bar
             // 
-            this.progress_Bar.Location = new System.Drawing.Point(28, 43);
+            this.progress_Bar.Location = new System.Drawing.Point(26, 36);
             this.progress_Bar.Name = "progress_Bar";
-            this.progress_Bar.Size = new System.Drawing.Size(307, 23);
-            this.progress_Bar.TabIndex = 3;
+            this.progress_Bar.Size = new System.Drawing.Size(311, 23);
+            this.progress_Bar.TabIndex = 0;
             // 
-            // Archiving_Trans
+            // Initialize_DB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 86);
+            this.ClientSize = new System.Drawing.Size(375, 84);
             this.Controls.Add(this.progress_Bar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Archiving_Trans";
-            this.Text = "Archiving Transactions";
-            this.Load += new System.EventHandler(this.Archiving_Trans_Load);
+            this.Name = "Initialize_DB";
+            this.Text = "Initializing Database";
+            this.Load += new System.EventHandler(this.Initialize_DB_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private Progress_Bar progress_Bar;
     }
 }

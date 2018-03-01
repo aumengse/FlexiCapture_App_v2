@@ -31,24 +31,31 @@ namespace FlexiCapture_App
         private void Archiving_Trans_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            pbar_timer.Enabled = true;
+            this.Show();            
+            load_progressbar();
         }
 
-        private void pbar_timer_Tick(object sender, EventArgs e)
+        private void load_progressbar()
         {
-            pbar_archive.Increment(5);
-            lbl_percent.Text = pbar_archive.Value.ToString() + " %";
-            //int a = int.Parse(pbar_archive.Value.ToString());
-            if (pbar_archive.Value == 100)
+            progress_Bar.Minimum = 0;
+            progress_Bar.Maximum = 101;
+            for (int i = 0; i <= 100; i++)
             {
-                
-                pbar_timer.Stop();
-                archiving_SCAN();
-                archiving_ICBS();
-                MessageBox.Show("Archiving Complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                progress_Bar.Value = i;
+                Thread.Sleep(20);
+
+                if (i == 100)
+                {
+                    archiving_SCAN();
+                    archiving_ICBS();
+                    MessageBox.Show("Archiving Complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
+
         }
+
+        
 
         private void archiving_ICBS()
         {

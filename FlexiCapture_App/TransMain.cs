@@ -48,7 +48,7 @@ namespace FlexiCapture_App
 
         private void matchingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Match Data? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to start matching? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                ScanForm sf = new ScanForm();
@@ -59,8 +59,13 @@ namespace FlexiCapture_App
         
         private void archiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Archiving_Trans at = new Archiving_Trans();
-            at.Show();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to start archiving? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Archiving_Trans at = new Archiving_Trans();
+                at.Show();
+            }
+           
         }
 
         private void archivedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,5 +101,18 @@ namespace FlexiCapture_App
         {
             this.Close();
         }
+
+        private void initializeDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to initialize database? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Initialize_DB in_db = new Initialize_DB();
+                in_db.Show();
+            }
+            
+        }
+
+        
     }
 }

@@ -92,6 +92,7 @@
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_textfile);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Impt_ICBSTran";
             this.Text = "Import ICBS Transactions";

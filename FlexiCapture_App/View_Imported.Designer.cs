@@ -111,9 +111,9 @@
             this.lbl_icbs_total_items.AutoSize = true;
             this.lbl_icbs_total_items.Location = new System.Drawing.Point(716, 559);
             this.lbl_icbs_total_items.Name = "lbl_icbs_total_items";
-            this.lbl_icbs_total_items.Size = new System.Drawing.Size(41, 13);
+            this.lbl_icbs_total_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_total_items.TabIndex = 39;
-            this.lbl_icbs_total_items.Text = "label31";
+            this.lbl_icbs_total_items.Text = "0";
             // 
             // pnl_icbs
             // 
@@ -731,6 +731,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnl_scanned);
             this.Controls.Add(this.lv_scanned);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View_Imported";
             this.Text = "Imported Transactions";

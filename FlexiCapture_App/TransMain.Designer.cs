@@ -176,6 +176,7 @@
             this.initializeDatabaseToolStripMenuItem.Name = "initializeDatabaseToolStripMenuItem";
             this.initializeDatabaseToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.initializeDatabaseToolStripMenuItem.Text = "Initialize Database";
+            this.initializeDatabaseToolStripMenuItem.Click += new System.EventHandler(this.initializeDatabaseToolStripMenuItem_Click);
             // 
             // TransMain
             // 

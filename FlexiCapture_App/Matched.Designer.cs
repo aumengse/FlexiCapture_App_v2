@@ -328,6 +328,7 @@
             this.Controls.Add(this.btn_undo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Matched";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
