@@ -37,10 +37,17 @@ namespace FlexiCapture_App
             this.CenterToScreen();
             load_scan();
             load_icbs();
-            count_items();
-            count_breakdown();
-            sum_amount();
-            sum_breakdown();
+
+            count_items_scan();           
+            count_breakdown_scan();
+            sum_amount_scan();
+            sum_breakdown_scan();
+
+
+            count_items_icbs();
+            count_breakdown_icbs();
+            sum_amount_icbs();                       
+            sum_breakdown_icbs();
         }
 
 
@@ -165,7 +172,7 @@ namespace FlexiCapture_App
 
         }
 
-        private void count_items()
+        private void count_items_scan()
         {
             conString();
             try
@@ -180,7 +187,20 @@ namespace FlexiCapture_App
 
                 }
                 con.Close();
+ 
+            }
+            catch
+            {
+                
+            }
 
+        }
+
+        private void count_items_icbs()
+        {
+            conString();
+            try
+            {
                 con.Open();
                 string query = "SELECT COUNT(id) from icbs_trans where match_code is Null";
                 {
@@ -191,15 +211,19 @@ namespace FlexiCapture_App
 
                 }
                 con.Close();
+
             }
             catch
             {
-                
+
             }
 
         }
 
-        private void count_breakdown()
+
+
+
+        private void count_breakdown_scan()
         {
             try
             {
@@ -223,7 +247,18 @@ namespace FlexiCapture_App
 
                 }
                 con.Close();
+              
+            }
+            catch
+            {
 
+            }
+        }
+
+        private void count_breakdown_icbs()
+        {
+            try
+            {
                 con.Open();
                 string icbs_depo_count = "SELECT COUNT(id) from icbs_trans where trans_code='DEPO' and match_code is Null";
                 {
@@ -245,6 +280,7 @@ namespace FlexiCapture_App
 
                 }
                 con.Close();
+
             }
             catch
             {
@@ -252,7 +288,7 @@ namespace FlexiCapture_App
             }
         }
 
-        private void sum_amount()
+        private void sum_amount_scan()
         {
             conString();
 
@@ -269,6 +305,20 @@ namespace FlexiCapture_App
                 }
                 con.Close();
 
+               
+            }
+            catch
+            {
+                //MessageBox.Show("No Result found.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void sum_amount_icbs()
+        {
+            conString();
+
+            try
+            {
                 con.Open();
                 string query = "SELECT SUM(amount) from icbs_trans where match_code is Null";
                 {
@@ -279,16 +329,16 @@ namespace FlexiCapture_App
 
                 }
                 con.Close();
+
+
             }
             catch
             {
-                MessageBox.Show("No Result found.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                //MessageBox.Show("No Result found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
-        private void sum_breakdown()
+        private void sum_breakdown_scan()
         {
             try
             {
@@ -314,6 +364,19 @@ namespace FlexiCapture_App
                 }
                 con.Close();
 
+            }
+            catch
+            {
+
+            }
+
+        }
+
+
+        private void sum_breakdown_icbs()
+        {
+            try
+            {
                 con.Open();
                 string icbs_depo = "SELECT SUM(amount) from icbs_trans where trans_code='DEPO' and match_code is Null";
                 {
@@ -323,7 +386,7 @@ namespace FlexiCapture_App
                     lbl_icbs_total_depo.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
 
                 }
-                con.Close();              
+                con.Close();
 
                 con.Open();
                 string icbs_wdl = "SELECT SUM(amount) from icbs_trans where trans_code='WDL' and match_code is Null";
