@@ -63,25 +63,25 @@
             this.groupBox1.Controls.Add(this.lbl_icbs_date);
             this.groupBox1.Controls.Add(this.lbl_icbs_acct_num);
             this.groupBox1.Controls.Add(this.txt_icbs_date);
-            this.groupBox1.Location = new System.Drawing.Point(18, 12);
+            this.groupBox1.Location = new System.Drawing.Point(20, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 204);
+            this.groupBox1.Size = new System.Drawing.Size(344, 243);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ICBS Data";
             // 
             // txt_icbs_acct_num
             // 
-            this.txt_icbs_acct_num.Location = new System.Drawing.Point(101, 82);
+            this.txt_icbs_acct_num.Location = new System.Drawing.Point(113, 82);
             this.txt_icbs_acct_num.Name = "txt_icbs_acct_num";
             this.txt_icbs_acct_num.ReadOnly = true;
-            this.txt_icbs_acct_num.Size = new System.Drawing.Size(164, 20);
+            this.txt_icbs_acct_num.Size = new System.Drawing.Size(207, 20);
             this.txt_icbs_acct_num.TabIndex = 11;
             // 
             // lbl_icbs_amount
             // 
             this.lbl_icbs_amount.AutoSize = true;
-            this.lbl_icbs_amount.Location = new System.Drawing.Point(5, 165);
+            this.lbl_icbs_amount.Location = new System.Drawing.Point(17, 165);
             this.lbl_icbs_amount.Name = "lbl_icbs_amount";
             this.lbl_icbs_amount.Size = new System.Drawing.Size(43, 13);
             this.lbl_icbs_amount.TabIndex = 16;
@@ -89,24 +89,24 @@
             // 
             // txt_icbs_acct_name
             // 
-            this.txt_icbs_acct_name.Location = new System.Drawing.Point(101, 41);
+            this.txt_icbs_acct_name.Location = new System.Drawing.Point(113, 41);
             this.txt_icbs_acct_name.Name = "txt_icbs_acct_name";
             this.txt_icbs_acct_name.ReadOnly = true;
-            this.txt_icbs_acct_name.Size = new System.Drawing.Size(164, 20);
+            this.txt_icbs_acct_name.Size = new System.Drawing.Size(207, 20);
             this.txt_icbs_acct_name.TabIndex = 9;
             // 
             // txt_icbs_amount
             // 
-            this.txt_icbs_amount.Location = new System.Drawing.Point(101, 158);
+            this.txt_icbs_amount.Location = new System.Drawing.Point(113, 158);
             this.txt_icbs_amount.Name = "txt_icbs_amount";
             this.txt_icbs_amount.ReadOnly = true;
-            this.txt_icbs_amount.Size = new System.Drawing.Size(163, 20);
+            this.txt_icbs_amount.Size = new System.Drawing.Size(207, 20);
             this.txt_icbs_amount.TabIndex = 15;
             // 
             // lbl_icbs_acct_name
             // 
             this.lbl_icbs_acct_name.AutoSize = true;
-            this.lbl_icbs_acct_name.Location = new System.Drawing.Point(5, 48);
+            this.lbl_icbs_acct_name.Location = new System.Drawing.Point(17, 48);
             this.lbl_icbs_acct_name.Name = "lbl_icbs_acct_name";
             this.lbl_icbs_acct_name.Size = new System.Drawing.Size(78, 13);
             this.lbl_icbs_acct_name.TabIndex = 10;
@@ -115,7 +115,7 @@
             // lbl_icbs_date
             // 
             this.lbl_icbs_date.AutoSize = true;
-            this.lbl_icbs_date.Location = new System.Drawing.Point(5, 127);
+            this.lbl_icbs_date.Location = new System.Drawing.Point(17, 127);
             this.lbl_icbs_date.Name = "lbl_icbs_date";
             this.lbl_icbs_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_icbs_date.TabIndex = 14;
@@ -124,7 +124,7 @@
             // lbl_icbs_acct_num
             // 
             this.lbl_icbs_acct_num.AutoSize = true;
-            this.lbl_icbs_acct_num.Location = new System.Drawing.Point(5, 89);
+            this.lbl_icbs_acct_num.Location = new System.Drawing.Point(17, 89);
             this.lbl_icbs_acct_num.Name = "lbl_icbs_acct_num";
             this.lbl_icbs_acct_num.Size = new System.Drawing.Size(87, 13);
             this.lbl_icbs_acct_num.TabIndex = 12;
@@ -132,10 +132,10 @@
             // 
             // txt_icbs_date
             // 
-            this.txt_icbs_date.Location = new System.Drawing.Point(101, 120);
+            this.txt_icbs_date.Location = new System.Drawing.Point(113, 120);
             this.txt_icbs_date.Name = "txt_icbs_date";
             this.txt_icbs_date.ReadOnly = true;
-            this.txt_icbs_date.Size = new System.Drawing.Size(164, 20);
+            this.txt_icbs_date.Size = new System.Drawing.Size(207, 20);
             this.txt_icbs_date.TabIndex = 13;
             // 
             // groupBox2
@@ -148,25 +148,25 @@
             this.groupBox2.Controls.Add(this.lbl_scan_date);
             this.groupBox2.Controls.Add(this.lbl_scan_acct_num);
             this.groupBox2.Controls.Add(this.txt_scan_date);
-            this.groupBox2.Location = new System.Drawing.Point(327, 12);
+            this.groupBox2.Location = new System.Drawing.Point(380, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 204);
+            this.groupBox2.Size = new System.Drawing.Size(337, 243);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Scanned Data";
             // 
             // txt_scan_acct_num
             // 
-            this.txt_scan_acct_num.Location = new System.Drawing.Point(101, 82);
+            this.txt_scan_acct_num.Location = new System.Drawing.Point(112, 82);
             this.txt_scan_acct_num.Name = "txt_scan_acct_num";
             this.txt_scan_acct_num.ReadOnly = true;
-            this.txt_scan_acct_num.Size = new System.Drawing.Size(164, 20);
+            this.txt_scan_acct_num.Size = new System.Drawing.Size(207, 20);
             this.txt_scan_acct_num.TabIndex = 11;
             // 
             // lbl_scan_amount
             // 
             this.lbl_scan_amount.AutoSize = true;
-            this.lbl_scan_amount.Location = new System.Drawing.Point(5, 165);
+            this.lbl_scan_amount.Location = new System.Drawing.Point(16, 165);
             this.lbl_scan_amount.Name = "lbl_scan_amount";
             this.lbl_scan_amount.Size = new System.Drawing.Size(43, 13);
             this.lbl_scan_amount.TabIndex = 16;
@@ -174,24 +174,24 @@
             // 
             // txt_scan_acct_name
             // 
-            this.txt_scan_acct_name.Location = new System.Drawing.Point(101, 41);
+            this.txt_scan_acct_name.Location = new System.Drawing.Point(112, 41);
             this.txt_scan_acct_name.Name = "txt_scan_acct_name";
             this.txt_scan_acct_name.ReadOnly = true;
-            this.txt_scan_acct_name.Size = new System.Drawing.Size(164, 20);
+            this.txt_scan_acct_name.Size = new System.Drawing.Size(207, 20);
             this.txt_scan_acct_name.TabIndex = 9;
             // 
             // txt_scan_amount
             // 
-            this.txt_scan_amount.Location = new System.Drawing.Point(101, 158);
+            this.txt_scan_amount.Location = new System.Drawing.Point(112, 158);
             this.txt_scan_amount.Name = "txt_scan_amount";
             this.txt_scan_amount.ReadOnly = true;
-            this.txt_scan_amount.Size = new System.Drawing.Size(163, 20);
+            this.txt_scan_amount.Size = new System.Drawing.Size(207, 20);
             this.txt_scan_amount.TabIndex = 15;
             // 
             // lbl_scan_acct_name
             // 
             this.lbl_scan_acct_name.AutoSize = true;
-            this.lbl_scan_acct_name.Location = new System.Drawing.Point(5, 48);
+            this.lbl_scan_acct_name.Location = new System.Drawing.Point(16, 48);
             this.lbl_scan_acct_name.Name = "lbl_scan_acct_name";
             this.lbl_scan_acct_name.Size = new System.Drawing.Size(78, 13);
             this.lbl_scan_acct_name.TabIndex = 10;
@@ -200,7 +200,7 @@
             // lbl_scan_date
             // 
             this.lbl_scan_date.AutoSize = true;
-            this.lbl_scan_date.Location = new System.Drawing.Point(5, 127);
+            this.lbl_scan_date.Location = new System.Drawing.Point(16, 127);
             this.lbl_scan_date.Name = "lbl_scan_date";
             this.lbl_scan_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_scan_date.TabIndex = 14;
@@ -209,7 +209,7 @@
             // lbl_scan_acct_num
             // 
             this.lbl_scan_acct_num.AutoSize = true;
-            this.lbl_scan_acct_num.Location = new System.Drawing.Point(5, 89);
+            this.lbl_scan_acct_num.Location = new System.Drawing.Point(16, 89);
             this.lbl_scan_acct_num.Name = "lbl_scan_acct_num";
             this.lbl_scan_acct_num.Size = new System.Drawing.Size(87, 13);
             this.lbl_scan_acct_num.TabIndex = 12;
@@ -217,17 +217,17 @@
             // 
             // txt_scan_date
             // 
-            this.txt_scan_date.Location = new System.Drawing.Point(101, 120);
+            this.txt_scan_date.Location = new System.Drawing.Point(112, 120);
             this.txt_scan_date.Name = "txt_scan_date";
             this.txt_scan_date.ReadOnly = true;
-            this.txt_scan_date.Size = new System.Drawing.Size(164, 20);
+            this.txt_scan_date.Size = new System.Drawing.Size(207, 20);
             this.txt_scan_date.TabIndex = 13;
             // 
             // btn_force_match
             // 
-            this.btn_force_match.Location = new System.Drawing.Point(625, 17);
+            this.btn_force_match.Location = new System.Drawing.Point(723, 59);
             this.btn_force_match.Name = "btn_force_match";
-            this.btn_force_match.Size = new System.Drawing.Size(75, 23);
+            this.btn_force_match.Size = new System.Drawing.Size(78, 44);
             this.btn_force_match.TabIndex = 12;
             this.btn_force_match.Text = "Force Match";
             this.btn_force_match.UseVisualStyleBackColor = true;
@@ -235,9 +235,9 @@
             // 
             // txt_remarks
             // 
-            this.txt_remarks.Location = new System.Drawing.Point(86, 222);
+            this.txt_remarks.Location = new System.Drawing.Point(88, 314);
             this.txt_remarks.Name = "txt_remarks";
-            this.txt_remarks.Size = new System.Drawing.Size(530, 49);
+            this.txt_remarks.Size = new System.Drawing.Size(629, 83);
             this.txt_remarks.TabIndex = 13;
             this.txt_remarks.Text = "";
             // 
@@ -245,7 +245,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 222);
+            this.label1.Location = new System.Drawing.Point(19, 314);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 14;
@@ -255,7 +255,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 293);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(813, 426);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_remarks);
             this.Controls.Add(this.btn_force_match);
@@ -263,7 +264,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Unmatched_Data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unmatch Transaction";
+            this.Text = "Unmatched Transaction";
             this.Load += new System.EventHandler(this.Unmatched_Data_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

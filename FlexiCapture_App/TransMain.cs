@@ -52,12 +52,7 @@ namespace FlexiCapture_App
             sf.Show();
         }
 
-        private void importedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            View_Imported vi = new View_Imported();
-            vi.Show();
-        }
-
+        
         private void archiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Archiving_Trans at = new Archiving_Trans();
@@ -68,6 +63,24 @@ namespace FlexiCapture_App
         {
             Archive_View av = new Archive_View();
             av.Show();
+        }
+
+        private void importedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View_Imported vi = new View_Imported();
+            vi.Show();
+        }
+
+        private void matchedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Matched m = new Matched();
+            m.Show();
+        }
+
+        private void unmatchedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unmatched_View uv = new Unmatched_View();
+            uv.Show();
         }
     }
 }

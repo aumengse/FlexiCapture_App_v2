@@ -84,6 +84,7 @@ namespace FlexiCapture_App
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
                             aa.SubItems.Add(String.Format("{0:n}", Double.Parse(rdr.GetValue(4).ToString())));
+                            aa.SubItems.Add(rdr.GetValue(6).ToString());
                             if (table_name == "icbs_trans")
                             {
                                 Matched_Icbs_Records.Items.Add(aa);
@@ -213,7 +214,7 @@ namespace FlexiCapture_App
             {
                 if (table_name == "icbs_trans")
                 {
-                    MessageBox.Show("You Cannot Undo Regular Match Data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You Cannot Undo Regular Matched Data", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             

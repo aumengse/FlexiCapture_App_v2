@@ -136,34 +136,43 @@ namespace FlexiCapture_App
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string icbs_trans_code = Unmatched_Icbs_Records.CheckedItems[0].SubItems[1].Text;
-            string scan_trans_code = Unmatched_Scanned_Records.CheckedItems[0].SubItems[1].Text;
-            if (icbs_trans_code == scan_trans_code)
+            try
             {
-                try
+                string icbs_trans_code = Unmatched_Icbs_Records.CheckedItems[0].SubItems[1].Text;
+                string scan_trans_code = Unmatched_Scanned_Records.CheckedItems[0].SubItems[1].Text;
+                if (icbs_trans_code == scan_trans_code)
                 {
-                    Unmatched_Data ud = new Unmatched_Data();
-                    ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
-                    ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
-                    ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
-                    ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[5].Text;
-                    ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
-                    ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
-                    ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
-                    ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[5].Text;
-                    ud.Show();
-                    this.Close();
+                    try
+                    {
+                        Unmatched_Data ud = new Unmatched_Data();
+                        ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
+                        ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
+                        ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
+                        ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[5].Text;
+                        ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
+                        ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
+                        ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
+                        ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[5].Text;
+                        ud.Show();
+                        this.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Please Select Record To Verify", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Please Select Record To Verify", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Select Data with the same trasaction code.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
-            else
+            catch
             {
-                MessageBox.Show("Select Data with the same trasaction code.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please choose transactions to verify");
             }
-            
+
+
         }
         private void unmatched_view(string table_name, string var_match_code, string op, string match_code)
         {

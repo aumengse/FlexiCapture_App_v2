@@ -105,6 +105,12 @@
     <Compile Include="Matched.Designer.cs">
       <DependentUpon>Matched.cs</DependentUpon>
     </Compile>
+    <Compile Include="Progress_Bar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Progress_Bar.Designer.cs">
+      <DependentUpon>Progress_Bar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Remarks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +148,6 @@
       <DependentUpon>TransMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Progress_Bar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Progress_Bar.Designer.cs">
-      <DependentUpon>Progress_Bar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScanForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Impt_ScanTran.resx">
       <DependentUpon>Impt_ScanTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress_Bar.resx">
+      <DependentUpon>Progress_Bar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Remarks.resx">
       <DependentUpon>Remarks.cs</DependentUpon>
