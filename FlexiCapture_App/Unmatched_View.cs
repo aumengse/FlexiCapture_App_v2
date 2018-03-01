@@ -15,6 +15,15 @@ namespace FlexiCapture_App
     {
 
         public static string acct_name = "";
+        int total_amount = 0;
+        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private Conf.conf dbcon;
+        private void conString()
+        {
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+        }
         public Unmatched_View()
         {
             InitializeComponent();
@@ -37,14 +46,14 @@ namespace FlexiCapture_App
             try
             {
                 Unmatched_Data ud = new Unmatched_Data();
-                ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
-                ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
-                ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[1].Text;
-                ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
-                ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
-                ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
-                ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[1].Text;
-                ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_icbs_acct_name.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[3].Text;
+                ud.txt_icbs_acct_num.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_icbs_date.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[2].Text;
+                ud.txt_icbs_amount.Text = Unmatched_Icbs_Records.CheckedItems[0].SubItems[5].Text;
+                ud.txt_scan_acct_name.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[3].Text;
+                ud.txt_scan_acct_num.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[4].Text;
+                ud.txt_scan_date.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[2].Text;
+                ud.txt_scan_amount.Text = Unmatched_Scanned_Records.CheckedItems[0].SubItems[5].Text;
                 ud.Show();
                 this.Close();
             }
@@ -57,7 +66,8 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "SELECT * FROM icbs_trans where match_code = 'U'";
                 {
@@ -69,6 +79,7 @@ namespace FlexiCapture_App
                         while (rdr.Read())
                         {
                             ListViewItem aa = new ListViewItem();
+                            aa.SubItems.Add(rdr.GetValue(5).ToString());
                             aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
@@ -88,7 +99,8 @@ namespace FlexiCapture_App
         {
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                conString();
                 con.Open();
                 string cmd = "SELECT * FROM scanned_trans where match_code = 'U'";
                 {
@@ -100,6 +112,7 @@ namespace FlexiCapture_App
                         while (rdr.Read())
                         {
                             ListViewItem aa = new ListViewItem();
+                            aa.SubItems.Add(rdr.GetValue(5).ToString());
                             aa.SubItems.Add(DateTime.Parse(rdr.GetValue(1).ToString()).ToString("MM/dd/yyyy"));
                             aa.SubItems.Add(rdr.GetValue(2).ToString());
                             aa.SubItems.Add(rdr.GetValue(3).ToString());
@@ -115,11 +128,86 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
         }
+        private static string amount_sum(string table_name)
+        {
+            string amount = "";
+            OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+            Conf.conf dbcon;
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+
+            try
+            {
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //conString();
+                con.Open();
+                string cmd = "SELECT sum(amount) FROM " + table_name + " where match_code = 'U'";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    {
+                        amount = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return amount;
+        }
+        private static string items_counter(string table_name)
+        {
+            string items = "";
+            OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+            Conf.conf dbcon;
+            con = new OleDbConnection();
+            dbcon = new Conf.conf();
+            con.ConnectionString = dbcon.getConnectionString();
+            try
+            {
+                //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
+                //conString();
+                con.Open();
+                string cmd = "SELECT COUNT(acct_name) FROM " + table_name +" where match_code = 'U'";
+                {
+                    OleDbCommand command = new OleDbCommand(cmd, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    items = rdr.GetValue(0).ToString();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return items;
+        }
         private void Unmatched_View_Load(object sender, EventArgs e)
         {
             unmatched_icbs_view();
             unmatched_trans_view();
             Unmatched_Icbs_Records.Refresh();
+
+            if (Unmatched_Icbs_Records.Items.Count > 0)
+            {
+                string icbs_items = items_counter("icbs_trans");
+                string icbs_sum = amount_sum("icbs_trans");
+                lbl_icbs_value_items.Text = icbs_items;
+                lbl_icbs_total_amount.Text = icbs_sum;
+            }
+
+            if (Unmatched_Scanned_Records.Items.Count > 0)
+            {
+                string scan_items = items_counter("scanned_trans");
+                string scan_sum = amount_sum("scanned_trans");
+                lbl_scan_value_items.Text = scan_items;
+                lbl_scan_total_amount.Text = scan_sum;
+            }
         }
     }
 }

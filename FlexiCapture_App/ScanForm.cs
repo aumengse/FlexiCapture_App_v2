@@ -42,10 +42,8 @@ namespace FlexiCapture_App
 
                 if (i == 100)
                 {
-                    get_data_icbs();
-                    matching_ICBS();
-                    get_data_scanned();
-                    matching_scanned();
+                    matching_trans();
+                    
                 }
             }
 
@@ -59,266 +57,197 @@ namespace FlexiCapture_App
             this.CenterToScreen();
 
             load_progressbar();
-
-
-
         }
 
-        private void yes()
+        private void matching_trans()
         {
+            matching_ICBS();
+            matching_SCAN();
+            unmatching_SCAN();
+            unmatching_ICBS();
+            MessageBox.Show("Scan Complete", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
 
-            conString();
-
-            try
-            {
-                foreach (DataGridViewRow row in dg_scanned_trans.Rows)
-                {
-                    DateTime trans_date = DateTime.Parse(row.Cells[1].Value.ToString());
-
-                    //  MessageBox.Show(cc.ToString());
-                    con.Open();
-                    string cmd = "SELECT StrComp(acct_name," + row.Cells[2].Value.ToString() + ",0) ";
-                    {
-
-                        OleDbCommand command = new OleDbCommand(cmd, con);
-                        OleDbDataReader rdr = command.ExecuteReader();
-                        rdr.Read();
-                        MessageBox.Show(rdr.GetValue(0).ToString());
-
-
-                    }
-                    con.Close();
-                }
-            }
-            catch (Exception e)
-            {
-
-            }
         }
-
-
+        
         private void matching_ICBS()
         {
-            int row_id;
             conString();
-
+            int i;
             try
             {
-
-                foreach (DataGridViewRow row in dg_icbs_trans.Rows)
-                {
-                    
-                    con.Open();
-                    string cmd = "SELECT id,trans_date,acct_name FROM [icbs_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "";
-                    {
-                        OleDbCommand command = new OleDbCommand(cmd, con);
-                        OleDbDataReader rdr = command.ExecuteReader();
-                        rdr.Read();
-                        if (rdr.HasRows)
-                        {
-                            row_id = Convert.ToInt16(rdr.GetValue(0).ToString());
-                            con.Close();
-
-                            con.Open();
-                            string nw_cmd = "UPDATE [icbs_trans] SET match_code='R' where id=" + row_id + "";
-                            {
-
-                                OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
-                                OleDbDataReader nw_rdr = nw_command.ExecuteReader();
-                                nw_rdr.Read();
-                                //MessageBox.Show("Updated");
-
-                            }
-                            con.Close();
-                            con.Open();
-                            string nw_cmd2 = "UPDATE [scanned_trans] SET match_code='R' where id=" + row_id + "";
-                            {
-
-                                OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
-                                //MessageBox.Show("SCAN Updated");
-
-                            }
-                            con.Close();
-                        }
-
-                        else
-                        {
-                            con.Close();
-                            con.Open();
-                            string nw_cmd1 = "UPDATE [icbs_trans] SET match_code='U' where id=" + int.Parse(row.Cells[0].Value.ToString()) + "";
-                            {
-
-                                OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
-                                OleDbDataReader nw_rdr1 = nw_command1.ExecuteReader();
-                                nw_rdr1.Read();
-                                //MessageBox.Show("SCAN Unmatched Updated");
-
-                            }
-                            con.Close();
-                            con.Open();
-                            string nw_cmd2 = "UPDATE [scanned_trans] SET match_code='U' where id=" + int.Parse(row.Cells[0].Value.ToString()) + "";
-                            {
-
-                                OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
-                                //MessageBox.Show("ICBS Unmatched Updated");
-
-                            }
-                            con.Close();
-
-                        }
-                        con.Close();
-
-                    }
-                    MessageBox.Show("MATCHING ICBS DONE");
-                }
-
-            }
-            catch (Exception e)
-            {
-                //MessageBox.Show(e.Message);
-            }
-        }
-
-        private void matching_scanned()
-        {
-            int row_id;
-            conString();
-
-            try
-            {
-
-                foreach (DataGridViewRow row in dg_scanned_trans.Rows)
-                {
-
-                    con.Open();
-                    string cmd = "SELECT id,trans_date,acct_name FROM [scanned_trans] where [trans_date] =#" + DateTime.Parse(row.Cells[1].Value.ToString()) + "# and [acct_name] ='" + row.Cells[2].Value.ToString() + "'" +
-                                                             "and [acct_num] =" + int.Parse(row.Cells[3].Value.ToString()) + " and [amount] = " + Double.Parse(row.Cells[4].Value.ToString()) + "";
-                    {
-                        OleDbCommand command = new OleDbCommand(cmd, con);
-                        OleDbDataReader rdr = command.ExecuteReader();
-                        rdr.Read();
-                        if (rdr.HasRows)
-                        {
-                            row_id = Convert.ToInt16(rdr.GetValue(0).ToString());
-                            con.Close();
-
-                            con.Open();
-                            string nw_cmd = "UPDATE [scanned_trans] SET match_code='R' where id=" + row_id + "";
-                            {
-
-                                OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
-                                OleDbDataReader nw_rdr = nw_command.ExecuteReader();
-                                nw_rdr.Read();
-                                //MessageBox.Show("Updated");
-
-                            }
-                            con.Close();
-                            con.Open();
-                            string nw_cmd2 = "UPDATE [icbs_trans] SET match_code='R' where id=" + row_id + "";
-                            {
-
-                                OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
-                                //MessageBox.Show("SCAN Updated");
-
-                            }
-                            con.Close();
-                        }
-
-                        else
-                        {
-                            con.Close();
-                            con.Open();
-                            string nw_cmd1 = "UPDATE [scanned_trans] SET match_code='U' where id=" + int.Parse(row.Cells[0].Value.ToString()) + "";
-                            {
-
-                                OleDbCommand nw_command1 = new OleDbCommand(nw_cmd1, con);
-                                OleDbDataReader nw_rdr1 = nw_command1.ExecuteReader();
-                                nw_rdr1.Read();
-                                //MessageBox.Show("SCAN Unmatched Updated");
-
-                            }
-                            con.Close();
-                            con.Open();
-                            string nw_cmd2 = "UPDATE [icbs_trans] SET match_code='U' where id=" + int.Parse(row.Cells[0].Value.ToString()) + "";
-                            {
-
-                                OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
-                                OleDbDataReader nw_rdr2 = nw_command2.ExecuteReader();
-                                nw_rdr2.Read();
-                                //MessageBox.Show("ICBS Unmatched Updated");
-
-                            }
-                            con.Close();
-
-                        }
-                        con.Close();
-
-                    }
-                    MessageBox.Show("MATCHING SCANNED DONE");
-                }
-            }
-            catch (Exception e)
-            {
-                //MessageBox.Show(e.Message);
-            }
-        }
-
-
-        private void get_data_scanned()
-        {
-            try
-            {
-                conString();
+                
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount FROM scanned_trans";
+                cmd.CommandText  = "SELECT icbs_trans.ID,scanned_trans.ID FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) " +
+                                "AND(icbs_trans.amount = scanned_trans.amount) AND(icbs_trans.acct_num = scanned_trans.acct_num) AND(icbs_trans.acct_name = scanned_trans.acct_name) AND(icbs_trans.trans_date = scanned_trans.trans_date);";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
+                con.Close();
 
-                dg_scanned_trans.DataSource = ds.Tables[0];
+                foreach (DataTable dt in ds.Tables)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        con.Open();
+                        string nw_cmd = "UPDATE [icbs_trans] SET match_code='R', trans_src='ICBS', match_ref= " + dr["scanned_trans.id"]+" where id=" + dr["icbs_trans.id"] + "";
+                        {
 
+                            OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
+                            nw_command.ExecuteNonQuery();
+                            //MessageBox.Show("ICBS MATCHED Updated");
+
+                        }
+                        con.Close();
+                        //MessageBox.Show(dr["id"].ToString());
+
+                    }
+                }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void get_data_icbs()
+        private void matching_SCAN()
         {
+            conString();
             try
             {
-                conString();
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT id,trans_date,acct_name,acct_num,amount FROM icbs_trans";
+                cmd.CommandText = "SELECT scanned_trans.ID,icbs_trans.ID FROM icbs_trans INNER JOIN scanned_trans ON(icbs_trans.trans_code = scanned_trans.trans_code) AND(icbs_trans.amount = scanned_trans.amount) " +
+                                   "AND(icbs_trans.acct_num = scanned_trans.acct_num) AND(icbs_trans.acct_name = scanned_trans.acct_name) AND(icbs_trans.trans_date = scanned_trans.trans_date);";
                 cmd.Connection = con;
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
+                con.Close();
 
-                dg_icbs_trans.DataSource = ds.Tables[0];
+                foreach (DataTable dt in ds.Tables)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        con.Open();
+                        string nw_cmd = "UPDATE [scanned_trans] SET match_code='R', trans_src='SCAN', match_ref= " + dr["icbs_trans.id"] + " where id=" + dr["scanned_trans.id"] + "";
+                        {
 
+                            OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
+                            nw_command.ExecuteNonQuery();
+                            //MessageBox.Show("SCAN MATCHED Updated");
+
+                        }
+                        con.Close();
+                        //MessageBox.Show(dr["id"].ToString());
+
+                    }
+                }
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                //comment
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void unmatching_ICBS()
         {
-            get_data_scanned();
-            get_data_icbs();
+            conString();
+            int e;
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "SELECT DISTINCT id FROM icbs_trans WHERE NOT EXISTS(SELECT  id FROM scanned_trans WHERE icbs_trans.trans_date = scanned_trans.trans_date and icbs_trans.acct_name = scanned_trans.acct_name and icbs_trans.amount = scanned_trans.amount " +
+                                    "and icbs_trans.acct_num = scanned_trans.acct_num and icbs_trans.trans_code = scanned_trans.trans_code);";
+                cmd.Connection = con;
+                OleDbDataAdapter dau = new OleDbDataAdapter(cmd);
+                DataSet dsu = new DataSet();
+                dau.Fill(dsu);
+                con.Close();
+
+                foreach (DataTable dtu in dsu.Tables)
+                {
+                    foreach (DataRow dru in dtu.Rows)
+                    {
+                        
+                        con.Open();
+                        string nw_cmd2 = "UPDATE [icbs_trans] SET match_code='U', trans_src='ICBS' where id=" + dru["id"] + "";
+                        {
+
+                            OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
+                            nw_command2.ExecuteNonQuery();
+                            //MessageBox.Show("ICBS UNMATCHED Updated");
+
+                        }
+                        con.Close();
+                        //MessageBox.Show(dru["id"].ToString());
+
+                    }
+                }
+            }
+            catch (Exception xx)
+            {
+                //MessageBox.Show(xx.Message);
+            }
         }
+
+        private void unmatching_SCAN()
+        {
+            conString();
+            int e;
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "SELECT DISTINCT id FROM scanned_trans WHERE NOT EXISTS(SELECT  id FROM icbs_trans WHERE scanned_trans.trans_date = icbs_trans.trans_date and scanned_trans.acct_name = icbs_trans.acct_name " +
+                                    "and scanned_trans.acct_num = icbs_trans.acct_num  and scanned_trans.amount = icbs_trans.amount and scanned_trans.trans_code = icbs_trans.trans_code);";
+                cmd.Connection = con;
+                OleDbDataAdapter dau = new OleDbDataAdapter(cmd);
+                DataSet dsu = new DataSet();
+                dau.Fill(dsu);
+                con.Close();
+
+                foreach (DataTable dtu in dsu.Tables)
+                {
+                    foreach (DataRow dru in dtu.Rows)
+                    {
+
+                        con.Open();
+                        string nw_cmd2 = "UPDATE [scanned_trans] SET match_code='U', trans_src='SCAN' where id=" + dru["id"] + "";
+                        {
+
+                            OleDbCommand nw_command2 = new OleDbCommand(nw_cmd2, con);
+                            nw_command2.ExecuteNonQuery();
+                            //MessageBox.Show("SCAN UNMATCHED Updated");
+
+                        }
+                        con.Close();
+                        //MessageBox.Show(dru["id"].ToString());
+
+                    }
+                }
+            }
+            catch (Exception xx)
+            {
+                //MessageBox.Show(xx.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

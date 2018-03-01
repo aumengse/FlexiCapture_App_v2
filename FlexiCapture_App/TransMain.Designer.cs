@@ -39,6 +39,7 @@
             this.performMatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unmatchedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.performArchivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openfile_browse_icbs = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_info = new System.Windows.Forms.Panel();
@@ -52,13 +53,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_scan_trans = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.lbl_scan_total_items = new System.Windows.Forms.Label();
             this.lbl_scan_total_amt = new System.Windows.Forms.Label();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_icbs_total_amt = new System.Windows.Forms.Label();
@@ -75,20 +77,21 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmb_icbs_trans = new System.Windows.Forms.ComboBox();
             this.lv_icbs = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.lv_data = new System.Windows.Forms.ListView();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trans_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.acc_num = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.archiveTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_info.SuspendLayout();
             this.pnl_main.SuspendLayout();
@@ -114,6 +117,7 @@
             // fileToolStrip
             // 
             this.fileToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archiveTransactionsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStrip.Name = "fileToolStrip";
             this.fileToolStrip.Size = new System.Drawing.Size(37, 20);
@@ -122,7 +126,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // actionsToolStripMenuItem
@@ -133,7 +137,8 @@
             this.viewImportedRecordsToolStripMenuItem,
             this.performMatchingToolStripMenuItem,
             this.matchedTransactionsToolStripMenuItem,
-            this.unmatchedTransactionsToolStripMenuItem});
+            this.unmatchedTransactionsToolStripMenuItem,
+            this.performArchivingToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.actionsToolStripMenuItem.Text = "Actions";
@@ -179,6 +184,13 @@
             this.unmatchedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.unmatchedTransactionsToolStripMenuItem.Text = "View Unmatched Transactions";
             this.unmatchedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.unmatchedTransactionsToolStripMenuItem_Click);
+            // 
+            // performArchivingToolStripMenuItem
+            // 
+            this.performArchivingToolStripMenuItem.Name = "performArchivingToolStripMenuItem";
+            this.performArchivingToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.performArchivingToolStripMenuItem.Text = "Perform Archiving";
+            this.performArchivingToolStripMenuItem.Click += new System.EventHandler(this.performArchivingToolStripMenuItem_Click);
             // 
             // openfile_browse_icbs
             // 
@@ -306,17 +318,18 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Account Name:";
             // 
-            // comboBox1
+            // cmb_scan_trans
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_scan_trans.FormattingEnabled = true;
+            this.cmb_scan_trans.Items.AddRange(new object[] {
             "All",
             "Deposits",
             "Withdrawals"});
-            this.comboBox1.Location = new System.Drawing.Point(423, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cmb_scan_trans.Location = new System.Drawing.Point(423, 84);
+            this.cmb_scan_trans.Name = "cmb_scan_trans";
+            this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
+            this.cmb_scan_trans.TabIndex = 8;
+            this.cmb_scan_trans.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -367,13 +380,14 @@
             // 
             // pnl_main
             // 
+            this.pnl_main.Controls.Add(this.btn_close);
             this.pnl_main.Controls.Add(this.label2);
             this.pnl_main.Controls.Add(this.label3);
             this.pnl_main.Controls.Add(this.lbl_icbs_total_amt);
             this.pnl_main.Controls.Add(this.lbl_icbs_total_items);
             this.pnl_main.Controls.Add(this.label24);
             this.pnl_main.Controls.Add(this.pnl_info_icbs);
-            this.pnl_main.Controls.Add(this.comboBox2);
+            this.pnl_main.Controls.Add(this.cmb_icbs_trans);
             this.pnl_main.Controls.Add(this.lv_icbs);
             this.pnl_main.Controls.Add(this.label8);
             this.pnl_main.Controls.Add(this.lbl_scan_total_amt);
@@ -381,7 +395,7 @@
             this.pnl_main.Controls.Add(this.label27);
             this.pnl_main.Controls.Add(this.label25);
             this.pnl_main.Controls.Add(this.label23);
-            this.pnl_main.Controls.Add(this.comboBox1);
+            this.pnl_main.Controls.Add(this.cmb_scan_trans);
             this.pnl_main.Controls.Add(this.pnl_info);
             this.pnl_main.Controls.Add(this.lv_data);
             this.pnl_main.Controls.Add(this.label1);
@@ -390,6 +404,18 @@
             this.pnl_main.Size = new System.Drawing.Size(1216, 772);
             this.pnl_main.TabIndex = 17;
             this.pnl_main.Visible = false;
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_close.Location = new System.Drawing.Point(1168, 3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(45, 23);
+            this.btn_close.TabIndex = 28;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label2
             // 
@@ -454,7 +480,7 @@
             this.pnl_info_icbs.Controls.Add(this.label22);
             this.pnl_info_icbs.Location = new System.Drawing.Point(700, 143);
             this.pnl_info_icbs.Name = "pnl_info_icbs";
-            this.pnl_info_icbs.Size = new System.Drawing.Size(436, 369);
+            this.pnl_info_icbs.Size = new System.Drawing.Size(449, 369);
             this.pnl_info_icbs.TabIndex = 21;
             this.pnl_info_icbs.Visible = false;
             this.pnl_info_icbs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_icbs_Paint_1);
@@ -551,40 +577,40 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Account Name:";
             // 
-            // comboBox2
+            // cmb_icbs_trans
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmb_icbs_trans.FormattingEnabled = true;
+            this.cmb_icbs_trans.Items.AddRange(new object[] {
             "All",
             "Deposits",
             "Withdrawals"});
-            this.comboBox2.Location = new System.Drawing.Point(1055, 88);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 22;
+            this.cmb_icbs_trans.Location = new System.Drawing.Point(1055, 88);
+            this.cmb_icbs_trans.Name = "cmb_icbs_trans";
+            this.cmb_icbs_trans.Size = new System.Drawing.Size(121, 21);
+            this.cmb_icbs_trans.TabIndex = 22;
+            this.cmb_icbs_trans.SelectedIndexChanged += new System.EventHandler(this.cmb_icbs_trans_SelectedIndexChanged);
             // 
             // lv_icbs
             // 
             this.lv_icbs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
+            this.columnHeader7,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
             this.lv_icbs.FullRowSelect = true;
             this.lv_icbs.GridLines = true;
-            this.lv_icbs.Location = new System.Drawing.Point(670, 133);
+            this.lv_icbs.Location = new System.Drawing.Point(640, 133);
             this.lv_icbs.Name = "lv_icbs";
-            this.lv_icbs.Size = new System.Drawing.Size(506, 535);
+            this.lv_icbs.Size = new System.Drawing.Size(536, 535);
             this.lv_icbs.TabIndex = 20;
             this.lv_icbs.UseCompatibleStateImageBehavior = false;
             this.lv_icbs.View = System.Windows.Forms.View.Details;
             this.lv_icbs.DoubleClick += new System.EventHandler(this.lv_icbs_DoubleClick_1);
             // 
-            // columnHeader1
+            // columnHeader7
             // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 38;
+            this.columnHeader7.Text = "Tran Code";
             // 
             // columnHeader2
             // 
@@ -620,7 +646,7 @@
             // lv_data
             // 
             this.lv_data.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
+            this.columnHeader6,
             this.trans_date,
             this.acc_name,
             this.acc_num,
@@ -629,16 +655,15 @@
             this.lv_data.GridLines = true;
             this.lv_data.Location = new System.Drawing.Point(38, 129);
             this.lv_data.Name = "lv_data";
-            this.lv_data.Size = new System.Drawing.Size(506, 535);
+            this.lv_data.Size = new System.Drawing.Size(533, 535);
             this.lv_data.TabIndex = 6;
             this.lv_data.UseCompatibleStateImageBehavior = false;
             this.lv_data.View = System.Windows.Forms.View.Details;
             this.lv_data.DoubleClick += new System.EventHandler(this.lv_data_DoubleClick);
             // 
-            // id
+            // columnHeader6
             // 
-            this.id.Text = "ID";
-            this.id.Width = 38;
+            this.columnHeader6.Text = "Tran Code";
             // 
             // trans_date
             // 
@@ -661,18 +686,24 @@
             this.amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.amount.Width = 95;
             // 
+            // archiveTransactionsToolStripMenuItem
+            // 
+            this.archiveTransactionsToolStripMenuItem.Name = "archiveTransactionsToolStripMenuItem";
+            this.archiveTransactionsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.archiveTransactionsToolStripMenuItem.Text = "Archive Transactions";
+            this.archiveTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archiveTransactionsToolStripMenuItem_Click);
+            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1251, 811);
+            this.ClientSize = new System.Drawing.Size(1251, 741);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TransMain";
             this.Text = "Vouching Transactions Management System";
-            this.Load += new System.EventHandler(this.TransMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnl_info.ResumeLayout(false);
@@ -711,7 +742,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_scan_trans;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
@@ -732,22 +763,25 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_icbs_trans;
         private System.Windows.Forms.ListView lv_icbs;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListView lv_data;
-        private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.ColumnHeader trans_date;
         private System.Windows.Forms.ColumnHeader acc_name;
         private System.Windows.Forms.ColumnHeader acc_num;
         private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ToolStripMenuItem performArchivingToolStripMenuItem;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.ToolStripMenuItem archiveTransactionsToolStripMenuItem;
     }
 }
 

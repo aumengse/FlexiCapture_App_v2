@@ -10,18 +10,25 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Configuration;
 using System.Threading;
+using System.IO;
 
 namespace FlexiCapture_App
 {
     public partial class Impt_ScanTran : Form
     {
-        private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
+        private OleDbConnection con; //Initialize OleDBConnection
         private Conf.conf dbcon;
-
         public Impt_ScanTran()
         {
             InitializeComponent();
             this.CenterToScreen();
+        }
+
+
+
+        private void Impt_ScanTran_Load(object sender, EventArgs e)
+        {
+
         }
         private void conString()
         {
@@ -29,28 +36,52 @@ namespace FlexiCapture_App
             dbcon = new Conf.conf();
             con.ConnectionString = dbcon.getConnectionString();
         }
-
-
-
-        private void Impt_ScanTran_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void get_data()
         {
             try
             {
-                conString();
-                String query = "SELECT * FROM [" + tb_table_name.Text + "]";
-                OleDbCommand cmd = new OleDbCommand(query, con);
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + tb_table_name.Text + "] where is_import="+ false +"";
                 cmd.Connection = con;
+                //OleDbDataReader rdr = cmd.ExecuteReader();
+                //while (rdr.Read())
+                //{
+                //    MessageBox.Show(rdr[0].ToString());
+                //}
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
                 dg_data_imported.DataSource = ds.Tables[0];
 
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void mark_imported_data(string acct_num)
+        {
+            string cmd = "";
+            try
+            {
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
+                
+                con.Open();
+                if (!string.IsNullOrWhiteSpace(acct_num))
+                {
+                    cmd = "update [" + tb_table_name.Text + "] set is_import=" + true + " where acct_num='" + acct_num + "'";
+                }
+
+                OleDbCommand command = new OleDbCommand(cmd, con);
+                OleDbDataReader rdr = command.ExecuteReader();
+                
+                con.Close();
 
             }
             catch (Exception ex)
@@ -61,47 +92,78 @@ namespace FlexiCapture_App
 
         private void inserting()
         {
-            string date_string, acct_name, acct_num, amount;
-            DateTime date_xx;
+            string date_string;
+            DateTime? date_x = null;
             conString();
-           
+
             try
-            { 
+            {
                 foreach (DataGridViewRow row in dg_data_imported.Rows)
                 {
-                    date_string = DateTime.Parse(row.Cells[1].Value.ToString()).ToString("MM/dd/yyyy");
-                    date_xx = DateTime.Parse(date_string);
-                    acct_name = row.Cells[2].Value.ToString();
-                    acct_num = row.Cells[3].Value.ToString();
-                    amount = row.Cells[4].Value.ToString();
-                    
+                    string is_emp_date = row.Cells[0].Value.ToString();
+                    if (!string.IsNullOrWhiteSpace(is_emp_date))
+                    {
+                        date_string = DateTime.Parse(row.Cells[0].Value.ToString()).ToString("MM/dd/yyyy");
+                        date_x = DateTime.Parse(date_string);
+                    }
+
+
 
                     con.Open();
-                    String query = "INSERT INTO scanned_trans(trans_date,acct_name,acct_num,amount) VALUES ('" + date_string + "','" + acct_name + "','"+ acct_num + "','" + amount + "');";
 
+                    String query = "INSERT INTO scanned_trans (trans_date,acct_name,acct_num,amount,trans_code) VALUES(@trans_date, @acct_name, @acct_num, @amount, @trans_code)";
                     OleDbCommand cmd = new OleDbCommand(query, con);
+                    if (!string.IsNullOrWhiteSpace(is_emp_date))
+                    {
+                        cmd.Parameters.AddWithValue("@trans_date", date_x); // set parameterized query @a to fname parameter
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@trans_date", DBNull.Value); // set parameterized query @a to fname parameter
+                    }
+                    if (!string.IsNullOrWhiteSpace(row.Cells[1].Value.ToString())) {
+                        cmd.Parameters.AddWithValue("@acct_name", row.Cells[1].Value.ToString()); // set parameterized query @b to mname parameter
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@acct_name", DBNull.Value); // set parameterized query @b to mname parameter
+                    }
+                    cmd.Parameters.AddWithValue("@acct_num", row.Cells[2].Value.ToString());
+                    if (!string.IsNullOrWhiteSpace(row.Cells[3].Value.ToString()))
+                    {
+                        cmd.Parameters.AddWithValue("@amount", double.Parse(row.Cells[3].Value.ToString()));
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@amount", DBNull.Value);
+                    }
+                    cmd.Parameters.AddWithValue("@trans_code", row.Cells[4].Value.ToString());
+                    mark_imported_data(row.Cells[2].Value.ToString());
+                    
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    //MessageBox.Show("Import Successfully");
-                    
                 }
-
+                
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(e.Message);
             }
-         }
+            MessageBox.Show("Import Successfully","Import Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+        }
 
 
-        /*private void import_from_flexiCapture()
+
+
+        private void import_from_flexiCapture()
         {
             try
             {
-                conString();
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
                 con.Open();
 
-                string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) SELECT date,acct_name,acct_num,amount from"+ tb_data_source.Text+"."+tb_table_name+"";
+                string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) SELECT date,acct_name,acct_num,amount from" + tb_data_source.Text + "." + tb_table_name + "";
 
                 using (OleDbCommand sqlCeCommand = new OleDbCommand(query, con))
                 {
@@ -114,42 +176,45 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
 
-        }*/
+        }
 
-      
+        private void openfile_browse_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
             //import_from_flexiCapture();
             get_data();
             inserting();
-            //this.Close();
+            this.Close();
         }
 
         private void btn_browse_Click(object sender, EventArgs e)
         {
             OpenFileDialog openfile_browse_icbs = new OpenFileDialog();
 
-            openfile_browse_icbs.InitialDirectory = @"C:\";
+            openfile_browse.InitialDirectory = @"C:\";
             openfile_browse_icbs.Title = "Browse Database";
 
-            openfile_browse_icbs.CheckFileExists = true;
+            openfile_browse.CheckFileExists = true;
             openfile_browse_icbs.CheckPathExists = true;
 
-            openfile_browse_icbs.DefaultExt = "accdb";
-            openfile_browse_icbs.Filter = "Access files (*.accdb)|*.accdb";
-            openfile_browse_icbs.FilterIndex = 2;
-            openfile_browse_icbs.RestoreDirectory = true;
+            openfile_browse.DefaultExt = "accdb";
+            openfile_browse.Filter = "Access files (*.accdb)|*.accdb";
+            openfile_browse.FilterIndex = 2;
+            openfile_browse.RestoreDirectory = true;
 
 
-            openfile_browse_icbs.ReadOnlyChecked = true;
-            openfile_browse_icbs.ShowReadOnly = true;
+            openfile_browse.ReadOnlyChecked = true;
+            openfile_browse.ShowReadOnly = true;
 
 
-            if (openfile_browse_icbs.ShowDialog() == DialogResult.OK)
+            if (openfile_browse.ShowDialog() == DialogResult.OK)
 
             {
-                tb_data_source.Text = openfile_browse_icbs.FileName;
+                tb_data_source.Text = openfile_browse.FileName;
             }
         }
     }

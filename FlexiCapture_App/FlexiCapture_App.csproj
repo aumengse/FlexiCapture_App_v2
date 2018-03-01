@@ -86,6 +86,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archive_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archive_View.Designer.cs">
+      <DependentUpon>Archive_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archiving_Trans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archiving_Trans.Designer.cs">
+      <DependentUpon>Archiving_Trans.cs</DependentUpon>
+    </Compile>
     <Compile Include="conf.cs" />
     <Compile Include="Matched.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,12 @@
     <Compile Include="ScanForm.Designer.cs">
       <DependentUpon>ScanForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Archive_View.resx">
+      <DependentUpon>Archive_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archiving_Trans.resx">
+      <DependentUpon>Archiving_Trans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Matched.resx">
       <DependentUpon>Matched.cs</DependentUpon>
     </EmbeddedResource>
