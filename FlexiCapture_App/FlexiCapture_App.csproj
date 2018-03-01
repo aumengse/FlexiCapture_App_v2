@@ -155,6 +155,12 @@
     <Compile Include="ScanForm.Designer.cs">
       <DependentUpon>ScanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Imported.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Imported.Designer.cs">
+      <DependentUpon>View_Imported.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Archive_View.resx">
       <DependentUpon>Archive_View.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Unmatched_View.resx">
       <DependentUpon>Unmatched_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Imported.resx">
+      <DependentUpon>View_Imported.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
