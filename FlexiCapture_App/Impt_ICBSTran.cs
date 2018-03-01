@@ -93,5 +93,12 @@ namespace FlexiCapture_App
             MessageBox.Show("Import Successfully");
             this.Close();
         }
+
+        private void btn_view_Click(object sender, EventArgs e)
+        {
+            string[] lines = File.ReadAllLines(tb_textfile.Text);
+            view_ICBStrans viewall = new view_ICBStrans(lines);
+            viewall.Show();
+        }
     }
 }

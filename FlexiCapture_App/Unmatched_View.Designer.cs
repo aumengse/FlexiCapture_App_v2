@@ -73,10 +73,10 @@
             this.Amount});
             this.Unmatched_Icbs_Records.FullRowSelect = true;
             this.Unmatched_Icbs_Records.GridLines = true;
-            this.Unmatched_Icbs_Records.Location = new System.Drawing.Point(6, 42);
+            this.Unmatched_Icbs_Records.Location = new System.Drawing.Point(6, 19);
             this.Unmatched_Icbs_Records.MultiSelect = false;
             this.Unmatched_Icbs_Records.Name = "Unmatched_Icbs_Records";
-            this.Unmatched_Icbs_Records.Size = new System.Drawing.Size(629, 507);
+            this.Unmatched_Icbs_Records.Size = new System.Drawing.Size(571, 507);
             this.Unmatched_Icbs_Records.TabIndex = 3;
             this.Unmatched_Icbs_Records.UseCompatibleStateImageBehavior = false;
             this.Unmatched_Icbs_Records.View = System.Windows.Forms.View.Details;
@@ -85,7 +85,8 @@
             // 
             // Check
             // 
-            this.Check.Text = "Check";
+            this.Check.Text = "";
+            this.Check.Width = 20;
             // 
             // trans_code
             // 
@@ -94,22 +95,22 @@
             // Date
             // 
             this.Date.Text = "Date";
-            this.Date.Width = 120;
+            this.Date.Width = 90;
             // 
             // Account_Name
             // 
             this.Account_Name.Text = "Account Name";
-            this.Account_Name.Width = 148;
+            this.Account_Name.Width = 170;
             // 
             // Account_Number
             // 
             this.Account_Number.Text = "Account Number";
-            this.Account_Number.Width = 100;
+            this.Account_Number.Width = 120;
             // 
             // Amount
             // 
             this.Amount.Text = "Amount";
-            this.Amount.Width = 120;
+            this.Amount.Width = 100;
             // 
             // Unmatched_Scanned_Records
             // 
@@ -123,10 +124,10 @@
             this.columnHeader5});
             this.Unmatched_Scanned_Records.FullRowSelect = true;
             this.Unmatched_Scanned_Records.GridLines = true;
-            this.Unmatched_Scanned_Records.Location = new System.Drawing.Point(24, 37);
+            this.Unmatched_Scanned_Records.Location = new System.Drawing.Point(6, 19);
             this.Unmatched_Scanned_Records.MultiSelect = false;
             this.Unmatched_Scanned_Records.Name = "Unmatched_Scanned_Records";
-            this.Unmatched_Scanned_Records.Size = new System.Drawing.Size(618, 512);
+            this.Unmatched_Scanned_Records.Size = new System.Drawing.Size(571, 507);
             this.Unmatched_Scanned_Records.TabIndex = 4;
             this.Unmatched_Scanned_Records.UseCompatibleStateImageBehavior = false;
             this.Unmatched_Scanned_Records.View = System.Windows.Forms.View.Details;
@@ -135,7 +136,8 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Check";
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 20;
             // 
             // columnHeader6
             // 
@@ -144,29 +146,29 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Date";
-            this.columnHeader2.Width = 120;
+            this.columnHeader2.Width = 90;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Account Name";
-            this.columnHeader3.Width = 148;
+            this.columnHeader3.Width = 170;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Account Number";
-            this.columnHeader4.Width = 100;
+            this.columnHeader4.Width = 120;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Amount";
-            this.columnHeader5.Width = 120;
+            this.columnHeader5.Width = 100;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1264, 713);
+            this.button1.Location = new System.Drawing.Point(1119, 601);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 37);
+            this.button1.Size = new System.Drawing.Size(82, 35);
             this.button1.TabIndex = 5;
             this.button1.Text = "Verify";
             this.button1.UseVisualStyleBackColor = true;
@@ -175,9 +177,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Unmatched_Icbs_Records);
-            this.groupBox1.Location = new System.Drawing.Point(16, 69);
+            this.groupBox1.Location = new System.Drawing.Point(21, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(657, 571);
+            this.groupBox1.Size = new System.Drawing.Size(583, 538);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ICBS Data";
@@ -185,9 +187,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Unmatched_Scanned_Records);
-            this.groupBox2.Location = new System.Drawing.Point(704, 69);
+            this.groupBox2.Location = new System.Drawing.Point(624, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(660, 571);
+            this.groupBox2.Size = new System.Drawing.Size(583, 538);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Scanned Data";
@@ -195,7 +197,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 667);
+            this.label1.Location = new System.Drawing.Point(24, 575);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 8;
@@ -204,7 +206,7 @@
             // lbl_icbs_value_items
             // 
             this.lbl_icbs_value_items.AutoSize = true;
-            this.lbl_icbs_value_items.Location = new System.Drawing.Point(100, 667);
+            this.lbl_icbs_value_items.Location = new System.Drawing.Point(89, 575);
             this.lbl_icbs_value_items.Name = "lbl_icbs_value_items";
             this.lbl_icbs_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_value_items.TabIndex = 9;
@@ -213,7 +215,7 @@
             // lbl_icbs_total_amount
             // 
             this.lbl_icbs_total_amount.AutoSize = true;
-            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(660, 667);
+            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(556, 575);
             this.lbl_icbs_total_amount.Name = "lbl_icbs_total_amount";
             this.lbl_icbs_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_total_amount.TabIndex = 11;
@@ -222,7 +224,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(584, 667);
+            this.label3.Location = new System.Drawing.Point(480, 575);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 10;
@@ -231,7 +233,7 @@
             // lbl_scan_total_amount
             // 
             this.lbl_scan_total_amount.AutoSize = true;
-            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1303, 667);
+            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1153, 575);
             this.lbl_scan_total_amount.Name = "lbl_scan_total_amount";
             this.lbl_scan_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_total_amount.TabIndex = 15;
@@ -240,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1227, 667);
+            this.label4.Location = new System.Drawing.Point(1077, 575);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 14;
@@ -249,7 +251,7 @@
             // lbl_scan_value_items
             // 
             this.lbl_scan_value_items.AutoSize = true;
-            this.lbl_scan_value_items.Location = new System.Drawing.Point(839, 667);
+            this.lbl_scan_value_items.Location = new System.Drawing.Point(692, 575);
             this.lbl_scan_value_items.Name = "lbl_scan_value_items";
             this.lbl_scan_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_value_items.TabIndex = 13;
@@ -258,7 +260,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(774, 667);
+            this.label6.Location = new System.Drawing.Point(627, 575);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 12;
@@ -267,7 +269,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(1187, 46);
+            this.label24.Location = new System.Drawing.Point(1042, 14);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(32, 13);
             this.label24.TabIndex = 27;
@@ -280,7 +282,7 @@
             "All",
             "Deposits",
             "Withdrawals"});
-            this.cmb_icbs_trans.Location = new System.Drawing.Point(533, 38);
+            this.cmb_icbs_trans.Location = new System.Drawing.Point(483, 11);
             this.cmb_icbs_trans.Name = "cmb_icbs_trans";
             this.cmb_icbs_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_icbs_trans.TabIndex = 26;
@@ -289,7 +291,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(495, 43);
+            this.label23.Location = new System.Drawing.Point(445, 16);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(32, 13);
             this.label23.TabIndex = 25;
@@ -302,7 +304,7 @@
             "All",
             "Deposits",
             "Withdrawals"});
-            this.cmb_scan_trans.Location = new System.Drawing.Point(1225, 40);
+            this.cmb_scan_trans.Location = new System.Drawing.Point(1080, 8);
             this.cmb_scan_trans.Name = "cmb_scan_trans";
             this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_scan_trans.TabIndex = 24;
@@ -313,7 +315,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1384, 781);
+            this.ClientSize = new System.Drawing.Size(1234, 650);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.cmb_icbs_trans);
             this.Controls.Add(this.label23);

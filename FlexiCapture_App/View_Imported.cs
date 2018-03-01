@@ -50,7 +50,7 @@ namespace FlexiCapture_App
             {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM [scanned_trans] where match_code is Null;";
+                string cmd = "SELECT * FROM [scanned_trans] where match_code is Null ORDER BY trans_code,trans_date;";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -90,7 +90,7 @@ namespace FlexiCapture_App
             {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM [icbs_trans] where match_code is Null;";
+                string cmd = "SELECT * FROM [icbs_trans] where match_code is Null ORDER BY trans_code,trans_date;";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -282,8 +282,7 @@ namespace FlexiCapture_App
             }
             catch
             {
-                MessageBox.Show("No Results found");
-
+                MessageBox.Show("No Result found.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
 

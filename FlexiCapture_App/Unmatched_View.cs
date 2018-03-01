@@ -169,7 +169,7 @@ namespace FlexiCapture_App
             }
             catch
             {
-                MessageBox.Show("Please choose transactions to verify");
+                MessageBox.Show("Please choose transactions to verify","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -181,7 +181,7 @@ namespace FlexiCapture_App
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM "+ table_name +" where "+ var_match_code +" "+ op +" '"+ match_code +"'";
+                string cmd = "SELECT * FROM "+ table_name +" where "+ var_match_code +" "+ op +" '"+ match_code +"' order by trans_code,trans_code";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();

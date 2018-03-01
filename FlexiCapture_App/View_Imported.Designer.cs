@@ -99,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(666, 650);
+            this.label3.Location = new System.Drawing.Point(650, 559);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 40;
@@ -108,7 +108,7 @@
             // lbl_icbs_total_items
             // 
             this.lbl_icbs_total_items.AutoSize = true;
-            this.lbl_icbs_total_items.Location = new System.Drawing.Point(732, 650);
+            this.lbl_icbs_total_items.Location = new System.Drawing.Point(716, 559);
             this.lbl_icbs_total_items.Name = "lbl_icbs_total_items";
             this.lbl_icbs_total_items.Size = new System.Drawing.Size(41, 13);
             this.lbl_icbs_total_items.TabIndex = 39;
@@ -128,9 +128,9 @@
             this.pnl_icbs.Controls.Add(this.label20);
             this.pnl_icbs.Controls.Add(this.label21);
             this.pnl_icbs.Controls.Add(this.label22);
-            this.pnl_icbs.Location = new System.Drawing.Point(715, 160);
+            this.pnl_icbs.Location = new System.Drawing.Point(712, 107);
             this.pnl_icbs.Name = "pnl_icbs";
-            this.pnl_icbs.Size = new System.Drawing.Size(449, 369);
+            this.pnl_icbs.Size = new System.Drawing.Size(449, 329);
             this.pnl_icbs.TabIndex = 38;
             this.pnl_icbs.Visible = false;
             this.pnl_icbs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_icbs_Paint);
@@ -237,9 +237,9 @@
             this.columnHeader5});
             this.lv_icbs.FullRowSelect = true;
             this.lv_icbs.GridLines = true;
-            this.lv_icbs.Location = new System.Drawing.Point(661, 146);
+            this.lv_icbs.Location = new System.Drawing.Point(658, 93);
             this.lv_icbs.Name = "lv_icbs";
-            this.lv_icbs.Size = new System.Drawing.Size(539, 475);
+            this.lv_icbs.Size = new System.Drawing.Size(539, 437);
             this.lv_icbs.TabIndex = 37;
             this.lv_icbs.UseCompatibleStateImageBehavior = false;
             this.lv_icbs.View = System.Windows.Forms.View.Details;
@@ -274,7 +274,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(679, 39);
+            this.label8.Location = new System.Drawing.Point(645, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(356, 33);
             this.label8.TabIndex = 36;
@@ -283,7 +283,7 @@
             // lbl_scan_total_amt
             // 
             this.lbl_scan_total_amt.AutoSize = true;
-            this.lbl_scan_total_amt.Location = new System.Drawing.Point(535, 650);
+            this.lbl_scan_total_amt.Location = new System.Drawing.Point(495, 559);
             this.lbl_scan_total_amt.Name = "lbl_scan_total_amt";
             this.lbl_scan_total_amt.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_amt.TabIndex = 35;
@@ -292,7 +292,7 @@
             // lbl_scan_total_items
             // 
             this.lbl_scan_total_items.AutoSize = true;
-            this.lbl_scan_total_items.Location = new System.Drawing.Point(120, 650);
+            this.lbl_scan_total_items.Location = new System.Drawing.Point(117, 559);
             this.lbl_scan_total_items.Name = "lbl_scan_total_items";
             this.lbl_scan_total_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_total_items.TabIndex = 34;
@@ -301,7 +301,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(456, 650);
+            this.label27.Location = new System.Drawing.Point(416, 559);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(72, 13);
             this.label27.TabIndex = 33;
@@ -310,7 +310,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(53, 650);
+            this.label25.Location = new System.Drawing.Point(50, 559);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(61, 13);
             this.label25.TabIndex = 32;
@@ -319,7 +319,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(415, 103);
+            this.label23.Location = new System.Drawing.Point(435, 60);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(32, 13);
             this.label23.TabIndex = 31;
@@ -332,7 +332,7 @@
             "All",
             "Deposits",
             "Withdrawals"});
-            this.cmb_scan_trans.Location = new System.Drawing.Point(465, 103);
+            this.cmb_scan_trans.Location = new System.Drawing.Point(485, 60);
             this.cmb_scan_trans.Name = "cmb_scan_trans";
             this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_scan_trans.TabIndex = 30;
@@ -343,7 +343,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 39);
+            this.label1.Location = new System.Drawing.Point(40, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 33);
             this.label1.TabIndex = 27;
@@ -352,7 +352,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1042, 650);
+            this.label2.Location = new System.Drawing.Point(1026, 559);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 42;
@@ -361,7 +361,7 @@
             // lbl_icbs_total_amt
             // 
             this.lbl_icbs_total_amt.AutoSize = true;
-            this.lbl_icbs_total_amt.Location = new System.Drawing.Point(1131, 650);
+            this.lbl_icbs_total_amt.Location = new System.Drawing.Point(1115, 559);
             this.lbl_icbs_total_amt.Name = "lbl_icbs_total_amt";
             this.lbl_icbs_total_amt.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_amt.TabIndex = 41;
@@ -370,7 +370,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(1031, 111);
+            this.label24.Location = new System.Drawing.Point(1038, 68);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(32, 13);
             this.label24.TabIndex = 44;
@@ -383,7 +383,7 @@
             "All",
             "Deposits",
             "Withdrawals"});
-            this.cmb_icbs_trans.Location = new System.Drawing.Point(1069, 109);
+            this.cmb_icbs_trans.Location = new System.Drawing.Point(1076, 66);
             this.cmb_icbs_trans.Name = "cmb_icbs_trans";
             this.cmb_icbs_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_icbs_trans.TabIndex = 43;
@@ -393,7 +393,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(481, 676);
+            this.label5.Location = new System.Drawing.Point(441, 578);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 45;
@@ -402,7 +402,7 @@
             // lbl_scan_total_depo
             // 
             this.lbl_scan_total_depo.AutoSize = true;
-            this.lbl_scan_total_depo.Location = new System.Drawing.Point(535, 676);
+            this.lbl_scan_total_depo.Location = new System.Drawing.Point(495, 578);
             this.lbl_scan_total_depo.Name = "lbl_scan_total_depo";
             this.lbl_scan_total_depo.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_depo.TabIndex = 46;
@@ -411,7 +411,7 @@
             // lbl_scan_total_wdl
             // 
             this.lbl_scan_total_wdl.AutoSize = true;
-            this.lbl_scan_total_wdl.Location = new System.Drawing.Point(535, 702);
+            this.lbl_scan_total_wdl.Location = new System.Drawing.Point(495, 598);
             this.lbl_scan_total_wdl.Name = "lbl_scan_total_wdl";
             this.lbl_scan_total_wdl.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_wdl.TabIndex = 48;
@@ -420,7 +420,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(481, 702);
+            this.label14.Location = new System.Drawing.Point(441, 598);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 47;
@@ -429,7 +429,7 @@
             // lbl_icbs_total_wdl
             // 
             this.lbl_icbs_total_wdl.AutoSize = true;
-            this.lbl_icbs_total_wdl.Location = new System.Drawing.Point(1131, 702);
+            this.lbl_icbs_total_wdl.Location = new System.Drawing.Point(1115, 598);
             this.lbl_icbs_total_wdl.Name = "lbl_icbs_total_wdl";
             this.lbl_icbs_total_wdl.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_wdl.TabIndex = 52;
@@ -438,7 +438,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1077, 702);
+            this.label17.Location = new System.Drawing.Point(1061, 598);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 51;
@@ -447,7 +447,7 @@
             // lbl_icbs_total_depo
             // 
             this.lbl_icbs_total_depo.AutoSize = true;
-            this.lbl_icbs_total_depo.Location = new System.Drawing.Point(1131, 676);
+            this.lbl_icbs_total_depo.Location = new System.Drawing.Point(1115, 578);
             this.lbl_icbs_total_depo.Name = "lbl_icbs_total_depo";
             this.lbl_icbs_total_depo.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_depo.TabIndex = 50;
@@ -456,7 +456,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1077, 676);
+            this.label19.Location = new System.Drawing.Point(1061, 578);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 49;
@@ -476,9 +476,9 @@
             this.pnl_scanned.Controls.Add(this.label11);
             this.pnl_scanned.Controls.Add(this.label10);
             this.pnl_scanned.Controls.Add(this.label9);
-            this.pnl_scanned.Location = new System.Drawing.Point(92, 154);
+            this.pnl_scanned.Location = new System.Drawing.Point(104, 107);
             this.pnl_scanned.Name = "pnl_scanned";
-            this.pnl_scanned.Size = new System.Drawing.Size(445, 309);
+            this.pnl_scanned.Size = new System.Drawing.Size(445, 329);
             this.pnl_scanned.TabIndex = 54;
             this.pnl_scanned.Visible = false;
             this.pnl_scanned.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_scanned_Paint);
@@ -585,9 +585,9 @@
             this.amount});
             this.lv_scanned.FullRowSelect = true;
             this.lv_scanned.GridLines = true;
-            this.lv_scanned.Location = new System.Drawing.Point(43, 146);
+            this.lv_scanned.Location = new System.Drawing.Point(53, 93);
             this.lv_scanned.Name = "lv_scanned";
-            this.lv_scanned.Size = new System.Drawing.Size(556, 475);
+            this.lv_scanned.Size = new System.Drawing.Size(556, 437);
             this.lv_scanned.TabIndex = 53;
             this.lv_scanned.UseCompatibleStateImageBehavior = false;
             this.lv_scanned.View = System.Windows.Forms.View.Details;
@@ -621,7 +621,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(62, 702);
+            this.label6.Location = new System.Drawing.Point(59, 598);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 56;
@@ -630,7 +630,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 676);
+            this.label7.Location = new System.Drawing.Point(59, 578);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 55;
@@ -639,7 +639,7 @@
             // lbl_scan_wdl_count
             // 
             this.lbl_scan_wdl_count.AutoSize = true;
-            this.lbl_scan_wdl_count.Location = new System.Drawing.Point(120, 702);
+            this.lbl_scan_wdl_count.Location = new System.Drawing.Point(117, 598);
             this.lbl_scan_wdl_count.Name = "lbl_scan_wdl_count";
             this.lbl_scan_wdl_count.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_wdl_count.TabIndex = 57;
@@ -648,7 +648,7 @@
             // lbl_scan_depo_count
             // 
             this.lbl_scan_depo_count.AutoSize = true;
-            this.lbl_scan_depo_count.Location = new System.Drawing.Point(120, 676);
+            this.lbl_scan_depo_count.Location = new System.Drawing.Point(117, 578);
             this.lbl_scan_depo_count.Name = "lbl_scan_depo_count";
             this.lbl_scan_depo_count.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_depo_count.TabIndex = 58;
@@ -657,7 +657,7 @@
             // lbl_icbs_depo_count
             // 
             this.lbl_icbs_depo_count.AutoSize = true;
-            this.lbl_icbs_depo_count.Location = new System.Drawing.Point(733, 676);
+            this.lbl_icbs_depo_count.Location = new System.Drawing.Point(717, 578);
             this.lbl_icbs_depo_count.Name = "lbl_icbs_depo_count";
             this.lbl_icbs_depo_count.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_depo_count.TabIndex = 62;
@@ -666,7 +666,7 @@
             // lbl_icbs_wdl_count
             // 
             this.lbl_icbs_wdl_count.AutoSize = true;
-            this.lbl_icbs_wdl_count.Location = new System.Drawing.Point(733, 702);
+            this.lbl_icbs_wdl_count.Location = new System.Drawing.Point(717, 598);
             this.lbl_icbs_wdl_count.Name = "lbl_icbs_wdl_count";
             this.lbl_icbs_wdl_count.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_wdl_count.TabIndex = 61;
@@ -675,7 +675,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(682, 702);
+            this.label26.Location = new System.Drawing.Point(666, 598);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(32, 13);
             this.label26.TabIndex = 60;
@@ -684,7 +684,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(682, 676);
+            this.label28.Location = new System.Drawing.Point(666, 578);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(37, 13);
             this.label28.TabIndex = 59;
@@ -695,7 +695,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1244, 770);
+            this.ClientSize = new System.Drawing.Size(1244, 661);
             this.Controls.Add(this.lbl_icbs_depo_count);
             this.Controls.Add(this.lbl_icbs_wdl_count);
             this.Controls.Add(this.label26);
