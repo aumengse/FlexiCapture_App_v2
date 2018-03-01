@@ -59,46 +59,59 @@ namespace FlexiCapture_App
 
         private void btn_ok_Click_1(object sender, EventArgs e)
         {
-
-            conString();
-            DateTime date;
-            string[] lines = File.ReadAllLines(tb_textfile.Text);
-
-            try
+            if (string.IsNullOrWhiteSpace(tb_textfile.Text))
             {
-                foreach (string line in lines) //read all records
+                MessageBox.Show("Please select a file First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                conString();
+                DateTime date;
+                string[] lines = File.ReadAllLines(tb_textfile.Text);
+
+                try
                 {
-                    string[] col = line.Split(new char[] { ',' });
-                    string date_string = DateTime.Parse(col[1]).ToString("MM/dd/yyyy");
-                    date = DateTime.Parse(date_string);
+                    foreach (string line in lines) //read all records
+                    {
+                        string[] col = line.Split(new char[] { ',' });
+                        string date_string = DateTime.Parse(col[1]).ToString("MM/dd/yyyy");
+                        date = DateTime.Parse(date_string);
 
-                    con.Open();
-                    //string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) VALUES ('" + thisDay + "','" + acct_name + "','" + acct_num + "','" + amount + "');";
-                    String query = "INSERT INTO icbs_trans (trans_code,trans_date,acct_name,acct_num,amount) VALUES(@code, @date, @acct_name, @acct_num, @amount)";
-                    OleDbCommand cmd = new OleDbCommand(query, con);
-                    cmd.Parameters.AddWithValue("@code", col[0]);
-                    cmd.Parameters.AddWithValue("@date", date); // set parameterized query @a to fname parameter
-                    cmd.Parameters.AddWithValue("@acct_name", col[2]); // set parameterized query @b to mname parameter
-                    cmd.Parameters.AddWithValue("@acct_num", col[3]);
-                    cmd.Parameters.AddWithValue("@amount", col[4]);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                        con.Open();
+                        //string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) VALUES ('" + thisDay + "','" + acct_name + "','" + acct_num + "','" + amount + "');";
+                        String query = "INSERT INTO icbs_trans (trans_code,trans_date,acct_name,acct_num,amount) VALUES(@code, @date, @acct_name, @acct_num, @amount)";
+                        OleDbCommand cmd = new OleDbCommand(query, con);
+                        cmd.Parameters.AddWithValue("@code", col[0]);
+                        cmd.Parameters.AddWithValue("@date", date); // set parameterized query @a to fname parameter
+                        cmd.Parameters.AddWithValue("@acct_name", col[2]); // set parameterized query @b to mname parameter
+                        cmd.Parameters.AddWithValue("@acct_num", col[3]);
+                        cmd.Parameters.AddWithValue("@amount", col[4]);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
 
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                MessageBox.Show("Import Successfully");
+                this.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            MessageBox.Show("Import Successfully");
-            this.Close();
         }
 
         private void btn_view_Click(object sender, EventArgs e)
         {
-            string[] lines = File.ReadAllLines(tb_textfile.Text);
-            view_ICBStrans viewall = new view_ICBStrans(lines);
-            viewall.Show();
+            if (string.IsNullOrWhiteSpace(tb_textfile.Text))
+            {
+                MessageBox.Show("Please select a file First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string[] lines = File.ReadAllLines(tb_textfile.Text);
+                view_ICBStrans viewall = new view_ICBStrans(lines);
+                viewall.Show();
+            }
         }
     }
 }
