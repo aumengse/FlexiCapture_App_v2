@@ -304,6 +304,17 @@ namespace FlexiCapture_App
                 con.Close();
 
                 con.Open();
+                string scan_wdl = "SELECT SUM(amount) from scanned_trans where trans_code='WDL' and match_code is Null";
+                {
+                    OleDbCommand command = new OleDbCommand(scan_wdl, con);
+                    OleDbDataReader rdr = command.ExecuteReader();
+                    rdr.Read();
+                    lbl_scan_total_wdl.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+
+                }
+                con.Close();
+
+                con.Open();
                 string icbs_depo = "SELECT SUM(amount) from icbs_trans where trans_code='DEPO' and match_code is Null";
                 {
                     OleDbCommand command = new OleDbCommand(icbs_depo, con);
@@ -312,18 +323,7 @@ namespace FlexiCapture_App
                     lbl_icbs_total_depo.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
 
                 }
-                con.Close();
-
-                con.Open();
-                string scan_wdl = "SELECT SUM(amount) from scanned_trans where trans_code='WDL' and match_code is Null";
-                {
-                    OleDbCommand command = new OleDbCommand(scan_wdl, con);
-                    OleDbDataReader rdr = command.ExecuteReader();
-                    rdr.Read();
-                    lbl_scan_total_depo.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
-
-                }
-                con.Close();
+                con.Close();              
 
                 con.Open();
                 string icbs_wdl = "SELECT SUM(amount) from icbs_trans where trans_code='WDL' and match_code is Null";
@@ -331,7 +331,7 @@ namespace FlexiCapture_App
                     OleDbCommand command = new OleDbCommand(icbs_wdl, con);
                     OleDbDataReader rdr = command.ExecuteReader();
                     rdr.Read();
-                    lbl_icbs_total_depo.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
+                    lbl_icbs_total_wdl.Text = String.Format("{0:n}", Double.Parse(rdr.GetValue(0).ToString()));
 
                 }
                 con.Close();

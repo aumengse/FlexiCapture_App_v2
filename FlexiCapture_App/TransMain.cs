@@ -48,8 +48,12 @@ namespace FlexiCapture_App
 
         private void matchingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScanForm sf = new ScanForm();
-            sf.Show();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Match Data? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+               ScanForm sf = new ScanForm();
+               sf.Show();
+            }
         }
 
         
