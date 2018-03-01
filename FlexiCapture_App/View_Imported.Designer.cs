@@ -592,6 +592,7 @@
             this.lv_scanned.TabIndex = 53;
             this.lv_scanned.UseCompatibleStateImageBehavior = false;
             this.lv_scanned.View = System.Windows.Forms.View.Details;
+            this.lv_scanned.SelectedIndexChanged += new System.EventHandler(this.lv_scanned_SelectedIndexChanged);
             this.lv_scanned.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lv_data_MouseDoubleClick);
             // 
             // columnHeader6

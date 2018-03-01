@@ -65,7 +65,7 @@ namespace FlexiCapture_App
                 //OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC-23\Desktop\TVVS.accdb; Persist Security Info=False;");
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM " + table_name + " where match_code "+ op +" '"+ match_code_value +"' order by trans_code, trans_date";
+                string cmd = "SELECT * FROM " + table_name + " where match_code "+ op +" '"+ match_code_value +"' order by trans_code, trans_date, acct_name";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();

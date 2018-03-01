@@ -37,6 +37,8 @@
             this.trans_src = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.match_code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.remarks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label23 = new System.Windows.Forms.Label();
+            this.cmb_scan_trans = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listview_archive
@@ -52,7 +54,7 @@
             this.remarks});
             this.listview_archive.FullRowSelect = true;
             this.listview_archive.GridLines = true;
-            this.listview_archive.Location = new System.Drawing.Point(12, 30);
+            this.listview_archive.Location = new System.Drawing.Point(12, 73);
             this.listview_archive.Name = "listview_archive";
             this.listview_archive.Size = new System.Drawing.Size(1224, 401);
             this.listview_archive.TabIndex = 7;
@@ -101,12 +103,37 @@
             this.remarks.Text = "Remarks";
             this.remarks.Width = 350;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(31, 32);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 13);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "Filter:";
+            // 
+            // cmb_scan_trans
+            // 
+            this.cmb_scan_trans.FormattingEnabled = true;
+            this.cmb_scan_trans.Items.AddRange(new object[] {
+            "All",
+            "Deposits",
+            "Withdrawals"});
+            this.cmb_scan_trans.Location = new System.Drawing.Point(81, 32);
+            this.cmb_scan_trans.Name = "cmb_scan_trans";
+            this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
+            this.cmb_scan_trans.TabIndex = 32;
+            this.cmb_scan_trans.Text = "All";
+            this.cmb_scan_trans.SelectedIndexChanged += new System.EventHandler(this.cmb_scan_trans_SelectedIndexChanged);
+            // 
             // Archive_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1248, 486);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.cmb_scan_trans);
             this.Controls.Add(this.listview_archive);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Archive_View";
@@ -114,6 +141,7 @@
             this.Text = "Archived Transactions";
             this.Load += new System.EventHandler(this.Archive_View_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,5 +156,7 @@
         private System.Windows.Forms.ColumnHeader trans_src;
         private System.Windows.Forms.ColumnHeader match_code;
         private System.Windows.Forms.ColumnHeader remarks;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cmb_scan_trans;
     }
 }

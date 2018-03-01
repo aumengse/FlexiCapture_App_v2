@@ -25,13 +25,13 @@ namespace FlexiCapture_App
         {
             InitializeComponent();
         }
-
-        private void Archive_View_Load(object sender, EventArgs e)
+        private void view_archive(string field_name, string op, string field_value)
         {
-            try { 
+            try
+            {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM archive_trans ORDER by trans_code,trans_date";
+                string cmd = "SELECT * FROM archive_trans where "+field_name+""+op+""+field_name+" ORDER by trans_code,trans_date,acct_name";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -60,6 +60,10 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
         }
+        private void Archive_View_Load(object sender, EventArgs e)
+        {
+            view_archive("trans_code","<>","N");
+        }
 
         private void alternateColor()
         {
@@ -75,5 +79,21 @@ namespace FlexiCapture_App
         {
 
         }
+
+        private void cmb_scan_trans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_scan_trans.Text == "Deposits")
+            {
+                view_archive("trans_code","=","DEPO");
+            }
+            else if (cmb_scan_trans.Text == "Withdrawals")
+            {
+                view_archive("trans_code","=","DEPO");
+            }
+            else
+            {
+                view_archive("trans_code", "<>", "All");
+            }
+        }   
     }
 }

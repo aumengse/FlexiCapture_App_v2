@@ -57,7 +57,7 @@ namespace FlexiCapture_App
             {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM [scanned_trans] where match_code is Null ORDER BY trans_code,trans_date;";
+                string cmd = "SELECT * FROM [scanned_trans] where match_code is Null ORDER BY trans_code,trans_date,acct_name;";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -97,7 +97,7 @@ namespace FlexiCapture_App
             {
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM [icbs_trans] where match_code is Null ORDER BY trans_code,trans_date;";
+                string cmd = "SELECT * FROM [icbs_trans] where match_code is Null ORDER BY trans_code,trans_date,acct_name;";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -491,6 +491,11 @@ namespace FlexiCapture_App
             {
 
             }
+        }
+
+        private void lv_scanned_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
