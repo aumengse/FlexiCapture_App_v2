@@ -39,6 +39,7 @@
             this.iCBSFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.archiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,8 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importedTransactionsToolStripMenuItem});
+            this.importedTransactionsToolStripMenuItem,
+            this.archivedTransactionsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
@@ -131,6 +133,13 @@
             this.archiveToolStripMenuItem.Text = "Archive";
             this.archiveToolStripMenuItem.Click += new System.EventHandler(this.archiveToolStripMenuItem_Click);
             // 
+            // archivedTransactionsToolStripMenuItem
+            // 
+            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
+            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
+            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
+            // 
             // TransMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,7 +149,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TransMain";
-            this.Text = "Vouching Transactions Management System";
+            this.Text = "Transaction Vouching and Verification System";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem matchingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importedTransactionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivedTransactionsToolStripMenuItem;
     }
 }
 

@@ -63,5 +63,11 @@ namespace FlexiCapture_App
             Archiving_Trans at = new Archiving_Trans();
             at.Show();
         }
+
+        private void archivedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Archive_View av = new Archive_View();
+            av.Show();
+        }
     }
 }

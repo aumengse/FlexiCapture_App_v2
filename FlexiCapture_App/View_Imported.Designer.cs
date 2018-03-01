@@ -336,6 +336,7 @@
             this.cmb_scan_trans.Name = "cmb_scan_trans";
             this.cmb_scan_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_scan_trans.TabIndex = 30;
+            this.cmb_scan_trans.Text = "All";
             this.cmb_scan_trans.SelectedIndexChanged += new System.EventHandler(this.cmb_scan_trans_SelectedIndexChanged);
             // 
             // label1
@@ -386,6 +387,7 @@
             this.cmb_icbs_trans.Name = "cmb_icbs_trans";
             this.cmb_icbs_trans.Size = new System.Drawing.Size(121, 21);
             this.cmb_icbs_trans.TabIndex = 43;
+            this.cmb_icbs_trans.Text = "All";
             this.cmb_icbs_trans.SelectedIndexChanged += new System.EventHandler(this.cmb_icbs_trans_SelectedIndexChanged);
             // 
             // label5
@@ -693,7 +695,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1230, 770);
+            this.ClientSize = new System.Drawing.Size(1244, 770);
             this.Controls.Add(this.lbl_icbs_depo_count);
             this.Controls.Add(this.lbl_icbs_wdl_count);
             this.Controls.Add(this.label26);

@@ -38,6 +38,7 @@ namespace FlexiCapture_App
             load_scan();
             load_icbs();
             count_items();
+            count_breakdown();
             sum_amount();
             sum_breakdown();
         }
@@ -45,7 +46,6 @@ namespace FlexiCapture_App
 
         private void load_scan()
         {
-            cmb_scan_trans.Text = "All";
             try
             {
                 conString();
@@ -86,7 +86,6 @@ namespace FlexiCapture_App
         }
         private void load_icbs()
         {
-            cmb_icbs_trans.Text = "All";
             try
             {
                 conString();
