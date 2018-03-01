@@ -31,7 +31,7 @@ namespace FlexiCapture_App
             try { 
                 conString();
                 con.Open();
-                string cmd = "SELECT * FROM archive_trans";
+                string cmd = "SELECT * FROM archive_trans ORDER by trans_code,trans_date";
                 {
                     OleDbCommand command = new OleDbCommand(cmd, con);
                     OleDbDataReader rdr = command.ExecuteReader();
@@ -53,11 +53,27 @@ namespace FlexiCapture_App
                     }
                 }
                 con.Close();
+                alternateColor();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void alternateColor()
+        {
+            foreach (ListViewItem item in listview_archive.Items)
+
+                if ((item.Index % 2) == 1)
+                    item.BackColor = Color.White;                   
+                else
+                    item.BackColor = Color.LightBlue;
+        }
+
+        private void listview_archive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
