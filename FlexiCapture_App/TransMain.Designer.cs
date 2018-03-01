@@ -32,11 +32,11 @@
             this.fileToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unmatchedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scannedFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +55,7 @@
             this.actionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1444, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,13 +82,6 @@
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
-            // archivedTransactionsToolStripMenuItem
-            // 
-            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
-            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.archivedTransactionsToolStripMenuItem.Text = "Archived";
-            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
-            // 
             // transactionsToolStripMenuItem
             // 
             this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,29 +89,36 @@
             this.matchedToolStripMenuItem,
             this.unmatchedToolStripMenuItem});
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
-            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.transactionsToolStripMenuItem.Text = "Transactions ";
             // 
             // importedToolStripMenuItem
             // 
             this.importedToolStripMenuItem.Name = "importedToolStripMenuItem";
-            this.importedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importedToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.importedToolStripMenuItem.Text = "Imported";
             this.importedToolStripMenuItem.Click += new System.EventHandler(this.importedToolStripMenuItem_Click);
             // 
             // matchedToolStripMenuItem
             // 
             this.matchedToolStripMenuItem.Name = "matchedToolStripMenuItem";
-            this.matchedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.matchedToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.matchedToolStripMenuItem.Text = "Matched";
             this.matchedToolStripMenuItem.Click += new System.EventHandler(this.matchedToolStripMenuItem_Click);
             // 
             // unmatchedToolStripMenuItem
             // 
             this.unmatchedToolStripMenuItem.Name = "unmatchedToolStripMenuItem";
-            this.unmatchedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.unmatchedToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.unmatchedToolStripMenuItem.Text = "Unmatched";
             this.unmatchedToolStripMenuItem.Click += new System.EventHandler(this.unmatchedToolStripMenuItem_Click);
+            // 
+            // archivedTransactionsToolStripMenuItem
+            // 
+            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
+            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.archivedTransactionsToolStripMenuItem.Text = "Archived";
+            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
             // 
             // actionsToolStripMenuItem
             // 
@@ -172,11 +172,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1444, 881);
+            this.ClientSize = new System.Drawing.Size(1362, 696);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TransMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transaction Vouching and Verification System";
+            this.Load += new System.EventHandler(this.TransMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

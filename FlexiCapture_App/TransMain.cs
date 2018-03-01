@@ -82,5 +82,10 @@ namespace FlexiCapture_App
             Unmatched_View uv = new Unmatched_View();
             uv.Show();
         }
+
+        private void TransMain_Load(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
     }
 }
