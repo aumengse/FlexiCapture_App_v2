@@ -56,7 +56,7 @@ namespace FlexiCapture_App
             try
             {
                 con.Open();
-                string nw_cmd = "INSERT INTO archive_trans(past_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
+                string nw_cmd = "INSERT INTO archive_trans(trans_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
                                 "SELECT id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM icbs_trans where match_code='R' or match_code='F';";
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
@@ -88,7 +88,7 @@ namespace FlexiCapture_App
             try
             {
                 con.Open();
-                string nw_cmd = "INSERT INTO archive_trans(past_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
+                string nw_cmd = "INSERT INTO archive_trans(trans_id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src)" +
                                 "SELECT id,trans_date,trans_code,acct_name,acct_num,amount,match_code,match_ref,remarks,trans_src FROM scanned_trans where match_code='R' or match_code='F';";
                 {
                     OleDbCommand nw_command = new OleDbCommand(nw_cmd, con);
