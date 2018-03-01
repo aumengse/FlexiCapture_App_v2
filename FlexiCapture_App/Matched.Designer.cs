@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Matched));
             this.Matched_Icbs_Records = new System.Windows.Forms.ListView();
             this.check = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Account_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Account_Number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Matched_Trans_Records = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_undo = new System.Windows.Forms.Button();
@@ -55,8 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.match_scan_filter = new System.Windows.Forms.ComboBox();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +107,11 @@
             this.Amount.Text = "Amount";
             this.Amount.Width = 100;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Match Code";
+            this.columnHeader6.Width = 70;
+            // 
             // Matched_Trans_Records
             // 
             this.Matched_Trans_Records.CheckBoxes = true;
@@ -149,6 +155,11 @@
             // 
             this.columnHeader5.Text = "Amount";
             this.columnHeader5.Width = 103;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Match Code";
+            this.columnHeader7.Width = 70;
             // 
             // groupBox1
             // 
@@ -296,16 +307,6 @@
             this.match_scan_filter.TabIndex = 26;
             this.match_scan_filter.SelectedIndexChanged += new System.EventHandler(this.match_scan_filter_SelectedIndexChanged);
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Match Code";
-            this.columnHeader6.Width = 70;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Match Code";
-            this.columnHeader7.Width = 70;
-            // 
             // Matched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,9 +328,10 @@
             this.Controls.Add(this.btn_undo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Matched";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Matched";
+            this.Text = "Matched Transactions";
             this.Load += new System.EventHandler(this.Matched_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

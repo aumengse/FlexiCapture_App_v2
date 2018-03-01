@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Remarks));
             this.txt_remarks = new System.Windows.Forms.RichTextBox();
             this.btn_remarks = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_remarks);
             this.Controls.Add(this.txt_remarks);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Remarks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Remarks";

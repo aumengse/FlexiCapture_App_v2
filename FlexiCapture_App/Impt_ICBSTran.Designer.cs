@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impt_ICBSTran));
             this.btn_browse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_textfile = new System.Windows.Forms.TextBox();
@@ -91,6 +92,7 @@
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_textfile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Impt_ICBSTran";
             this.Text = "Import ICBS Transactions";
             this.Load += new System.EventHandler(this.Impt_ICBSTran_Load);

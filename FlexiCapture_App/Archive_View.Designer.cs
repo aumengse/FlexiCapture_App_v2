@@ -110,7 +110,7 @@
             this.Controls.Add(this.listview_archive);
             this.Name = "Archive_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Archive_View";
+            this.Text = "Archived Transactions";
             this.Load += new System.EventHandler(this.Archive_View_Load);
             this.ResumeLayout(false);
 

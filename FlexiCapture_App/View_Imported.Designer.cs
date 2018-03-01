@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Imported));
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_icbs_total_items = new System.Windows.Forms.Label();
             this.pnl_icbs = new System.Windows.Forms.Panel();
@@ -730,6 +731,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnl_scanned);
             this.Controls.Add(this.lv_scanned);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View_Imported";
             this.Text = "Imported Transactions";
             this.Load += new System.EventHandler(this.View_Imported_Load);

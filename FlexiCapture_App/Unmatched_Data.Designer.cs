@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Unmatched_Data));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_icbs_acct_num = new System.Windows.Forms.TextBox();
             this.lbl_icbs_amount = new System.Windows.Forms.Label();
@@ -262,9 +263,10 @@
             this.Controls.Add(this.btn_force_match);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Unmatched_Data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unmatched Transaction";
+            this.Text = "Verifying Transactions";
             this.Load += new System.EventHandler(this.Unmatched_Data_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

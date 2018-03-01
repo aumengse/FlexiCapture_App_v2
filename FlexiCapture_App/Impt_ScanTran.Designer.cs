@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impt_ScanTran));
             this.btn_browse = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_data_source);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Impt_ScanTran";
             this.Text = "Import Scanned Transactions";
             this.Load += new System.EventHandler(this.Impt_ScanTran_Load);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Archiving_Trans));
             this.pbar_archive = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_percent = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.Controls.Add(this.lbl_percent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbar_archive);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Archiving_Trans";
             this.Text = "Archiving_Trans";
             this.Load += new System.EventHandler(this.Archiving_Trans_Load);
