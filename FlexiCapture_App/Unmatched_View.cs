@@ -114,6 +114,7 @@ namespace FlexiCapture_App
                 Unmatched_Icbs_Records.SelectedItems.Clear();
             }
             e.Item.Selected = e.Item.Checked;
+            e.Item.Selected = false;
 
             _doSelect = true;
         }

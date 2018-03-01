@@ -333,6 +333,7 @@ namespace FlexiCapture_App
                 Matched_Icbs_Records.SelectedItems.Clear();
             }
             e.Item.Selected = e.Item.Checked;
+            e.Item.Selected = false;
 
             _doSelect = true;
         }
