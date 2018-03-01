@@ -130,7 +130,7 @@
             this.pnl_icbs.Controls.Add(this.label22);
             this.pnl_icbs.Location = new System.Drawing.Point(712, 107);
             this.pnl_icbs.Name = "pnl_icbs";
-            this.pnl_icbs.Size = new System.Drawing.Size(449, 369);
+            this.pnl_icbs.Size = new System.Drawing.Size(449, 329);
             this.pnl_icbs.TabIndex = 38;
             this.pnl_icbs.Visible = false;
             this.pnl_icbs.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_icbs_Paint);
@@ -476,9 +476,9 @@
             this.pnl_scanned.Controls.Add(this.label11);
             this.pnl_scanned.Controls.Add(this.label10);
             this.pnl_scanned.Controls.Add(this.label9);
-            this.pnl_scanned.Location = new System.Drawing.Point(102, 101);
+            this.pnl_scanned.Location = new System.Drawing.Point(104, 107);
             this.pnl_scanned.Name = "pnl_scanned";
-            this.pnl_scanned.Size = new System.Drawing.Size(445, 309);
+            this.pnl_scanned.Size = new System.Drawing.Size(445, 329);
             this.pnl_scanned.TabIndex = 54;
             this.pnl_scanned.Visible = false;
             this.pnl_scanned.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_scanned_Paint);
