@@ -36,14 +36,14 @@ namespace FlexiCapture_App
             dbcon = new Conf.conf();
             con.ConnectionString = dbcon.getConnectionString();
         }
-        private void get_data()
+        private void get_data(string table_name)
         {
             try
             {
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tb_data_source.Text + "; Persist Security Info=False;");
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + tb_table_name.Text + "] where is_import="+ false +"";
+                cmd.CommandText = "SELECT trans_date,acct_name,acct_num,amount,trans_code FROM [" + table_name + "] where is_import="+ false +"";
                 cmd.Connection = con;
                 //OleDbDataReader rdr = cmd.ExecuteReader();
                 //while (rdr.Read())
@@ -65,7 +65,7 @@ namespace FlexiCapture_App
                 MessageBox.Show(ex.Message);
             }
         }
-        private void mark_imported_data(string acct_num)
+        private void mark_imported_data(string table_name,string acct_num)
         {
             string cmd = "";
             try
@@ -75,7 +75,7 @@ namespace FlexiCapture_App
                 con.Open();
                 if (!string.IsNullOrWhiteSpace(acct_num))
                 {
-                    cmd = "update [" + tb_table_name.Text + "] set is_import=" + true + " where acct_num='" + acct_num + "'";
+                    cmd = "update [" + table_name + "] set is_import=" + true + " where acct_num='" + acct_num + "'";
                 }
 
                 OleDbCommand command = new OleDbCommand(cmd, con);
@@ -90,7 +90,7 @@ namespace FlexiCapture_App
             }
         }
 
-        private void inserting()
+        private void inserting(string table_name)
         {
             string date_string;
             DateTime? date_x = null;
@@ -138,8 +138,15 @@ namespace FlexiCapture_App
                         cmd.Parameters.AddWithValue("@amount", DBNull.Value);
                     }
                     cmd.Parameters.AddWithValue("@trans_code", row.Cells[4].Value.ToString());
-                    mark_imported_data(row.Cells[2].Value.ToString());
-                    
+                    if (table_name == "depo_slip")
+                    {
+                        mark_imported_data("depo_slip", row.Cells[2].Value.ToString());
+                    }
+                    else
+                    {
+                        mark_imported_data("with_slip", row.Cells[2].Value.ToString());
+                    }
+
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -149,34 +156,34 @@ namespace FlexiCapture_App
             {
                 //MessageBox.Show(e.Message);
             }
-            MessageBox.Show("Import Successfully","Import Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-        }
-
-
-
-
-        private void import_from_flexiCapture()
-        {
-            try
+            if (table_name == "depo_slip")
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
-                con.Open();
-
-                string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) SELECT date,acct_name,acct_num,amount from" + tb_data_source.Text + "." + tb_table_name + "";
-
-                using (OleDbCommand sqlCeCommand = new OleDbCommand(query, con))
-                {
-                    sqlCeCommand.ExecuteNonQuery();
-                    MessageBox.Show("Import Successfully");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Import Successfully", "Import Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
+        
+        //private void import_from_flexiCapture()
+        //{
+        //    try
+        //    {
+        //        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\D\Desktop\TVVS.accdb; Persist Security Info=False;");
+        //        con.Open();
+
+        //        string query = "INSERT INTO scanned_trans(date,acct_name,acct_num,amount) SELECT date,acct_name,acct_num,amount from" + tb_data_source.Text + "." + tb_table_name + "";
+
+        //        using (OleDbCommand sqlCeCommand = new OleDbCommand(query, con))
+        //        {
+        //            sqlCeCommand.ExecuteNonQuery();
+        //            MessageBox.Show("Import Successfully");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+
+        //}
 
         private void openfile_browse_FileOk(object sender, CancelEventArgs e)
         {
@@ -185,10 +192,26 @@ namespace FlexiCapture_App
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            //import_from_flexiCapture();
-            get_data();
-            inserting();
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(tb_data_source.Text))
+            {
+                //import_from_flexiCapture();
+                get_data("depo_slip");
+                inserting("depo_slip");
+                get_data("with_slip");
+                inserting("with_slip");
+                if (chk_view_imp_data.Checked == true)
+                {
+                    View_Imported vi = new View_Imported();
+                    vi.Show();
+                }
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please insert Location.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            
         }
 
         private void btn_browse_Click(object sender, EventArgs e)
