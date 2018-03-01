@@ -169,7 +169,7 @@ namespace FlexiCapture_App
             }
             catch
             {
-                MessageBox.Show("Please choose transactions to verify");
+                MessageBox.Show("Please choose transactions to verify","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
