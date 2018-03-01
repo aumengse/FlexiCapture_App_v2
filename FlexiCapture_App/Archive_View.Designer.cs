@@ -58,6 +58,7 @@
             this.listview_archive.TabIndex = 7;
             this.listview_archive.UseCompatibleStateImageBehavior = false;
             this.listview_archive.View = System.Windows.Forms.View.Details;
+            this.listview_archive.SelectedIndexChanged += new System.EventHandler(this.listview_archive_SelectedIndexChanged);
             // 
             // tran_code
             // 
