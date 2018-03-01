@@ -47,6 +47,8 @@
             this.lbl_scan_acct_num = new System.Windows.Forms.Label();
             this.txt_scan_date = new System.Windows.Forms.TextBox();
             this.btn_force_match = new System.Windows.Forms.Button();
+            this.txt_remarks = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -231,11 +233,31 @@
             this.btn_force_match.UseVisualStyleBackColor = true;
             this.btn_force_match.Click += new System.EventHandler(this.btn_force_match_Click);
             // 
+            // txt_remarks
+            // 
+            this.txt_remarks.Location = new System.Drawing.Point(86, 222);
+            this.txt_remarks.Name = "txt_remarks";
+            this.txt_remarks.Size = new System.Drawing.Size(530, 49);
+            this.txt_remarks.TabIndex = 13;
+            this.txt_remarks.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 222);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Remarks";
+            // 
             // Unmatched_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 251);
+            this.ClientSize = new System.Drawing.Size(712, 293);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_remarks);
             this.Controls.Add(this.btn_force_match);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -248,6 +270,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,5 +295,7 @@
         private System.Windows.Forms.Label lbl_scan_acct_num;
         public System.Windows.Forms.TextBox txt_scan_date;
         private System.Windows.Forms.Button btn_force_match;
+        public System.Windows.Forms.RichTextBox txt_remarks;
+        private System.Windows.Forms.Label label1;
     }
 }
