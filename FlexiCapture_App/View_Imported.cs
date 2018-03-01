@@ -282,8 +282,7 @@ namespace FlexiCapture_App
             }
             catch
             {
-                MessageBox.Show("No Results found");
-
+                MessageBox.Show("No Result found.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
 
