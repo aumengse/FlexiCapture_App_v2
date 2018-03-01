@@ -13,6 +13,8 @@ namespace FlexiCapture_App
 {
     public partial class Matched : Form
     {
+        private bool _doCheck = true;
+        private bool _doSelect = true;
         private OleDbConnection con = new OleDbConnection(); //Initialize OleDBConnection
         private Conf.conf dbcon;
         public Matched()
@@ -284,6 +286,85 @@ namespace FlexiCapture_App
             else
             {
                 matched_listview_view("scanned_trans", "<>", "U");
+            }
+        }
+
+        private void Matched_Icbs_Records_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void check_one_item(string table_name, ItemCheckedEventArgs e)
+        {
+            if (!_doCheck)
+            {
+                return;
+            }
+
+            _doCheck = false;
+
+            _doSelect = false;
+            if (table_name == "scan")
+            {
+                foreach (ListViewItem lvi in Matched_Trans_Records.Items)
+                { // clear all checked items except the one we are working with
+                    if (lvi != e.Item)
+                        lvi.Checked = false;
+                }
+            }
+            else
+            {
+                foreach (ListViewItem lvi in Matched_Icbs_Records.Items)
+                { // clear all checked items except the one we are working with
+                    if (lvi != e.Item)
+                    {
+                        lvi.Checked = false;
+                    }
+                }
+            }
+
+            _doCheck = true;
+            if (table_name == "scan")
+            {
+                Matched_Trans_Records.SelectedItems.Clear();
+            }
+            else
+            {
+                Matched_Icbs_Records.SelectedItems.Clear();
+            }
+            e.Item.Selected = e.Item.Checked;
+
+            _doSelect = true;
+        }
+        private void Matched_Icbs_Records_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            check_one_item("icbs", e);
+            foreach (ListViewItem lv in Matched_Icbs_Records.Items)
+            {
+                if (lv.Checked)
+                {
+                    lv.BackColor = Color.LightBlue;
+                }
+                else
+                {
+                    lv.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void Matched_Trans_Records_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            check_one_item("scan", e);
+            foreach (ListViewItem lv in Matched_Trans_Records.Items)
+            {
+                if (lv.Checked)
+                {
+                    lv.BackColor = Color.LightBlue;
+                }
+                else
+                {
+                    lv.BackColor = Color.White;
+                }
             }
         }
     }

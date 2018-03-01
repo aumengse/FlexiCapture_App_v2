@@ -80,6 +80,8 @@
             this.Matched_Icbs_Records.TabIndex = 6;
             this.Matched_Icbs_Records.UseCompatibleStateImageBehavior = false;
             this.Matched_Icbs_Records.View = System.Windows.Forms.View.Details;
+            this.Matched_Icbs_Records.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Matched_Icbs_Records_ItemChecked);
+            this.Matched_Icbs_Records.SelectedIndexChanged += new System.EventHandler(this.Matched_Icbs_Records_SelectedIndexChanged);
             // 
             // check
             // 
@@ -130,6 +132,7 @@
             this.Matched_Trans_Records.TabIndex = 7;
             this.Matched_Trans_Records.UseCompatibleStateImageBehavior = false;
             this.Matched_Trans_Records.View = System.Windows.Forms.View.Details;
+            this.Matched_Trans_Records.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.Matched_Trans_Records_ItemChecked);
             // 
             // columnHeader1
             // 

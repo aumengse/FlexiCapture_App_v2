@@ -85,21 +85,26 @@ namespace FlexiCapture_App
         }
         private void btn_force_match_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txt_remarks.Text))
+            {
+                DialogResult dialogResult = MessageBox.Show("Please Enter Reason for Force Matching", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //get id first, this is use in force match method
+                int scan_id = get_id(txt_scan_acct_num.Text, "scanned_trans");
+                int icbs_id = get_id(txt_icbs_acct_num.Text, "icbs_trans");
 
-            //get id first, this is use in force match method
-            int scan_id = get_id(txt_scan_acct_num.Text, "scanned_trans");
-            int icbs_id = get_id(txt_icbs_acct_num.Text, "icbs_trans");
+                //Force matching method
+                force_match("icbs_trans", txt_icbs_acct_num.Text, txt_remarks.Text, scan_id);
+                force_match("scanned_trans", txt_scan_acct_num.Text, txt_remarks.Text, icbs_id);
 
-            //Force matching method
-            force_match("icbs_trans", txt_icbs_acct_num.Text, txt_remarks.Text, scan_id);
-            force_match("scanned_trans", txt_scan_acct_num.Text, txt_remarks.Text, icbs_id);
+                MessageBox.Show("Force Match Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show("Force Match Successful", "Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
-
-            Unmatched_View uv = new Unmatched_View();
-            uv.Show();
-            this.Close();
-            
+                Unmatched_View uv = new Unmatched_View();
+                uv.Show();
+                this.Close();
+            }
         }
     }
 }

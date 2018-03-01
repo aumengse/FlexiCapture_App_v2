@@ -105,7 +105,7 @@
     <Compile Include="Initialize_DB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Initialize_DB.designer.cs">
+    <Compile Include="Initialize_DB.Designer.cs">
       <DependentUpon>Initialize_DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Matched.cs">

@@ -98,7 +98,9 @@ namespace FlexiCapture_App
                 foreach (ListViewItem lvi in Unmatched_Icbs_Records.Items)
                 { // clear all checked items except the one we are working with
                     if (lvi != e.Item)
+                    {
                         lvi.Checked = false;
+                    }
                 }
             }
             
@@ -118,10 +120,32 @@ namespace FlexiCapture_App
         private void Unmatched_Scanned_Records_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             check_one_item("scan", e);
+            foreach(ListViewItem lv in Unmatched_Scanned_Records.Items)
+            {
+                if (lv.Checked)
+                {
+                    lv.BackColor = Color.LightBlue;
+                }
+                else
+                {
+                    lv.BackColor = Color.White;
+                }
+            }
         }
         private void Unmatched_Icbs_Records_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             check_one_item("icbs",e);
+            foreach (ListViewItem lv in Unmatched_Icbs_Records.Items)
+            {
+                if (lv.Checked)
+                {
+                    lv.BackColor = Color.LightBlue;
+                }
+                else
+                {
+                    lv.BackColor = Color.White;
+                }
+            }
         }
         
         private void Unmatched_Icbs_Records_SelectedIndexChanged(object sender, EventArgs e)
