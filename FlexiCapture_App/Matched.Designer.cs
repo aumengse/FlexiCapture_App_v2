@@ -183,7 +183,7 @@
             // lbl_scan_total_amount
             // 
             this.lbl_scan_total_amount.AutoSize = true;
-            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1107, 569);
+            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1072, 560);
             this.lbl_scan_total_amount.Name = "lbl_scan_total_amount";
             this.lbl_scan_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_total_amount.TabIndex = 23;
@@ -192,7 +192,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1031, 569);
+            this.label4.Location = new System.Drawing.Point(996, 560);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 22;
@@ -201,7 +201,7 @@
             // lbl_scan_value_items
             // 
             this.lbl_scan_value_items.AutoSize = true;
-            this.lbl_scan_value_items.Location = new System.Drawing.Point(735, 569);
+            this.lbl_scan_value_items.Location = new System.Drawing.Point(695, 560);
             this.lbl_scan_value_items.Name = "lbl_scan_value_items";
             this.lbl_scan_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_value_items.TabIndex = 21;
@@ -210,7 +210,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(670, 569);
+            this.label6.Location = new System.Drawing.Point(630, 560);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 20;
@@ -219,7 +219,7 @@
             // lbl_icbs_total_amount
             // 
             this.lbl_icbs_total_amount.AutoSize = true;
-            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(485, 560);
+            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(440, 560);
             this.lbl_icbs_total_amount.Name = "lbl_icbs_total_amount";
             this.lbl_icbs_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_total_amount.TabIndex = 19;
@@ -228,7 +228,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 560);
+            this.label3.Location = new System.Drawing.Point(354, 560);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 18;
@@ -237,7 +237,7 @@
             // lbl_icbs_value_items
             // 
             this.lbl_icbs_value_items.AutoSize = true;
-            this.lbl_icbs_value_items.Location = new System.Drawing.Point(101, 560);
+            this.lbl_icbs_value_items.Location = new System.Drawing.Point(80, 560);
             this.lbl_icbs_value_items.Name = "lbl_icbs_value_items";
             this.lbl_icbs_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_value_items.TabIndex = 17;
@@ -246,7 +246,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 560);
+            this.label1.Location = new System.Drawing.Point(15, 560);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 16;
