@@ -283,7 +283,7 @@
             // lbl_scan_total_amt
             // 
             this.lbl_scan_total_amt.AutoSize = true;
-            this.lbl_scan_total_amt.Location = new System.Drawing.Point(514, 559);
+            this.lbl_scan_total_amt.Location = new System.Drawing.Point(495, 559);
             this.lbl_scan_total_amt.Name = "lbl_scan_total_amt";
             this.lbl_scan_total_amt.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_amt.TabIndex = 35;
@@ -301,7 +301,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(435, 559);
+            this.label27.Location = new System.Drawing.Point(416, 559);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(72, 13);
             this.label27.TabIndex = 33;
@@ -352,7 +352,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1044, 559);
+            this.label2.Location = new System.Drawing.Point(1026, 559);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 42;
@@ -361,7 +361,7 @@
             // lbl_icbs_total_amt
             // 
             this.lbl_icbs_total_amt.AutoSize = true;
-            this.lbl_icbs_total_amt.Location = new System.Drawing.Point(1133, 559);
+            this.lbl_icbs_total_amt.Location = new System.Drawing.Point(1115, 559);
             this.lbl_icbs_total_amt.Name = "lbl_icbs_total_amt";
             this.lbl_icbs_total_amt.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_amt.TabIndex = 41;
@@ -393,7 +393,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(460, 578);
+            this.label5.Location = new System.Drawing.Point(441, 578);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 45;
@@ -402,7 +402,7 @@
             // lbl_scan_total_depo
             // 
             this.lbl_scan_total_depo.AutoSize = true;
-            this.lbl_scan_total_depo.Location = new System.Drawing.Point(514, 578);
+            this.lbl_scan_total_depo.Location = new System.Drawing.Point(495, 578);
             this.lbl_scan_total_depo.Name = "lbl_scan_total_depo";
             this.lbl_scan_total_depo.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_depo.TabIndex = 46;
@@ -411,7 +411,7 @@
             // lbl_scan_total_wdl
             // 
             this.lbl_scan_total_wdl.AutoSize = true;
-            this.lbl_scan_total_wdl.Location = new System.Drawing.Point(514, 598);
+            this.lbl_scan_total_wdl.Location = new System.Drawing.Point(495, 598);
             this.lbl_scan_total_wdl.Name = "lbl_scan_total_wdl";
             this.lbl_scan_total_wdl.Size = new System.Drawing.Size(28, 13);
             this.lbl_scan_total_wdl.TabIndex = 48;
@@ -420,7 +420,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(460, 598);
+            this.label14.Location = new System.Drawing.Point(441, 598);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 47;
@@ -429,7 +429,7 @@
             // lbl_icbs_total_wdl
             // 
             this.lbl_icbs_total_wdl.AutoSize = true;
-            this.lbl_icbs_total_wdl.Location = new System.Drawing.Point(1133, 598);
+            this.lbl_icbs_total_wdl.Location = new System.Drawing.Point(1115, 598);
             this.lbl_icbs_total_wdl.Name = "lbl_icbs_total_wdl";
             this.lbl_icbs_total_wdl.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_wdl.TabIndex = 52;
@@ -438,7 +438,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1079, 598);
+            this.label17.Location = new System.Drawing.Point(1061, 598);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 51;
@@ -447,7 +447,7 @@
             // lbl_icbs_total_depo
             // 
             this.lbl_icbs_total_depo.AutoSize = true;
-            this.lbl_icbs_total_depo.Location = new System.Drawing.Point(1133, 578);
+            this.lbl_icbs_total_depo.Location = new System.Drawing.Point(1115, 578);
             this.lbl_icbs_total_depo.Name = "lbl_icbs_total_depo";
             this.lbl_icbs_total_depo.Size = new System.Drawing.Size(28, 13);
             this.lbl_icbs_total_depo.TabIndex = 50;
@@ -456,7 +456,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1079, 578);
+            this.label19.Location = new System.Drawing.Point(1061, 578);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 49;
