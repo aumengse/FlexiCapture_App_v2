@@ -73,9 +73,9 @@
             this.columnHeader6});
             this.Matched_Icbs_Records.FullRowSelect = true;
             this.Matched_Icbs_Records.GridLines = true;
-            this.Matched_Icbs_Records.Location = new System.Drawing.Point(9, 16);
+            this.Matched_Icbs_Records.Location = new System.Drawing.Point(19, 16);
             this.Matched_Icbs_Records.Name = "Matched_Icbs_Records";
-            this.Matched_Icbs_Records.Size = new System.Drawing.Size(643, 501);
+            this.Matched_Icbs_Records.Size = new System.Drawing.Size(543, 429);
             this.Matched_Icbs_Records.TabIndex = 6;
             this.Matched_Icbs_Records.UseCompatibleStateImageBehavior = false;
             this.Matched_Icbs_Records.View = System.Windows.Forms.View.Details;
@@ -84,6 +84,7 @@
             // 
             this.check.Text = "Check";
             this.check.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.check.Width = 45;
             // 
             // Date
             // 
@@ -93,12 +94,12 @@
             // Account_Name
             // 
             this.Account_Name.Text = "Account Name";
-            this.Account_Name.Width = 151;
+            this.Account_Name.Width = 100;
             // 
             // Account_Number
             // 
             this.Account_Number.Text = "Account Number";
-            this.Account_Number.Width = 120;
+            this.Account_Number.Width = 100;
             // 
             // Amount
             // 
@@ -119,7 +120,7 @@
             this.Matched_Trans_Records.GridLines = true;
             this.Matched_Trans_Records.Location = new System.Drawing.Point(22, 16);
             this.Matched_Trans_Records.Name = "Matched_Trans_Records";
-            this.Matched_Trans_Records.Size = new System.Drawing.Size(633, 501);
+            this.Matched_Trans_Records.Size = new System.Drawing.Size(543, 429);
             this.Matched_Trans_Records.TabIndex = 7;
             this.Matched_Trans_Records.UseCompatibleStateImageBehavior = false;
             this.Matched_Trans_Records.View = System.Windows.Forms.View.Details;
@@ -127,6 +128,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Check";
+            this.columnHeader1.Width = 45;
             // 
             // columnHeader2
             // 
@@ -136,12 +138,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Account Name";
-            this.columnHeader3.Width = 130;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Account Number";
-            this.columnHeader4.Width = 138;
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
@@ -151,9 +153,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Matched_Icbs_Records);
-            this.groupBox1.Location = new System.Drawing.Point(16, 83);
+            this.groupBox1.Location = new System.Drawing.Point(9, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(671, 546);
+            this.groupBox1.Size = new System.Drawing.Size(581, 474);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ICBS Data";
@@ -161,16 +163,16 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Matched_Trans_Records);
-            this.groupBox2.Location = new System.Drawing.Point(703, 83);
+            this.groupBox2.Location = new System.Drawing.Point(633, 72);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(667, 546);
+            this.groupBox2.Size = new System.Drawing.Size(589, 474);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Scanned Data";
             // 
             // btn_undo
             // 
-            this.btn_undo.Location = new System.Drawing.Point(26, 711);
+            this.btn_undo.Location = new System.Drawing.Point(18, 611);
             this.btn_undo.Name = "btn_undo";
             this.btn_undo.Size = new System.Drawing.Size(132, 38);
             this.btn_undo.TabIndex = 10;
@@ -181,7 +183,7 @@
             // lbl_scan_total_amount
             // 
             this.lbl_scan_total_amount.AutoSize = true;
-            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1311, 652);
+            this.lbl_scan_total_amount.Location = new System.Drawing.Point(1107, 569);
             this.lbl_scan_total_amount.Name = "lbl_scan_total_amount";
             this.lbl_scan_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_total_amount.TabIndex = 23;
@@ -190,7 +192,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1235, 652);
+            this.label4.Location = new System.Drawing.Point(1031, 569);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 22;
@@ -199,7 +201,7 @@
             // lbl_scan_value_items
             // 
             this.lbl_scan_value_items.AutoSize = true;
-            this.lbl_scan_value_items.Location = new System.Drawing.Point(793, 652);
+            this.lbl_scan_value_items.Location = new System.Drawing.Point(735, 569);
             this.lbl_scan_value_items.Name = "lbl_scan_value_items";
             this.lbl_scan_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_scan_value_items.TabIndex = 21;
@@ -208,7 +210,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(728, 652);
+            this.label6.Location = new System.Drawing.Point(670, 569);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 20;
@@ -217,7 +219,7 @@
             // lbl_icbs_total_amount
             // 
             this.lbl_icbs_total_amount.AutoSize = true;
-            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(601, 652);
+            this.lbl_icbs_total_amount.Location = new System.Drawing.Point(485, 560);
             this.lbl_icbs_total_amount.Name = "lbl_icbs_total_amount";
             this.lbl_icbs_total_amount.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_total_amount.TabIndex = 19;
@@ -226,7 +228,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(508, 652);
+            this.label3.Location = new System.Drawing.Point(392, 560);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 18;
@@ -235,7 +237,7 @@
             // lbl_icbs_value_items
             // 
             this.lbl_icbs_value_items.AutoSize = true;
-            this.lbl_icbs_value_items.Location = new System.Drawing.Point(88, 652);
+            this.lbl_icbs_value_items.Location = new System.Drawing.Point(101, 560);
             this.lbl_icbs_value_items.Name = "lbl_icbs_value_items";
             this.lbl_icbs_value_items.Size = new System.Drawing.Size(13, 13);
             this.lbl_icbs_value_items.TabIndex = 17;
@@ -244,7 +246,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 652);
+            this.label1.Location = new System.Drawing.Point(36, 560);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 16;
@@ -257,7 +259,7 @@
             "All",
             "Regular Match",
             "Force Match"});
-            this.match_icbs_filter.Location = new System.Drawing.Point(528, 43);
+            this.match_icbs_filter.Location = new System.Drawing.Point(430, 32);
             this.match_icbs_filter.Name = "match_icbs_filter";
             this.match_icbs_filter.Size = new System.Drawing.Size(141, 21);
             this.match_icbs_filter.TabIndex = 24;
@@ -266,7 +268,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 51);
+            this.label2.Location = new System.Drawing.Point(392, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 25;
@@ -275,7 +277,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1176, 51);
+            this.label5.Location = new System.Drawing.Point(996, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 27;
@@ -288,7 +290,7 @@
             "All",
             "Regular Match",
             "Force Match"});
-            this.match_scan_filter.Location = new System.Drawing.Point(1214, 43);
+            this.match_scan_filter.Location = new System.Drawing.Point(1034, 32);
             this.match_scan_filter.Name = "match_scan_filter";
             this.match_scan_filter.Size = new System.Drawing.Size(156, 21);
             this.match_scan_filter.TabIndex = 26;
@@ -297,19 +299,19 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Match Code";
-            this.columnHeader6.Width = 90;
+            this.columnHeader6.Width = 70;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Match Code";
-            this.columnHeader7.Width = 100;
+            this.columnHeader7.Width = 70;
             // 
             // Matched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1384, 781);
+            this.ClientSize = new System.Drawing.Size(1234, 661);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.match_scan_filter);
             this.Controls.Add(this.label2);
