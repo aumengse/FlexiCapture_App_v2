@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Configuration;
 using System.Threading;
+using FlexiCapture_App_v2;
 
 namespace FlexiCapture_App
 {
@@ -113,6 +114,10 @@ namespace FlexiCapture_App
             
         }
 
-        
+        private void matchingToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Main_Process mp = new Main_Process();
+            mp.Show();
+        } 
     }
 }

@@ -123,6 +123,12 @@
     <Compile Include="Initialize_DB.Designer.cs">
       <DependentUpon>Initialize_DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main_Process.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Process.Designer.cs">
+      <DependentUpon>Main_Process.cs</DependentUpon>
+    </Compile>
     <Compile Include="Matched.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="Remarks.Designer.cs">
       <DependentUpon>Remarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Summary_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Summary_View.Designer.cs">
+      <DependentUpon>Summary_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Unmatched_Data.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,9 @@
     <EmbeddedResource Include="Initialize_DB.resx">
       <DependentUpon>Initialize_DB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main_Process.resx">
+      <DependentUpon>Main_Process.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Matched.resx">
       <DependentUpon>Matched.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Remarks.resx">
       <DependentUpon>Remarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary_View.resx">
+      <DependentUpon>Summary_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransMain.resx">
       <DependentUpon>TransMain.cs</DependentUpon>
